@@ -45,5 +45,6 @@ const runConfig = configPath => {
 	require(`./configs/${configPath}`)(meth, attributes)
 }
 
+runConfig('yubikey')
 runConfig('config-home')
 runConfig('terminator')
