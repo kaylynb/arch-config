@@ -1,4 +1,8 @@
 [global_config]
+  enabled_plugins = ,
+  homogeneous_tabbar = False
+  scroll_tabbar = False
+  tab_position = hidden
 [keybindings]
 [layouts]
   [[default]]

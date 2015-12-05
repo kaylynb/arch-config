@@ -9,7 +9,7 @@ module.exports = (m, attr) => {
 
 	m.directory.install(path.dirname(configFilePath), {
 		permissions: {
-			mode: 0o755,
+			mode: 0o700,
 			owner: attr.user,
 			group: 'users'
 		}
@@ -18,7 +18,7 @@ module.exports = (m, attr) => {
 	m.file.install(configFilePath, {
 		source: path.resolve(__dirname, 'config'),
 		permissions: {
-			mode: 0o644,
+			mode: 0o600,
 			owner: attr.user,
 			group: 'users'
 		}
