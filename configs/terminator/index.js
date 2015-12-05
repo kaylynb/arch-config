@@ -2,14 +2,24 @@
 
 const path = require('path')
 
-module.exports = meth => {
-	meth.pkg.install('terminator')
+module.exports = (m, attr) => {
+	m.pkg.install('terminator')
 
-	meth.file.install('/home/kaylyn/.config/terminator/config', {
+	const configFilePath = m.home('.config/terminator/config')
+
+	m.directory.install(path.dirname(configFilePath), {
+		permissions: {
+			mode: 0o755,
+			owner: attr.user,
+			group: 'users'
+		}
+	})
+
+	m.file.install(configFilePath, {
 		source: path.resolve(__dirname, 'config'),
 		permissions: {
 			mode: 0o644,
-			owner: 'kaylyn',
+			owner: attr.user,
 			group: 'users'
 		}
 	})
