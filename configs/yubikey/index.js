@@ -2,7 +2,7 @@
 
 const path = require('path')
 
-module.exports = (m, attr) => {
+module.exports = (m, a, u) => {
 	m.pkg.install('pcsclite')
 	m.pkg.install('libusb-compat')
 

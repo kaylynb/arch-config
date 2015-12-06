@@ -1,54 +1,42 @@
 'use strict'
 
 const path = require('path')
+const tpl = require('../../util/tpl')
 
-module.exports = (m, attr) => {
+module.exports = (m, a, u) => {
 	m.pkg.install('i3status')
-
-	m.directory.install(m.home('.config/i3status'), {
-		permissions: {
-			mode: 0o700,
-			owner: attr.user,
-			group: 'users'
-		}
-	})
-
-	m.file.install(m.home('.config/i3status/config'), {
-		source: path.resolve(__dirname, 'i3status/config'),
-		permissions: {
-			mode: 0o600,
-			owner: attr.user,
-			group: 'users'
-		}
-	})
-
 	m.pkg.install('i3-wm')
+	m.pkg.install('dmenu')
 
-	m.directory.install(m.home('.config/i3'), {
-		permissions: {
-			mode: 0o700,
-			owner: attr.user,
-			group: 'users'
-		}
+	// i3status
+	m.directory.install(u.home('.config/i3status'), {
+		permissions: u.mode(0o700)
 	})
 
-	m.file.install(m.home('.config/i3/config'), {
-		source: path.resolve(__dirname, 'i3/config'),
-		permissions: {
-			mode: 0o600,
-			owner: attr.user,
-			group: 'users'
-		}
+	m.file.install(u.home('.config/i3status/config'), {
+		source: path.resolve(__dirname, 'i3status/config'),
+		permissions: u.mode(0o600)
+	})
+
+	// i3
+	m.directory.install(u.home('.config/i3'), {
+		permissions: u.mode(0o700)
+	})
+
+	const i3config = tpl.render(
+		path.resolve(__dirname, 'i3/config'),
+		a.i3
+	)
+
+	m.file.install(u.home('.config/i3/config'), {
+		content: i3config,
+		permissions: u.mode(0o600)
 	})
 
 	;['i3statusmem.sh', 'mem.sh'].forEach(filename => {
-		m.file.install(m.home(`.config/i3/${filename}`), {
+		m.file.install(u.home(`.config/i3/${filename}`), {
 			source: path.resolve(__dirname, `i3/${filename}`),
-			permissions: {
-				mode: 0o700,
-				owner: attr.user,
-				group: 'users'
-			}
+			permissions: u.mode(0o700)
 		})
 	})
 }

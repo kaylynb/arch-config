@@ -2,6 +2,7 @@
 
 const path = require('path')
 const R = require('ramda')
+const os = require('os')
 
 const command = {
 	PkgAura: require('./util/pkg_aura'),
@@ -28,26 +29,32 @@ const init = (resource, command) => {
 	return new resource(config, new command()).getActions()
 }
 
-const defaultAttributes = {
-	user: 'kaylyn'
-}
 
-const attributes = R.merge(defaultAttributes, process.argv[2] ? require(`./${process.argv[2]}`) : {})
+const attributes = require(`./${os.hostname()}.json`)
 
 const meth = {
 	pkg_aura: init(resource.Pkg, command.PkgAura),
 	pkg: init(resource.Pkg, command.PkgPacman),
 	file: init(resource.File, command.FileUnix),
 	directory: init(resource.Directory, command.FileUnix),
-	service: init(resource.Service, command.ServiceSystemd),
-	home: x => path.join(`/home/${attributes.user}/`, x)
+	service: init(resource.Service, command.ServiceSystemd)
+}
+
+const util = {
+	home: x => path.join('/home/kaylyn/', x),
+	mode: x => { return { mode: x, owner: 'kaylyn', group: 'users' } }
 }
 
 const runConfig = configPath => {
-	require(`./configs/${configPath}`)(meth, attributes)
+	console.log(`Config: Begin ➜ ${configPath}`)
+	require(`./configs/${configPath}`)(meth, attributes, util)
+	console.log(`Config: End ➜ ${configPath}\n`)
 }
 
 runConfig('config-home')
 runConfig('yubikey')
-runConfig('terminator')
+runConfig('X11')
+runConfig('lightdm')
+runConfig('compton')
 runConfig('i3')
+runConfig('terminator')
