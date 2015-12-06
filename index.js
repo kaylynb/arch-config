@@ -4,7 +4,7 @@ const path = require('path')
 const R = require('ramda')
 
 const command = {
-	PkgAura: require('./pkg_aura'),
+	PkgAura: require('./util/pkg_aura'),
 	PkgPacman: require('meth/lib/command/pkg/pacman'),
 	FileUnix: require('meth/lib/command/file/unix'),
 	ServiceSystemd: require('meth/lib/command/service/systemd')
@@ -28,9 +28,11 @@ const init = (resource, command) => {
 	return new resource(config, new command()).getActions()
 }
 
-const attributes = {
+const defaultAttributes = {
 	user: 'kaylyn'
 }
+
+const attributes = R.merge(defaultAttributes, process.argv[2] ? require(`./${process.argv[2]}`) : {})
 
 const meth = {
 	pkg_aura: init(resource.Pkg, command.PkgAura),
@@ -45,6 +47,7 @@ const runConfig = configPath => {
 	require(`./configs/${configPath}`)(meth, attributes)
 }
 
-runConfig('yubikey')
 runConfig('config-home')
+runConfig('yubikey')
 runConfig('terminator')
+runConfig('i3')

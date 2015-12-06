@@ -18,6 +18,7 @@
   "homepage": "https://github.com/kaylynb/arch-config#readme",
   "dependencies": {
     "meth": "0.0.2",
+    "nunjucks": "^2.2.0",
     "ramda": "^0.18.0"
   }
 }

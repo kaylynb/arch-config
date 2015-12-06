@@ -6,6 +6,9 @@ module.exports = (m, attr) => {
 	m.pkg.install('pcsclite')
 	m.pkg.install('libusb-compat')
 
+	m.service.enable('pcscd')
+	m.service.start('pcscd')
+
 	// Add udev rules for permissions on smartcard for yubikey
 	// This config also fixes a bug related to scdaemon not working when
 	// replugging the key, so the workaround for now is have udev kill
@@ -20,4 +23,3 @@ module.exports = (m, attr) => {
 		}
 	})
 }
-
