@@ -29,8 +29,9 @@ const init = (resource, command) => {
 	return new resource(config, new command()).getActions()
 }
 
+const hostname = os.hostname()
 
-const attributes = require(`./${os.hostname()}.json`)
+const attributes = R.merge(require('./default.json'), require(`./${hostname}.json`))
 
 const meth = {
 	pkg_aura: init(resource.Pkg, command.PkgAura),
@@ -53,8 +54,13 @@ const runConfig = configPath => {
 
 runConfig('config-home')
 runConfig('yubikey')
+runConfig('gpg')
 runConfig('X11')
 runConfig('lightdm')
 runConfig('compton')
 runConfig('i3')
 runConfig('terminator')
+
+if (hostname === 'wasat') {
+	runConfig('wasat-xbindkeys')
+}

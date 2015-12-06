@@ -14,6 +14,6 @@ module.exports = (m, a, u) => {
 
 	m.file.install(u.home('.xprofile'), {
 		source: path.resolve(__dirname, 'xprofile'),
-		permissions: u.mode(0o500)
+		permissions: u.mode(0o400)
 	})
 }
