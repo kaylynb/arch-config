@@ -56,6 +56,16 @@ runConfig('config-home')
 runConfig('git')
 runConfig('yubikey')
 runConfig('gpg')
+
+// Install graphics before X11
+if (hostname === 'rho') {
+	runConfig('nvidia')
+}
+
+if (hostname === 'wasat') {
+	runConfig('intel-graphics')
+}
+
 runConfig('X11')
 runConfig('lightdm')
 runConfig('compton')
@@ -63,5 +73,5 @@ runConfig('i3')
 runConfig('terminator')
 
 if (hostname === 'wasat') {
-	runConfig('wasat-xbindkeys')
+	runConfig('xbindkeys')
 }
