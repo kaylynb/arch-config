@@ -1,5 +1,10 @@
 {
 	"gpg": {
 		"sshKeygrip": "CF8093FCFC1073BA8F62BF19DEDF7679C9BDF73B"
+	},
+	"git": {
+		"email": "kaylyn@kaylyn.ink",
+		"name": "Kaylyn Bogle",
+		"editor": "subl3 -n -w"
 	}
 }

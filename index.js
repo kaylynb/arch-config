@@ -53,6 +53,7 @@ const runConfig = configPath => {
 }
 
 runConfig('config-home')
+runConfig('git')
 runConfig('yubikey')
 runConfig('gpg')
 runConfig('X11')
