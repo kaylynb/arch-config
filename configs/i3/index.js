@@ -4,6 +4,7 @@ const path = require('path')
 const tpl = require('../../util/tpl')
 
 module.exports = (m, a, u) => {
+	m.pkg_aura.install('ttf-font-awesome')
 	m.pkg.install('i3status')
 	m.pkg.install('i3-wm')
 	m.pkg.install('dmenu')
