@@ -1,7 +1,8 @@
 [user]
-	email = {{ email }}
-	name = {{ name }}
+	email = {{ git.email }}
+	name = {{ git.name }}
+	signingkey = {{ gpg.signingKeyHash }}
 [core]
-	editor = {{ editor }}
+	editor = {{ git.editor }}
 [push]
 	default = simple

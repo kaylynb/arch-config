@@ -13,7 +13,10 @@ module.exports = (m, a, u) => {
 	m.file.install(u.home('.config/git/config'), {
 		content: tpl.render(
 			path.resolve(__dirname, 'config'),
-			a.git
+			{
+				git: a.git,
+				gpg: a.gpg
+			}
 		),
 		permissions: u.mode(0o600)
 	})

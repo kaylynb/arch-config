@@ -1,6 +1,7 @@
 {
 	"gpg": {
-		"sshKeygrip": "CF8093FCFC1073BA8F62BF19DEDF7679C9BDF73B"
+		"sshKeygrip": "CF8093FCFC1073BA8F62BF19DEDF7679C9BDF73B",
+		"signingKeyHash": "754D 875D 1CF9 B7D0 BC60  DCCD C614 7F50 B1CC F27A"
 	},
 	"git": {
 		"email": "kaylyn@kaylyn.ink",
