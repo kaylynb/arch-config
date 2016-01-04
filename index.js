@@ -56,6 +56,7 @@ runConfig('config-home')
 runConfig('git')
 runConfig('yubikey')
 runConfig('gpg')
+runConfig('infinality')
 
 // Install graphics before X11
 if (hostname === 'rho') {
@@ -66,7 +67,6 @@ if (hostname === 'wasat') {
 	runConfig('intel-graphics')
 }
 
-runConfig('infinality')
 runConfig('X11')
 runConfig('lightdm')
 runConfig('compton')
