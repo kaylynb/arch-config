@@ -67,6 +67,7 @@ if (hostname === 'wasat') {
 }
 
 runConfig('X11')
+runConfig('infinality')
 runConfig('lightdm')
 runConfig('compton')
 runConfig('i3')
