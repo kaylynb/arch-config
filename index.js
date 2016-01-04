@@ -66,8 +66,8 @@ if (hostname === 'wasat') {
 	runConfig('intel-graphics')
 }
 
-runConfig('X11')
 runConfig('infinality')
+runConfig('X11')
 runConfig('lightdm')
 runConfig('compton')
 runConfig('i3')
