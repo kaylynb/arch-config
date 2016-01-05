@@ -6,6 +6,6 @@ const exec = require('meth/lib/util/exec')
 // TODO: figure out how to do this sort of thing in meth. Just a workaround here now
 module.exports = class PkgAura extends PkgPacman {
 	remove (packageName) {
-		exec.run(`pacman -Rss --noconfirm ${exec.escape(packageName)}`)
+		exec.run(`pacman -Rdd --noconfirm ${exec.escape(packageName)}`)
 	}
 }
