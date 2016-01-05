@@ -56,9 +56,20 @@ runConfig('config-home')
 runConfig('git')
 runConfig('yubikey')
 runConfig('gpg')
+
+// TODO: Need to figure out the nightmare that is installing these deps correctly. Preferably config-driven.
+// Install libgl before dependencies
+if (hostname === 'rho') {
+	runConfig('nvidia-libgl')
+}
+
+if (hostname === 'wasat') {
+	runConfig('mesa-libgl')
+}
+
 runConfig('infinality')
 
-// Install graphics before X11
+// Install graphics drivers before X11
 if (hostname === 'rho') {
 	runConfig('nvidia')
 }
