@@ -7,6 +7,7 @@ const os = require('os')
 const command = {
 	PkgAura: require('./util/pkg_aura'),
 	PkgPacman: require('meth/lib/command/pkg/pacman'),
+	PkgPacmanNodep: require('./util/pkg_pacman_nodep'),
 	FileUnix: require('meth/lib/command/file/unix'),
 	ServiceSystemd: require('meth/lib/command/service/systemd')
 }
@@ -36,6 +37,7 @@ const attributes = R.merge(require('./default.json'), require(`./${hostname}.jso
 const meth = {
 	pkg_aura: init(resource.Pkg, command.PkgAura),
 	pkg: init(resource.Pkg, command.PkgPacman),
+	pkgNodep: init(resource.Pkg, command.PkgPacmanNodep),
 	file: init(resource.File, command.FileUnix),
 	directory: init(resource.Directory, command.FileUnix),
 	service: init(resource.Service, command.ServiceSystemd)
@@ -57,18 +59,6 @@ runConfig('git')
 runConfig('yubikey')
 runConfig('gpg')
 
-// TODO: Need to figure out the nightmare that is installing these deps correctly. Preferably config-driven.
-// Install libgl before dependencies
-if (hostname === 'rho') {
-	runConfig('nvidia-libgl')
-}
-
-if (hostname === 'wasat') {
-	runConfig('mesa-libgl')
-}
-
-runConfig('infinality')
-
 // Install graphics drivers before X11
 if (hostname === 'rho') {
 	runConfig('nvidia')
@@ -78,6 +68,7 @@ if (hostname === 'wasat') {
 	runConfig('intel-graphics')
 }
 
+runConfig('infinality')
 runConfig('X11')
 runConfig('lightdm')
 runConfig('compton')
