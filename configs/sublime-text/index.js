@@ -3,6 +3,7 @@
 const path = require('path')
 const fs = require('fs')
 const exec = require('meth/lib/util/exec')
+const tpl = require('../../util/tpl')
 
 module.exports = (m, a, u) => {
 	m.pkg_aura.install('sublime-text-dev')
@@ -43,8 +44,13 @@ module.exports = (m, a, u) => {
 	}
 
 	// Install sublime text settings
+	const sublimeconfig = tpl.render(
+		path.resolve(__dirname, 'Preferences.sublime-settings'),
+		a['sublime-text']
+	)
+
 	m.file.install(u.home('.config/sublime-text-3/Packages/User/Preferences.sublime-settings'), {
-		source: path.resolve(__dirname, 'Preferences.sublime-settings'),
+		content: sublimeconfig,
 		permissions: u.mode(0o600)
 	})
 }

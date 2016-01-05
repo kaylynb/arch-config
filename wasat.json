@@ -1,5 +1,8 @@
 {
 	"i3": {
 		"fontSize": 8
+	},
+	"sublime-text": {
+		"dpi_scale": "2.0"
 	}
 }

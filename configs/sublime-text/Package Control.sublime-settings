@@ -6,9 +6,15 @@
 	"installed_packages":
 	[
 		"Babel",
-		"Dockerfile Syntax Highlighting",
+		"BracketHighlighter",
 		"EditorConfig",
+		"Ledger syntax highlighting",
+		"LiveScript",
+		"nginx",
 		"Package Control",
+		"Stylus",
+		"SublimeLinter",
+		"SublimeLinter-contrib-eslint",
 		"Theme - Spacegray"
 	]
 }
