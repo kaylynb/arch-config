@@ -76,3 +76,5 @@ runConfig('terminator')
 if (hostname === 'wasat') {
 	runConfig('xbindkeys')
 }
+
+runConfig('sublime-text')
