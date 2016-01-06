@@ -5,6 +5,6 @@ const exec = require('meth/lib/util/exec')
 
 module.exports = class PkgAura extends PkgPacman {
 	install (packageName) {
-		exec.run(`aura -A --noconfirm ${exec.escape(packageName)}`)
+		exec.run(`aura -Aa --noconfirm ${exec.escape(packageName)}`)
 	}
 }
