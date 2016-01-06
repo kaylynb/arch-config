@@ -55,6 +55,7 @@ const runConfig = configPath => {
 }
 
 runConfig('config-home')
+runConfig('libinput')
 runConfig('git')
 runConfig('yubikey')
 runConfig('gpg')
