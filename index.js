@@ -79,6 +79,7 @@ runConfig('terminator')
 if (hostname === 'wasat') {
 	runConfig('mtrack')
 	runConfig('xbindkeys')
+	runConfig('tlp')
 }
 
 runConfig('sublime-text')
