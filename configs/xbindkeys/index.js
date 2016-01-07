@@ -11,7 +11,7 @@ module.exports = (m, a, u) => {
 	})
 
 	m.file.install(u.home('.xprofile.d/xbindkeys'), {
-		source: path.resolve(__dirname, 'xbindkeys'),
+		source: path.resolve(__dirname, 'xprofile.d/xbindkeys'),
 		permissions: u.mode(0o500)
 	})
 }

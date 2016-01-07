@@ -26,7 +26,7 @@ module.exports = (m, a, u) => {
 	})
 
 	m.file.install(u.home('.xprofile.d/gpg-agent'), {
-		source: path.resolve(__dirname, 'gpg-agent'),
+		source: path.resolve(__dirname, 'xprofile.d/gpg-agent'),
 		permissions: u.mode(0o500)
 	})
 }

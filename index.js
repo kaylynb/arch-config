@@ -55,7 +55,7 @@ const runConfig = configPath => {
 }
 
 runConfig('config-home')
-runConfig('libinput')
+// runConfig('libinput')
 runConfig('git')
 runConfig('yubikey')
 runConfig('gpg')
@@ -77,6 +77,7 @@ runConfig('i3')
 runConfig('terminator')
 
 if (hostname === 'wasat') {
+	runConfig('mtrack')
 	runConfig('xbindkeys')
 }
 
