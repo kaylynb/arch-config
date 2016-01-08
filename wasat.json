@@ -4,5 +4,8 @@
 	},
 	"sublime-text": {
 		"dpi_scale": "2.0"
+	},
+	"firefox": {
+		"dpi_scale": "2"
 	}
 }

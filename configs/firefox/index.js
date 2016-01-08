@@ -1,6 +1,7 @@
 'use strict'
 
 const path = require('path')
+const tpl = require('../../util/tpl')
 
 module.exports = (m, a, u) => {
 	m.pkg.install('firefox')
@@ -23,7 +24,10 @@ module.exports = (m, a, u) => {
 	})
 
 	m.file.install(u.home('.mozilla/firefox/profile/user.js'), {
-		source: path.resolve(__dirname, 'profile/user.js'),
+		content: tpl.render(
+			path.resolve(__dirname, 'profile/user.js'),
+			a.firefox
+		),
 		permissions: u.mode(0o644)
 	})
 }

@@ -469,7 +469,7 @@ user_pref("browser.newtab.url",		"about:blank");
 
 // CIS Version 1.2.0 October 21st, 2011 2.1.2 Enable Auto Notification of Outdated Plugins
 // https://wiki.mozilla.org/Firefox3.6/Plugin_Update_Awareness_Security_Review
-user_pref("plugins.update.notifyUser",		true);
+//user_pref("plugins.update.notifyUser",		true);
 
 // CIS Version 1.2.0 October 21st, 2011 2.1.3 Enable Information Bar for Outdated Plugins
 user_pref("plugins.hide_infobar_for_outdated_plugin",		false);
@@ -665,3 +665,10 @@ user_pref("security.ssl3.dhe_dss_camellia_256_sha",		false);
 // Fallbacks due compatibility reasons
 user_pref("security.ssl3.rsa_aes_256_sha",		true);
 user_pref("security.ssl3.rsa_aes_128_sha",		true);
+{% if dpi_scale %}
+// Setup DPI
+user_pref("layout.css.devPixelsPerPx", "{{ dpi_scale }}");
+{% endif %}
+
+// Set default search to DuckDuckGo
+user_pref("browser.search.defaultenginename.US", "DuckDuckGo");

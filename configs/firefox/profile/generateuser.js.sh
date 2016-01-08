@@ -1,7 +1,9 @@
 #!/bin/bash
 
+BASEDIR=$(dirname $0)
+
 # Get baseline security config
-curl -O https://raw.githubusercontent.com/pyllyukko/user.js/master/user.js
+curl https://raw.githubusercontent.com/pyllyukko/user.js/master/user.js -o $BASEDIR/user.js
 
 # Remove some of the settings we don't want
 removedconfigs=(
@@ -26,13 +28,20 @@ removedconfigs=(
 	'network.cookie.lifetimePolicy'							# Don't clear cookies on exit
 	'signon.rememberSignons'										# I want to use credential storage for some sites
 	'browser.urlbar.autocomplete.enabled'				# Don't disable uri autocomplete
+	'plugins.update.notifyUser'	# Hide awful plugin check window
 )
 
 for config in ${removedconfigs[@]}; do
-	sed -i "/$config/s/^/\/\//g" user.js
+	sed -i "/$config/s/^/\/\//g" $BASEDIR/user.js
 done
 
 # Now add a few extra configs
-# cat << EOF >> user.js
+cat << EOF >> $BASEDIR/user.js
+{% if dpi_scale %}
+// Setup DPI
+user_pref("layout.css.devPixelsPerPx", "{{ dpi_scale }}");
+{% endif %}
 
-# EOF
+// Set default search to DuckDuckGo
+user_pref("browser.search.defaultenginename.US", "DuckDuckGo");
+EOF
