@@ -83,3 +83,4 @@ if (hostname === 'wasat') {
 }
 
 runConfig('sublime-text')
+runConfig('firefox')
