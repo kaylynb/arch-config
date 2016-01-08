@@ -37,9 +37,9 @@ done
 
 # Now add a few extra configs
 cat << EOF >> $BASEDIR/user.js
-{% if dpi_scale %}
+{% if dpiScale %}
 // Setup DPI
-user_pref("layout.css.devPixelsPerPx", "{{ dpi_scale }}");
+user_pref("layout.css.devPixelsPerPx", "{{ dpiScale }}");
 {% endif %}
 
 // Set default search to DuckDuckGo

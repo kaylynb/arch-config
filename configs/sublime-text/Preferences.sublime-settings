@@ -1,7 +1,7 @@
 {
 	"color_scheme": "Packages/User/SublimeLinter/base16-eighties.dark (SL).tmTheme",
 	"default_line_ending": "unix",
-	"dpi_scale": {{ dpi_scale if dpi_scale else "1.0" }},
+	"dpi_scale": {{ dpiScale if dpiScale else "1.0" }},
 	"drag_text": false,
 	"draw_minimap_border": true,
 	"draw_white_space": "all",

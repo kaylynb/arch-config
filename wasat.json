@@ -3,9 +3,12 @@
 		"fontSize": 8
 	},
 	"sublime-text": {
-		"dpi_scale": "2.0"
+		"dpiScale": "2.0"
 	},
 	"firefox": {
-		"dpi_scale": "2"
+		"dpiScale": "2"
+	},
+	"X11": {
+		"displaySize": "286 179"
 	}
 }
