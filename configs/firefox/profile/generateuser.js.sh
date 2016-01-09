@@ -28,7 +28,8 @@ removedconfigs=(
 	'network.cookie.lifetimePolicy'							# Don't clear cookies on exit
 	'signon.rememberSignons'										# I want to use credential storage for some sites
 	'browser.urlbar.autocomplete.enabled'				# Don't disable uri autocomplete
-	'plugins.update.notifyUser'	# Hide awful plugin check window
+	'plugins.update.notifyUser'									# Hide awful plugin check window
+	'keyword.enabled'														# We want keyword search enabled as a convienience
 )
 
 for config in ${removedconfigs[@]}; do
