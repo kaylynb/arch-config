@@ -44,5 +44,7 @@ user_pref("layout.css.devPixelsPerPx", "{{ dpiScale }}");
 {% endif %}
 
 // Set default search to DuckDuckGo
-user_pref("browser.search.defaultenginename.US", "DuckDuckGo");
+user_pref("browser.search.geoSpecificDefaults", false);
+user_pref("browser.search.defaultenginename", "DuckDuckGo");
+user_pref("browser.search.defaultenginename.US", "data:text/plain,browser.search.defaultenginename.US=DuckDuckGo");
 EOF
