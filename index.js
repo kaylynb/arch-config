@@ -55,6 +55,7 @@ const runConfig = configPath => {
 }
 
 runConfig('config-home')
+runConfig('pacman')
 // runConfig('libinput')
 runConfig('git')
 runConfig('yubikey')
