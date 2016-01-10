@@ -10,7 +10,6 @@
 		".git",
 		"node_modules"
 	],
-	"font_face": "DejaVu Sans Mono",
 	"font_size": 12,
 	"hot_exit": false,
 	"ignored_packages":
