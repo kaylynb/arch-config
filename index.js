@@ -82,5 +82,6 @@ if (hostname === 'wasat') {
 	runConfig('tlp')
 }
 
+runConfig('pcmanfm')
 runConfig('sublime-text')
 runConfig('firefox')
