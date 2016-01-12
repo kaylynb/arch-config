@@ -1,6 +1,7 @@
 'use strict'
 
 const path = require('path')
+const tpl = require('../../util/tpl')
 
 module.exports = (m, a, u) => {
 	m.pkg_aura.install('gtk-theme-arc')
@@ -10,12 +11,18 @@ module.exports = (m, a, u) => {
 	})
 
 	m.file.install(u.home('.config/gtk-3.0/settings.ini'), {
-		source: path.resolve(__dirname, 'settings.ini'),
+		content: tpl.render(
+			path.resolve(__dirname, 'settings.ini'),
+			a.gtk
+		),
 		permissions: u.mode(0o600)
 	})
 
 	m.file.install(u.home('.gtkrc-2.0'), {
-		source: path.resolve(__dirname, 'gtkrc-2.0'),
+		content: tpl.render(
+			path.resolve(__dirname, 'gtkrc-2.0'),
+			a.gtk
+		),
 		permissions: u.mode(0o600)
 	})
 }

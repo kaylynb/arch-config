@@ -10,5 +10,8 @@
 	},
 	"X11": {
 		"displaySize": "286 179"
+	},
+	"gtk": {
+		"fontSize": 22
 	}
 }

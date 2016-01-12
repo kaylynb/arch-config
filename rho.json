@@ -1,5 +1,8 @@
 {
 	"i3": {
 		"fontSize": 10
+	},
+	"gtk": {
+		"fontSize": 12
 	}
 }
