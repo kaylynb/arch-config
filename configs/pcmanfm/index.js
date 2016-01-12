@@ -7,7 +7,7 @@ module.exports = (m, a, u) => {
 	m.pkg.install('gvfs')
 	m.pkg.install('gvfs-smb')
 
-	m.file.install(u.home('.xprofile.d/pcmanfm'), {
+	m.file.remove(u.home('.xprofile.d/pcmanfm'), {
 		source: path.resolve(__dirname, 'xprofile.d/pcmanfm'),
 		permissions: u.mode(0o500)
 	})
