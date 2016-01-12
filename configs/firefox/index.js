@@ -23,11 +23,17 @@ module.exports = (m, a, u) => {
 		permissions: u.mode(0o644)
 	})
 
-	m.file.install(u.home('.mozilla/firefox/profile/user.js'), {
+	if(m.file.install(u.home('.mozilla/firefox/profile/user.js'), {
 		content: tpl.render(
 			path.resolve(__dirname, 'profile/user.js'),
 			a.firefox
 		),
 		permissions: u.mode(0o644)
-	})
+	})) {
+		// If user.js was mutated we need to delete prefs.js for settings to stick.
+		// This still won't work if firefox is already running but ¯\_(ツ)_/¯
+		m.file.remove(u.home('.mozilla/firefox/profile/prefs.js'), {
+			source: ''
+		})
+	}
 }

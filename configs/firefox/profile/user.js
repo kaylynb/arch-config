@@ -291,6 +291,8 @@ user_pref("network.dns.disablePrefetchFromHTTPS",		true);
 
 // https://wiki.mozilla.org/Privacy/Reviews/Necko
 user_pref("network.predictor.enabled",		false);
+// https://wiki.mozilla.org/Privacy/Reviews/Necko#Principle:_Real_Choice
+user_pref("network.seer.enabled",		false);
 
 // http://kb.mozillazine.org/Browser.search.suggest.enabled
 user_pref("browser.search.suggest.enabled",		false);
@@ -305,6 +307,7 @@ user_pref("media.gmp-gmpopenh264.enabled",		false);
 user_pref("media.gmp-manager.url",		"");
 
 // https://support.mozilla.org/en-US/kb/how-stop-firefox-making-automatic-connections#w_speculative-pre-connections
+// https://bugzil.la/814169
 user_pref("network.http.speculative-parallel-limit",		0);
 
 // https://support.mozilla.org/en-US/kb/how-stop-firefox-making-automatic-connections#w_mozilla-content
@@ -386,10 +389,10 @@ user_pref("browser.cache.offline.enable",		false);
 // Clear history when Firefox closes
 // https://support.mozilla.org/en-US/kb/Clear%20Recent%20History#w_how-do-i-make-firefox-clear-my-history-automatically
 user_pref("privacy.sanitize.sanitizeOnShutdown",		true);
-//user_pref("privacy.clearOnShutdown.cache",		true);
-//user_pref("privacy.clearOnShutdown.cookies",		true);
+user_pref("privacy.clearOnShutdown.cache",		true);
+user_pref("privacy.clearOnShutdown.cookies",		true);
 //user_pref("privacy.clearOnShutdown.downloads",		true);
-//user_pref("privacy.clearOnShutdown.formdata",		true);
+user_pref("privacy.clearOnShutdown.formdata",		true);
 //user_pref("privacy.clearOnShutdown.history",		true);
 //user_pref("privacy.clearOnShutdown.offlineApps",		true);
 //user_pref("privacy.clearOnShutdown.passwords",		true);
@@ -401,7 +404,7 @@ user_pref("privacy.sanitize.sanitizeOnShutdown",		true);
 
 // The cookie expires at the end of the session (when the browser closes).
 // http://kb.mozillazine.org/Network.cookie.lifetimePolicy#2
-//user_pref("network.cookie.lifetimePolicy",		2);
+user_pref("network.cookie.lifetimePolicy",		2);
 
 // http://kb.mozillazine.org/Browser.cache.disk.enable
 user_pref("browser.cache.disk.enable",		false);
@@ -489,7 +492,7 @@ user_pref("browser.urlbar.autoFill.typed",		false);
 // http://www.labnol.org/software/browsers/prevent-firefox-showing-bookmarks-address-location-bar/3636/
 // http://kb.mozillazine.org/Browser.urlbar.maxRichResults
 // "Setting the preference to 0 effectively disables the Location Bar dropdown entirely."
-user_pref("browser.urlbar.maxRichResults",		0);
+//user_pref("browser.urlbar.maxRichResults",		0);
 
 // https://blog.mozilla.org/security/2010/03/31/plugging-the-css-history-leak/
 // http://dbaron.org/mozilla/visited-privacy
@@ -597,13 +600,13 @@ user_pref("security.ssl3.rsa_rc2_40_md5",		false);
 user_pref("security.ssl3.rsa_1024_rc4_56_sha",		false);
 
 // 128 bits
-user_pref("security.ssl3.rsa_camellia_128_sha",		false);
-user_pref("security.ssl3.ecdhe_rsa_aes_128_sha",		false);
-user_pref("security.ssl3.ecdhe_ecdsa_aes_128_sha",		false);
-user_pref("security.ssl3.ecdh_rsa_aes_128_sha",		false);
-user_pref("security.ssl3.ecdh_ecdsa_aes_128_sha",		false);
-user_pref("security.ssl3.dhe_rsa_camellia_128_sha",		false);
-user_pref("security.ssl3.dhe_rsa_aes_128_sha",		false);
+//user_pref("security.ssl3.rsa_camellia_128_sha",		false);
+//user_pref("security.ssl3.ecdhe_rsa_aes_128_sha",		false);
+//user_pref("security.ssl3.ecdhe_ecdsa_aes_128_sha",		false);
+//user_pref("security.ssl3.ecdh_rsa_aes_128_sha",		false);
+//user_pref("security.ssl3.ecdh_ecdsa_aes_128_sha",		false);
+//user_pref("security.ssl3.dhe_rsa_camellia_128_sha",		false);
+//user_pref("security.ssl3.dhe_rsa_aes_128_sha",		false);
 
 // RC4 (CVE-2013-2566)
 user_pref("security.ssl3.ecdh_ecdsa_rc4_128_sha",		false);
@@ -638,8 +641,8 @@ user_pref("security.ssl3.rsa_des_ede3_sha",		false);
 user_pref("security.ssl3.rsa_fips_des_ede3_sha",		false);
 
 // Ciphers with ECDH (without /e$/)
-user_pref("security.ssl3.ecdh_rsa_aes_256_sha",		false);
-user_pref("security.ssl3.ecdh_ecdsa_aes_256_sha",		false);
+//user_pref("security.ssl3.ecdh_rsa_aes_256_sha",		false);
+//user_pref("security.ssl3.ecdh_ecdsa_aes_256_sha",		false);
 
 // 256 bits without PFS
 user_pref("security.ssl3.rsa_camellia_256_sha",		false);
@@ -653,14 +656,14 @@ user_pref("security.ssl3.ecdhe_ecdsa_aes_128_gcm_sha256",		true);
 user_pref("security.ssl3.ecdhe_rsa_aes_128_gcm_sha256",		true);
 
 // Susceptible to the logjam attack - https://weakdh.org/
-user_pref("security.ssl3.dhe_rsa_camellia_256_sha",		false);
-user_pref("security.ssl3.dhe_rsa_aes_256_sha",		false);
+//user_pref("security.ssl3.dhe_rsa_camellia_256_sha",		false);
+//user_pref("security.ssl3.dhe_rsa_aes_256_sha",		false);
 
 // Ciphers with DSA (max 1024 bits)
-user_pref("security.ssl3.dhe_dss_aes_128_sha",		false);
-user_pref("security.ssl3.dhe_dss_aes_256_sha",		false);
-user_pref("security.ssl3.dhe_dss_camellia_128_sha",		false);
-user_pref("security.ssl3.dhe_dss_camellia_256_sha",		false);
+//user_pref("security.ssl3.dhe_dss_aes_128_sha",		false);
+//user_pref("security.ssl3.dhe_dss_aes_256_sha",		false);
+//user_pref("security.ssl3.dhe_dss_camellia_128_sha",		false);
+//user_pref("security.ssl3.dhe_dss_camellia_256_sha",		false);
 
 // Fallbacks due compatibility reasons
 user_pref("security.ssl3.rsa_aes_256_sha",		true);
@@ -674,3 +677,15 @@ user_pref("layout.css.devPixelsPerPx", "{{ dpiScale }}");
 user_pref("browser.search.geoSpecificDefaults", false);
 user_pref("browser.search.defaultenginename", "DuckDuckGo");
 user_pref("browser.search.defaultenginename.US", "data:text/plain,browser.search.defaultenginename.US=DuckDuckGo");
+
+// Fullscreen shouldn't animate. Just no.
+user_pref("browser.fullscreen.animate", false);
+
+// Select arc theme (this will get nuked if user.js is updated)
+user_pref("general.skins.selectedSkin", "arc-darker-theme");
+
+// Disable 'first run' page on startup
+user_pref("browser.startup.homepage_override.mstone","ignore");
+
+// Don't warn on closing tabs
+user_pref("browser.tabs.warnOnClose", false);

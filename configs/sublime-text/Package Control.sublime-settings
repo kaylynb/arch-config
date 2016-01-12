@@ -15,6 +15,7 @@
 		"Stylus",
 		"SublimeLinter",
 		"SublimeLinter-contrib-eslint",
-		"Theme - Spacegray"
+		"Theme - Spacegray",
+		"SyncedSideBar"
 	]
 }

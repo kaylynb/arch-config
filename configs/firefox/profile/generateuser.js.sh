@@ -12,10 +12,7 @@ removedconfigs=(
 	'security.xpconnect.plugin.unrestricted'		# Plugin mods (keysnail mostly)
 	'browser.privatebrowsing.autostart'					# No default private browsing
 	'extensions.ghostery.privateBrowsing'
-	'privacy.clearOnShutdown.cache'							# Don't clear cache on close
-	'privacy.clearOnShutdown.cookies'
 	'privacy.clearOnShutdown.downloads'
-	'privacy.clearOnShutdown.formdata'
 	'privacy.clearOnShutdown.history'
 	'privacy.clearOnShutdown.offlineApps'
 	'privacy.clearOnShutdown.passwords'
@@ -25,11 +22,26 @@ removedconfigs=(
 	'browser.history_expire_sites'
 	'browser.history_expire_visits'
 	'browser.download.manager.retention'
-	'network.cookie.lifetimePolicy'							# Don't clear cookies on exit
 	'signon.rememberSignons'										# I want to use credential storage for some sites
 	'browser.urlbar.autocomplete.enabled'				# Don't disable uri autocomplete
 	'plugins.update.notifyUser'									# Hide awful plugin check window
+	'browser.urlbar.maxRichResults'
 	'keyword.enabled'														# We want keyword search enabled as a convienience
+	'security.ssl3.rsa_camellia_128_sha'				# Don't disable a bunch of ciphers
+	'security.ssl3.ecdhe_rsa_aes_128_sha'
+	'security.ssl3.ecdhe_ecdsa_aes_128_sha'
+	'security.ssl3.ecdh_rsa_aes_128_sha'
+	'security.ssl3.ecdh_ecdsa_aes_128_sha'
+	'security.ssl3.dhe_rsa_camellia_128_sha'
+	'security.ssl3.dhe_rsa_aes_128_sha'
+	'security.ssl3.ecdh_rsa_aes_256_sha'
+	'security.ssl3.ecdh_ecdsa_aes_256_sha'
+	'security.ssl3.dhe_rsa_camellia_256_sha'
+	'security.ssl3.dhe_rsa_aes_256_sha'
+	'security.ssl3.dhe_dss_aes_128_sha'
+	'security.ssl3.dhe_dss_aes_256_sha'
+	'security.ssl3.dhe_dss_camellia_128_sha'
+	'security.ssl3.dhe_dss_camellia_256_sha'
 )
 
 for config in ${removedconfigs[@]}; do
@@ -47,4 +59,16 @@ user_pref("layout.css.devPixelsPerPx", "{{ dpiScale }}");
 user_pref("browser.search.geoSpecificDefaults", false);
 user_pref("browser.search.defaultenginename", "DuckDuckGo");
 user_pref("browser.search.defaultenginename.US", "data:text/plain,browser.search.defaultenginename.US=DuckDuckGo");
+
+// Fullscreen shouldn't animate. Just no.
+user_pref("browser.fullscreen.animate", false);
+
+// Select arc theme (this will get nuked if user.js is updated)
+user_pref("general.skins.selectedSkin", "arc-darker-theme");
+
+// Disable 'first run' page on startup
+user_pref("browser.startup.homepage_override.mstone","ignore");
+
+// Don't warn on closing tabs
+user_pref("browser.tabs.warnOnClose", false);
 EOF
