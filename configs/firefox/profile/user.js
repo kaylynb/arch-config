@@ -388,7 +388,7 @@ user_pref("browser.cache.offline.enable",		false);
 
 // Clear history when Firefox closes
 // https://support.mozilla.org/en-US/kb/Clear%20Recent%20History#w_how-do-i-make-firefox-clear-my-history-automatically
-user_pref("privacy.sanitize.sanitizeOnShutdown",		true);
+//user_pref("privacy.sanitize.sanitizeOnShutdown",		true);
 user_pref("privacy.clearOnShutdown.cache",		true);
 //user_pref("privacy.clearOnShutdown.cookies",		true);
 //user_pref("privacy.clearOnShutdown.downloads",		true);

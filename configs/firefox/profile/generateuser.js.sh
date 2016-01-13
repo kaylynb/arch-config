@@ -22,6 +22,7 @@ removedconfigs=(
 	'browser.history_expire_sites'
 	'browser.history_expire_visits'
 	'browser.download.manager.retention'
+	'privacy.sanitize.sanitizeOnShutdown'
 	'signon.rememberSignons'										# I want to use credential storage for some sites
 	'browser.urlbar.autocomplete.enabled'				# Don't disable uri autocomplete
 	'plugins.update.notifyUser'									# Hide awful plugin check window
