@@ -356,7 +356,7 @@ user_pref("network.http.sendSecureXSiteReferrer",		false);
 // CIS 2.5.1 Accept Only 1st Party Cookies
 // http://kb.mozillazine.org/Network.cookie.cookieBehavior#1
 // This breaks a number of payment gateways so you may need to comment it out.
-user_pref("network.cookie.cookieBehavior",		1);
+//user_pref("network.cookie.cookieBehavior",		1);
 // Make sure that third-party cookies (if enabled) never persist beyond the session.
 // https://feeding.cloud.geek.nz/posts/tweaking-cookies-for-privacy-in-firefox/
 // http://kb.mozillazine.org/Network.cookie.thirdparty.sessionOnly
@@ -390,7 +390,7 @@ user_pref("browser.cache.offline.enable",		false);
 // https://support.mozilla.org/en-US/kb/Clear%20Recent%20History#w_how-do-i-make-firefox-clear-my-history-automatically
 user_pref("privacy.sanitize.sanitizeOnShutdown",		true);
 user_pref("privacy.clearOnShutdown.cache",		true);
-user_pref("privacy.clearOnShutdown.cookies",		true);
+//user_pref("privacy.clearOnShutdown.cookies",		true);
 //user_pref("privacy.clearOnShutdown.downloads",		true);
 user_pref("privacy.clearOnShutdown.formdata",		true);
 //user_pref("privacy.clearOnShutdown.history",		true);
@@ -404,7 +404,7 @@ user_pref("privacy.clearOnShutdown.formdata",		true);
 
 // The cookie expires at the end of the session (when the browser closes).
 // http://kb.mozillazine.org/Network.cookie.lifetimePolicy#2
-user_pref("network.cookie.lifetimePolicy",		2);
+//user_pref("network.cookie.lifetimePolicy",		2);
 
 // http://kb.mozillazine.org/Browser.cache.disk.enable
 user_pref("browser.cache.disk.enable",		false);

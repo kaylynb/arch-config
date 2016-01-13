@@ -27,6 +27,9 @@ removedconfigs=(
 	'plugins.update.notifyUser'									# Hide awful plugin check window
 	'browser.urlbar.maxRichResults'
 	'keyword.enabled'														# We want keyword search enabled as a convienience
+	'privacy.clearOnShutdown.cookies'						# Don't clear cookies (using uMatrix or something here)
+	'network.cookie.cookieBehavior'
+	'network.cookie.lifetimePolicy'
 	'security.ssl3.rsa_camellia_128_sha'				# Don't disable a bunch of ciphers
 	'security.ssl3.ecdhe_rsa_aes_128_sha'
 	'security.ssl3.ecdhe_ecdsa_aes_128_sha'
