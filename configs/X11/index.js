@@ -27,7 +27,7 @@ module.exports = (m, a, u) => {
 
 	if (a.X11 && a.X11.leftHandedMouse) {
 		m.file.install('/etc/X11/xorg.conf.d/10-left-handed-mouse.conf', {
-			source: 	path.resolve(__dirname, '10-left-handed-mouse.conf'),
+			source: path.resolve(__dirname, '10-left-handed-mouse.conf'),
 			permissions: {
 				mode: 0o644,
 				owner: 'root',
