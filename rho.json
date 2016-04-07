@@ -4,8 +4,5 @@
 	},
 	"gtk": {
 		"fontSize": 12
-	},
-	"X11": {
-		"leftHandedMouse": true
 	}
 }
