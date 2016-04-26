@@ -87,3 +87,4 @@ if (hostname === 'wasat') {
 runConfig('pcmanfm')
 runConfig('sublime-text')
 runConfig('firefox')
+runConfig('mirage')
