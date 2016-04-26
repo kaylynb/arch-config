@@ -15,10 +15,11 @@ general {
 
 order += "disk /"
 order += "load"
-order += "wireless _first_"
+
+{% if notebook %} order += "wireless _first_" {% endif %}
 order += "ethernet ens9"
 order += "volume master"
-order += "battery 0"
+{% if notebook %} order += "battery 0" {% endif %}
 order += "tztime local"
 
 volume master {

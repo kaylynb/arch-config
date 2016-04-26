@@ -14,8 +14,13 @@ module.exports = (m, a, u) => {
 		permissions: u.mode(0o700)
 	})
 
+	const i3statusConfig = tpl.render(
+		path.resolve(__dirname, 'i3status/config'),
+		a.i3status
+	)
+
 	m.file.install(u.home('.config/i3status/config'), {
-		source: path.resolve(__dirname, 'i3status/config'),
+		content: i3statusConfig,
 		permissions: u.mode(0o600)
 	})
 

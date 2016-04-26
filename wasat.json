@@ -2,6 +2,9 @@
 	"i3": {
 		"fontSize": 8
 	},
+	"i3status": {
+		"notebook": true
+	},
 	"sublime-text": {
 		"dpiScale": "2.0"
 	},
