@@ -16,6 +16,7 @@
 		"SublimeLinter",
 		"SublimeLinter-contrib-eslint",
 		"SyncedSideBar",
-		"Theme - Spacegray"
+		"Theme - Spacegray",
+		"Rust"
 	]
 }
