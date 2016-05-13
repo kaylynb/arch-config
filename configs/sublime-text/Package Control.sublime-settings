@@ -5,18 +5,15 @@
 	],
 	"installed_packages":
 	[
-		"Babel",
 		"BracketHighlighter",
 		"EditorConfig",
 		"Ledger syntax highlighting",
-		"LiveScript",
 		"nginx",
 		"Package Control",
 		"Stylus",
 		"SublimeLinter",
 		"SublimeLinter-contrib-eslint",
 		"SyncedSideBar",
-		"Theme - Spacegray",
-		"Rust"
+		"Theme - Spacegray"
 	]
 }
