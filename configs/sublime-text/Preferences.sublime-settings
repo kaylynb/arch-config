@@ -30,5 +30,6 @@
 	"show_encoding": true,
 	"show_line_endings": true,
 	"tab_size": 2,
-	"theme": "Spacegray Eighties.sublime-theme"
+	"theme": "Spacegray Eighties.sublime-theme",
+	"update_check": false
 }

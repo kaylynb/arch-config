@@ -5,6 +5,8 @@
 	],
 	"installed_packages":
 	[
+		"Babel",
+		"Base16 Color Schemes",
 		"BracketHighlighter",
 		"EditorConfig",
 		"Ledger syntax highlighting",
