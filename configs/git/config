@@ -6,3 +6,4 @@
 	editor = {{ git.editor }}
 [push]
 	default = simple
+	followTags = true
