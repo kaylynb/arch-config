@@ -75,4 +75,7 @@ user_pref("browser.startup.homepage_override.mstone","ignore");
 
 // Don't warn on closing tabs
 user_pref("browser.tabs.warnOnClose", false);
+
+// Disable middle mouse from opening pasted text
+user_pref("middlemouse.contentLoadURL", false);
 EOF
