@@ -3,7 +3,7 @@
 const path = require('path')
 
 module.exports = (m, a, u) => {
-	m.pkg_aura.install('xbindkeys')
+	m.pkg.install('xbindkeys')
 
 	m.file.install(u.home('.xbindkeysrc'), {
 		source: path.resolve(__dirname, 'xbindkeysrc'),
