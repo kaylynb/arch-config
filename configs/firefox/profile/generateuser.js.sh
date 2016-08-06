@@ -7,10 +7,10 @@ curl https://raw.githubusercontent.com/pyllyukko/user.js/master/user.js -o $BASE
 
 # Remove some of the settings we don't want
 removedconfigs=(
-	'javascript.options.methodjit.chrome'				# JIT for js
+	'javascript.options.methodjit.chrome'           # JIT for js
 	'javascript.options.methodjit.content'
-	'security.xpconnect.plugin.unrestricted'		# Plugin mods (keysnail mostly)
-	'browser.privatebrowsing.autostart'					# No default private browsing
+	'security.xpconnect.plugin.unrestricted'        # Plugin mods (keysnail mostly)
+	'browser.privatebrowsing.autostart'             # No default private browsing
 	'extensions.ghostery.privateBrowsing'
 	'privacy.clearOnShutdown.downloads'
 	'privacy.clearOnShutdown.history'
@@ -23,15 +23,15 @@ removedconfigs=(
 	'browser.history_expire_visits'
 	'browser.download.manager.retention'
 	'privacy.sanitize.sanitizeOnShutdown'
-	'signon.rememberSignons'										# I want to use credential storage for some sites
-	'browser.urlbar.autocomplete.enabled'				# Don't disable uri autocomplete
-	'plugins.update.notifyUser'									# Hide awful plugin check window
+	'signon.rememberSignons'                        # I want to use credential storage for some sites
+	'browser.urlbar.autocomplete.enabled'           # Don't disable uri autocomplete
+	'plugins.update.notifyUser'                     # Hide awful plugin check window
 	'browser.urlbar.maxRichResults'
-	'keyword.enabled'														# We want keyword search enabled as a convienience
-	'privacy.clearOnShutdown.cookies'						# Don't clear cookies (using uMatrix or something here)
+	'keyword.enabled'                               # We want keyword search enabled as a convienience
+	'privacy.clearOnShutdown.cookies'               # Don't clear cookies (using uMatrix or something here)
 	'network.cookie.cookieBehavior'
 	'network.cookie.lifetimePolicy'
-	'security.ssl3.rsa_camellia_128_sha'				# Don't disable a bunch of ciphers
+	'security.ssl3.rsa_camellia_128_sha'            # Don't disable a bunch of ciphers
 	'security.ssl3.ecdhe_rsa_aes_128_sha'
 	'security.ssl3.ecdhe_ecdsa_aes_128_sha'
 	'security.ssl3.ecdh_rsa_aes_128_sha'
