@@ -10,6 +10,8 @@ module.exports = (m, a, u) => {
 		permissions: u.mode(0o644)
 	})
 
+	m.service.disable('systemd-rfkill')
+
 	m.service.enable('tlp')
 	m.service.enable('tlp-sleep')
 

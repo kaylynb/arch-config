@@ -56,7 +56,6 @@ const runConfig = configPath => {
 
 runConfig('config-home')
 runConfig('pacman')
-// runConfig('libinput')
 runConfig('git')
 runConfig('yubikey')
 runConfig('gpg')
@@ -79,6 +78,7 @@ runConfig('i3')
 runConfig('terminator')
 
 if (hostname === 'wasat') {
+	runConfig('NetworkManager')
 	runConfig('mtrack')
 	runConfig('tlp')
 }
