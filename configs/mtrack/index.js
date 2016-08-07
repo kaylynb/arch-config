@@ -17,6 +17,15 @@ module.exports = (m, a, u) => {
 	// Install dispad from AUR archive for now
 	// https://raw.githubusercontent.com/aur-archive/dispad-git/master/PKGBUILD
 
+	m.directory.install(u.home('.config/dispad'), {
+		permissions: u.mode(0o700)
+	})
+
+	m.file.install(u.home('.config/dispad/dispad.conf'), {
+		source: path.resolve(__dirname, 'dispad.conf'),
+		permissions: u.mode(0o600)
+	})
+
 	m.file.install(u.home('.xprofile.d/dispad'), {
 		source: path.resolve(__dirname, 'xprofile.d/dispad'),
 		permissions: u.mode(0o500)
