@@ -16,5 +16,8 @@
 	},
 	"gtk": {
 		"fontSize": 22
+	},
+	"alsa": {
+		"disableIntelHdmi": true
 	}
 }
