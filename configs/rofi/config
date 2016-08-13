@@ -8,5 +8,6 @@ rofi.color-active: argb:27222133, #a074c4, argb:2f222133, argb:54a074c4, #a074c4
 rofi.color-urgent: argb:27222133, #ce4045, argb:2f222133, argb:54a074c4, #ce4045
 rofi.separator-style:                dash
 
-rofi.yoffset:                        150
-rofi.location:                       2
+rofi.yoffset: 150
+rofi.location: 2
+rofi.font: mono {{ fontSize if fontSize else "8" }}

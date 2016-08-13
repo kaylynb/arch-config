@@ -19,5 +19,8 @@
 	},
 	"alsa": {
 		"disableIntelHdmi": true
+	},
+	"rofi": {
+		"fontSize": 24
 	}
 }
