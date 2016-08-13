@@ -74,6 +74,7 @@ runConfig('X11')
 runConfig('gtk')
 runConfig('lightdm')
 runConfig('compton')
+runConfig('rofi')
 runConfig('i3')
 runConfig('terminator')
 
