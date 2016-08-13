@@ -75,6 +75,7 @@ runConfig('gtk')
 runConfig('lightdm')
 runConfig('compton')
 runConfig('rofi')
+runConfig('alsa')
 runConfig('i3')
 runConfig('terminator')
 
