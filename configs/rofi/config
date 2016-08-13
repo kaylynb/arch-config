@@ -10,4 +10,4 @@ rofi.separator-style:                dash
 
 rofi.yoffset: 150
 rofi.location: 2
-rofi.font: mono {{ fontSize if fontSize else "8" }}
+rofi.font: mono {{ fontSize if fontSize else "12" }}
