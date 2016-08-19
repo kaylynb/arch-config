@@ -83,6 +83,7 @@ if (hostname === 'wasat') {
 	runConfig('NetworkManager')
 	runConfig('mtrack')
 	runConfig('tlp')
+	runConfig('kbdlight')
 }
 runConfig('xbindkeys')
 
