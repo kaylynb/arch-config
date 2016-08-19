@@ -1,3 +1,0 @@
-#!/bin/sh
-
-dispad --config=/home/kaylyn/.config/dispad/dispad.conf &

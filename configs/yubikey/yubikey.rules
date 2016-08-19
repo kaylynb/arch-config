@@ -1,1 +1,0 @@
-ACTION=="add|change", SUBSYSTEM=="usb", ENV{ID_VENDOR_ID}=="1050", ENV{ID_MODEL_ID}=="0115", MODE="660", GROUP="wheel", RUN+="/usr/bin/killall -9 scdaemon"
