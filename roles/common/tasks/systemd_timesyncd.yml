@@ -3,7 +3,7 @@
   - name: install systemd-timesyncd configuration
     copy:
       src: systemd_timesyncd/timesyncd.conf
-      dest: /etc/systemd/timesyncd.conf
+      dest: /etc/systemd/
       mode: 0644
 
   - name: install systemd-timesyncd service

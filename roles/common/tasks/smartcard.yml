@@ -21,7 +21,7 @@
   - name: install udev smartcard reset rule
     copy:
       src: smartcard/smartcard_reset.rules
-      dest: /etc/udev/rules.d/smartcard_reset.rules
+      dest: /etc/udev/rules.d/
       mode: 0644
 
   become: yes

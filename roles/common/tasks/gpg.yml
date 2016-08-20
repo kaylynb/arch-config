@@ -1,0 +1,36 @@
+---
+- name: install gpg and ssh packages
+  become: true
+  package:
+    name: "{{ item }}"
+    state: present
+  with_items:
+    - gnupg
+    - openssh
+
+- name: install gpg user directory
+  file:
+    path: ~/.gnupg
+    state: directory
+    mode: 0700
+
+- name: install gpg configs
+  file:
+    src: "{{ item }}"
+    dest: ~/.gnupg/
+    mode: 0400
+  with_items:
+    - gpg/gpg.conf
+    - gpg/gpg-agent.conf
+
+- name: install gpg ssh keygrip
+  copy:
+    content: "{{ gpg.sshKeygrip }}\n"
+    dest: ~/.gnupg/sshcontrol
+    mode: 0400
+
+- name: install gpg-agent xprofile start script
+  copy:
+    src: gpg/xprofile.d/gpg-agent
+    dest: ~/.xprofile.d/
+    mode: 0500

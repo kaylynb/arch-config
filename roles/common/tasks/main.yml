@@ -3,4 +3,5 @@
 - include: makepkg.yml
 - include: systemd_timesyncd.yml
 - include: smartcard.yml
+- include: gpg.yml
 - include: git.yml
