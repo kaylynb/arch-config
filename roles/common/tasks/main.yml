@@ -2,4 +2,5 @@
 - include: home.yml
 - include: makepkg.yml
 - include: systemd_timesyncd.yml
+- include: smartcard.yml
 - include: git.yml
