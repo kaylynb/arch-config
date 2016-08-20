@@ -1,0 +1,12 @@
+---
+- name: install user pacman configuration directory
+  file:
+    path: ~/.config/pacman
+    state: directory
+    mode: 0700
+
+- name: install user makepkg configuration
+  copy:
+    src: makepkg/makepkg.conf
+    dest: ~/.config/pacman/makepkg.conf
+    mode: 0700

@@ -1,0 +1,15 @@
+---
+- block:
+  - name: systemd-timesyncd configuration
+    copy:
+      src: systemd_timesyncd/timesyncd.conf
+      dest: /etc/systemd/timesyncd.conf
+      mode: 0644
+
+  - name: systemd-timesyncd service
+    service:
+      name: systemd-timesyncd
+      state: started
+      enabled: true
+
+  become: yes
