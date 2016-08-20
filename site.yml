@@ -2,5 +2,7 @@
   connection: local
   vars:
     ansible_python_interpreter: /usr/bin/python2
+  vars_files:
+    - vars/main.yml
   roles:
     - common

@@ -1,0 +1,9 @@
+[user]
+	email = {{ email }}
+	name = {{ name }}
+	signingkey = {{ gpg.signingKeyHash }}
+[core]
+	editor = {{ git.editor }}
+[push]
+	default = simple
+	followTags = true

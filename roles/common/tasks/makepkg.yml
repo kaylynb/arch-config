@@ -9,4 +9,4 @@
   copy:
     src: makepkg/makepkg.conf
     dest: ~/.config/pacman/makepkg.conf
-    mode: 0700
+    mode: 0600
