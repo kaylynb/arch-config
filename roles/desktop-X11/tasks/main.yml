@@ -4,3 +4,4 @@
 - include: X11-mouse.yml
 - include: gtk.yml
 - include: lightdm.yml
+- include: compton.yml
