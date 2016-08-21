@@ -8,6 +8,10 @@
       - i3-wm
       - i3status
 
+  - name: install ttf-font-awesome
+    aura:
+      name: ttf-font-awesome
+
   become: true
 
 - name: install user i3 configuration directories
