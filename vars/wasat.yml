@@ -3,5 +3,7 @@ gtk:
   font_size: 22
 i3:
   font_size: 8
-  rofi:
-    font_size: 24
+  show_wireless: true
+  show_battery: true
+rofi:
+  font_size: 24

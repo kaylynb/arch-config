@@ -6,3 +6,4 @@
 - include: lightdm.yml
 - include: compton.yml
 - include: rofi.yml
+- include: i3.yml
