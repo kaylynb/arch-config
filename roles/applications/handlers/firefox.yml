@@ -1,0 +1,7 @@
+---
+- name: remove firefox prefs file
+  # If user.js was mutated we need to delete prefs.js for settings to stick.
+  # This still won't work if firefox is already running but ¯\_(ツ)_/¯
+  file:
+    path: ~/.mozilla/firefox/profile/prefs.js
+    state: absent

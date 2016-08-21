@@ -17,3 +17,16 @@
     src: firefox/profiles.ini
     dest: ~/.mozilla/firefox/
     mode: 0644
+
+- name: generate user.js file content
+  script: firefox/generate-user.js.sh
+  register: firefox_user_js
+  changed_when: false
+
+- name: install user.js file
+  copy:
+    content: "{{ firefox_user_js.stdout }}"
+    dest: ~/.mozilla/firefox/profile/user.js
+    mode: 0644
+  notify:
+    - restart systemd-timesyncd service
