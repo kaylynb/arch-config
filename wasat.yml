@@ -5,4 +5,4 @@
     - vars/main.yml
   roles:
     - base
-    - graphics-nvidia
+    - graphics-intel

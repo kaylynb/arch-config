@@ -1,6 +1,6 @@
 ---
 - block:
-  - name: install nvidia packages
+  - name: install nvidia graphics packages
     package:
       name: "{{ item }}"
       state: present

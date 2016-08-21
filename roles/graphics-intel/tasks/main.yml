@@ -1,0 +1,10 @@
+---
+- name: install intel graphics packages
+  become: true
+  package:
+    name: "{{ item }}"
+    state: present
+  with_items:
+    - mesa-libgl
+    - xf86-video-intel
+    - libva-intel-driver
