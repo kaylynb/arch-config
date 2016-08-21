@@ -5,6 +5,8 @@
       src: systemd_timesyncd/timesyncd.conf
       dest: /etc/systemd/
       mode: 0644
+    notify:
+      - restart systemd_timesyncd service
 
   - name: install systemd-timesyncd service
     service:
