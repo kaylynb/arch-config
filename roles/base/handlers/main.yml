@@ -1,2 +1,2 @@
 ---
-- include: systemd_timesyncd.yml
+- include: systemd-timesyncd.yml

@@ -1,5 +1,5 @@
 ---
-- name: restart systemd_timesyncd service
+- name: restart systemd-timesyncd service
   become: true
   service:
     name: systemd-timesyncd

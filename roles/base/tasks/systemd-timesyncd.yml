@@ -2,11 +2,11 @@
 - block:
   - name: install systemd-timesyncd configuration
     copy:
-      src: systemd_timesyncd/timesyncd.conf
+      src: systemd-timesyncd/timesyncd.conf
       dest: /etc/systemd/
       mode: 0644
     notify:
-      - restart systemd_timesyncd service
+      - restart systemd-timesyncd service
 
   - name: install systemd-timesyncd service
     service:
