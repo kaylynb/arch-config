@@ -1,0 +1,8 @@
+---
+- name: install left handed mouse config
+  become: true
+  copy:
+    src: X11-mouse/10-left-handed-mouse.conf
+    dest: /etc/X11/xorg.conf.d/
+    mode: 0644
+  when: (input.mouse_left_handed | default(false))

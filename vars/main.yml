@@ -2,4 +2,5 @@
 ansible_python_interpreter: /usr/bin/python2
 email: kaylyn@kaylyn.ink
 name: Kaylyn Bogle
-keyboard_layout: colemak
+input:
+  keyboard_layout: colemak
