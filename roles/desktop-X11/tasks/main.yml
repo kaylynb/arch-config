@@ -3,3 +3,4 @@
 - include: X11-keyboard.yml
 - include: X11-mouse.yml
 - include: gtk.yml
+- include: lightdm.yml
