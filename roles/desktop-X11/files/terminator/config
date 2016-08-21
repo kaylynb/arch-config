@@ -1,0 +1,20 @@
+[global_config]
+  enabled_plugins = ,
+  homogeneous_tabbar = False
+  scroll_tabbar = False
+  tab_position = hidden
+[keybindings]
+[layouts]
+  [[default]]
+    [[[child1]]]
+      parent = window0
+      type = Terminal
+    [[[window0]]]
+      parent = ""
+      type = Window
+[plugins]
+[profiles]
+  [[default]]
+    background_image = None
+    scrollbar_position = hidden
+    show_titlebar = False
