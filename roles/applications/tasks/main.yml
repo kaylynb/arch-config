@@ -1,0 +1,4 @@
+---
+- include: mirage.yml
+- include: evince.yml
+- include: firefox.yml

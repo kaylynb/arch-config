@@ -1,0 +1,6 @@
+---
+- name: install evince package
+  become: true
+  package:
+    name: evince
+    state: present

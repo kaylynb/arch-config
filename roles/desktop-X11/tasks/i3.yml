@@ -23,7 +23,7 @@
     - i3
     - i3status
 
-- name: install user i3 configurations
+- name: install user i3 configuration
   template:
     src: "i3/{{ item }}"
     dest: "~/.config/{{ item }}"

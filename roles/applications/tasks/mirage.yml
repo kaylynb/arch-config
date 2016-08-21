@@ -1,0 +1,6 @@
+---
+- name: install mirage package
+  become: true
+  package:
+    name: mirage
+    state: present

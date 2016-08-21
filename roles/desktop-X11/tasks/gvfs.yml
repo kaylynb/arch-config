@@ -1,0 +1,9 @@
+---
+- name: install gvfs packages
+  become: true
+  package:
+    name: "{{ item }}"
+    state: present
+  with_items:
+    - gvfs
+    - gvfs-smb

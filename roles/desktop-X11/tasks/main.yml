@@ -8,3 +8,5 @@
 - include: rofi.yml
 - include: i3.yml
 - include: terminator.yml
+- include: gvfs.yml
+- include: pcmanfm.yml

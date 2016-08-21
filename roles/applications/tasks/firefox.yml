@@ -1,0 +1,19 @@
+---
+- name: install firefox package
+  become: true
+  package:
+    name: firefox
+    state: present
+
+- name: install user firefox configuration directories
+  file:
+    path: ~/.mozilla/firefox/profile
+    state: directory
+    recurse: true
+    mode: 0700
+
+- name: install user firefox profiles configuration
+  copy:
+    src: firefox/profiles.ini
+    dest: ~/.mozilla/firefox/
+    mode: 0644
