@@ -1,0 +1,6 @@
+---
+- name: install alsa-utils package
+  become: true
+  package:
+    name: alsa-utils
+    state: present
