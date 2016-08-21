@@ -5,3 +5,4 @@
 - include: gtk.yml
 - include: lightdm.yml
 - include: compton.yml
+- include: rofi.yml
