@@ -23,6 +23,5 @@
     src: firefox/user.js
     dest: ~/.mozilla/firefox/profile/user.js
     mode: 0700
-  when: not ansible_check_mode
   notify:
     - remove firefox prefs file

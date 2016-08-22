@@ -127,7 +127,7 @@ user_pref("browser.fixup.alternate.enabled",			false);
 // https://trac.torproject.org/projects/tor/wiki/doc/TorifyHOWTO/WebBrowsers
 user_pref("network.proxy.socks_remote_dns",			true);
 
-// We not want to monitoring the connection state of users 
+// We not want to monitoring the connection state of users
 // https://trac.torproject.org/projects/tor/ticket/18945
 user_pref("network.manage-offline-status",		false);
 
@@ -722,7 +722,7 @@ user_pref("security.ssl3.ecdhe_rsa_chacha20_poly1305_sha256",	true);
 // Fallbacks due compatibility reasons
 user_pref("security.ssl3.rsa_aes_256_sha",			true);
 user_pref("security.ssl3.rsa_aes_128_sha",			true);
-{% if firefox and firefox.dpi_scale %}
+{% if firefox is defined and firefox.dpi_scale %}
 // Setup DPI
 user_pref("layout.css.devPixelsPerPx", "{{ firefox.dpi_scale }}");
 {% endif %}

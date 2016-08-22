@@ -13,6 +13,6 @@
       src: X11/90-monitor-scale.conf
       dest: /etc/X11/xorg.conf.d/
       mode: 0644
-    when: X11 and X11.display_size
+    when: X11 is defined and X11.display_size
 
   become: true
