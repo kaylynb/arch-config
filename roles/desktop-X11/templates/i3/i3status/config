@@ -27,7 +27,7 @@ volume master {
 }
 
 wireless _first_ {
-	format_up = "W: (%quality : $bitrate) [%essid] %ip"
+	format_up = "W: (%quality %essid) %ip"
 	format_down = "W: down"
 }
 
