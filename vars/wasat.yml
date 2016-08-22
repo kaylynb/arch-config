@@ -11,3 +11,5 @@ rofi:
   font_size: 24
 firefox:
   dpi_scale: "2.0"
+sublime_text:
+  dpi_scale: "2.0"
