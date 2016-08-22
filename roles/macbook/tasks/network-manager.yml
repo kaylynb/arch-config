@@ -1,0 +1,27 @@
+---
+- block:
+  - name: install network manager packages
+    package:
+      name: "{{ item }}"
+      state: present
+    with_items:
+      - networkmanager
+      - network-manager-applet
+      - dhclient
+      # Needed to store Wi-Fi passwords
+      - gnome-keyring
+
+  # Must ensure dhcpcd is disabled as network manager uses dhclient
+  - name: uninstall dhcpcd service
+    service:
+      name: dhcpcd
+      state: stopped
+      enabled: false
+
+  - name: install NetworkManager service
+    service:
+      name: NetworkManager
+      state: started
+      enabled: true
+
+  become: true

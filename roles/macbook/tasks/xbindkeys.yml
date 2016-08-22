@@ -1,0 +1,18 @@
+---
+- name: install xbindkeys package
+  become: true
+  package:
+    name: xbindkeys
+    state: present
+
+- name: install user xbindkeys configuration
+  copy:
+    src: xbindkeys/xbindkeysrc
+    dest: ~/.xbindkeysrc
+    mode: 0400
+
+- name: install user xbindkeys xprofile start script
+  copy:
+    src: xbindkeys/xprofile.d/xbindkeys
+    dest: ~/.xprofile.d/
+    mode: 0500
