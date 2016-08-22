@@ -7,3 +7,6 @@
   roles:
     - base
     - graphics-intel
+    - infinality
+    - desktop-X11
+    - applications
