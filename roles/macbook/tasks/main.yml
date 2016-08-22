@@ -2,3 +2,4 @@
 - include: disable-intel-hdmi-sound.yml
 - include: xbindkeys.yml
 - include: network-manager.yml
+- include: mtrack.yml
