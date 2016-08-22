@@ -7,3 +7,5 @@ i3:
   show_battery: true
 rofi:
   font_size: 24
+firefox:
+  dpi_scale: "2.0"

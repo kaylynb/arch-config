@@ -54,9 +54,9 @@ done
 
 # Now add a few extra configs
 cat << EOF >> $BASEDIR/user.js
-{% if dpiScale %}
+{% if firefox.dpi_scale %}
 // Setup DPI
-user_pref("layout.css.devPixelsPerPx", "{{ dpiScale }}");
+user_pref("layout.css.devPixelsPerPx", "{{ firefox.dpi_scale }}");
 {% endif %}
 
 // Set default search to DuckDuckGo
@@ -80,4 +80,4 @@ user_pref("browser.tabs.warnOnClose", false);
 user_pref("middlemouse.contentLoadURL", false);
 EOF
 
-cat $BASEDIR/user.js
+# cat $BASEDIR/user.js
