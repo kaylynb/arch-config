@@ -54,7 +54,7 @@ done
 
 # Now add a few extra configs
 cat << EOF >> $BASEDIR/user.js
-{% if firefox.dpi_scale %}
+{% if firefox and firefox.dpi_scale %}
 // Setup DPI
 user_pref("layout.css.devPixelsPerPx", "{{ firefox.dpi_scale }}");
 {% endif %}

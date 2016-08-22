@@ -1,9 +1,18 @@
 ---
-- name: install X11 packages
+- block:
+  - name: install X11 packages
+    package:
+      name: "{{ item }}"
+      state: present
+    with_items:
+      - xorg-server
+      - xorg-server-utils
+
+  - name: install X11 display size configuration
+    template:
+      src: X11/90-monitor-scale.conf
+      dest: /etc/X11/xorg.conf.d/
+      mode: 0644
+    when: X11 and X11.display_size
+
   become: true
-  package:
-    name: "{{ item }}"
-    state: present
-  with_items:
-    - xorg-server
-    - xorg-server-utils

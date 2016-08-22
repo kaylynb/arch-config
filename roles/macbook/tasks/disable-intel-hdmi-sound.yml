@@ -1,0 +1,7 @@
+---
+- name: disable intel hdmi sound
+  become: true
+  copy:
+    src: disable-intel-hdmi-sound/disable-intel-hdmi-sound.conf
+    dest: /etc/modprobe.d/
+    mode: 0644

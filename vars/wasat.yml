@@ -1,4 +1,6 @@
 ---
+X11:
+  display_size: "286 179"
 gtk:
   font_size: 22
 i3:
