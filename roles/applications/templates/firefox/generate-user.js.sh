@@ -1,6 +1,6 @@
 #!/bin/bash
 
-BASEDIR=/tmp
+BASEDIR=$(dirname $0)
 
 # Get baseline security config
 curl https://raw.githubusercontent.com/pyllyukko/user.js/master/user.js -o $BASEDIR/user.js
@@ -79,5 +79,3 @@ user_pref("browser.tabs.warnOnClose", false);
 // Disable middle mouse from opening pasted text
 user_pref("middlemouse.contentLoadURL", false);
 EOF
-
-# cat $BASEDIR/user.js
