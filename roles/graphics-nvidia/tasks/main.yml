@@ -23,11 +23,3 @@
       mode: 0644
 
   become: true
-
-# Need to set metamodes at login instead of XORG conf due to bug in nvidia drivers
-# See: https://devtalk.nvidia.com/default/topic/950647/linux/black-screen-with-367-35/
-- name: install nvidia metamode set workaround
-  copy:
-    src: xprofile.d/nvidia-metamode-set-workaround
-    dest: ~/.xprofile.d/
-    mode: 0500
