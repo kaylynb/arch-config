@@ -1,2 +1,2 @@
 #!/bin/bash
-ansible-playbook --diff --ask-become-pass ${HOSTNAME}.yml
+ansible-playbook --diff ${HOSTNAME}.yml

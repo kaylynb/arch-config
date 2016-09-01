@@ -1,10 +1,9 @@
 #!/bin/bash
+# Start the agent by attempting to connect (SSH won't automatically start it)
+gpg-connect-agent /bye >/dev/null 2>&1
 
-if ! pgrep -x -u "${USER}" gpg-agent >/dev/null 2>&1; then
-  gpg-connect-agent /bye >/dev/null 2>&1
-fi
-
+# These are copied directly from gpg-agent manpages
 unset SSH_AGENT_PID
 if [ "${gnupg_SSH_AUTH_SOCK_by:-0}" -ne $$ ]; then
-  export SSH_AUTH_SOCK="/run/user/$UID/gnupg/S.gpg-agent.ssh"
+  export SSH_AUTH_SOCK="$(gpgconf --list-dirs agent-ssh-socket)"
 fi
