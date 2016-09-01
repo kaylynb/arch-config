@@ -1,0 +1,20 @@
+---
+- name: install bashrc.d directory
+  file:
+    path: ~/.bashrc.d
+    state: directory
+    mode: 0700
+
+- name: install bash inits
+  copy:
+    src: "bash/{{ item }}"
+    dest: "~/.{{ item }}"
+  with_items:
+    - bash_profile
+    - bashrc
+
+- name: install base bashrc.d rules
+  copy:
+    src: bash/bashrc.d/
+    dest: ~/.bashrc.d/
+    mode: 0600
