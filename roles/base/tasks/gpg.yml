@@ -33,7 +33,7 @@
   copy:
     src: gpg/xprofile.d/gpg-agent
     dest: ~/.xprofile.d/
-    mode: 0500
+    mode: 0600
 
 - name: install gpg bash TTY var
   copy:

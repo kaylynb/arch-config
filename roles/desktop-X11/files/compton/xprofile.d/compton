@@ -1,5 +1,3 @@
-#!/bin/sh
-
 # Setup compton compositor to prevent screen tearing
 # Preferable:
 # /usr/bin/compton -CGb --no-fading-openclose --backend glx

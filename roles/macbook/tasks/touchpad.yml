@@ -31,4 +31,4 @@
   copy:
     src: touchpad/xprofile.d/dispad
     dest: ~/.xprofile.d/dispad
-    mode: 0500
+    mode: 0600

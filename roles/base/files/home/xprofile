@@ -1,8 +1,11 @@
 #!/bin/sh
+directory=~/.xprofile.d
 
-if [ -d ~/.xprofile.d ]; then
-	for f in ~/.xprofile.d/*; do
-		[ -x "$f" ] && . "$f"
+if [[ -d "${directory}" && -r "${directory}" && -x "${directory}" ]]; then
+	for file in "${directory}"/* ; do
+		[[ -f "${file}" && -r "${file}" ]] && . "${file}"
 	done
-	unset f
+	unset file
 fi
+
+unset directory

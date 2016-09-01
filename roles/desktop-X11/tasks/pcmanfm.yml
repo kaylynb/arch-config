@@ -22,4 +22,4 @@
   copy:
     src: pcmanfm/xprofile.d/pcmanfm
     dest: ~/.xprofile.d/
-    mode: 0500
+    mode: 0600

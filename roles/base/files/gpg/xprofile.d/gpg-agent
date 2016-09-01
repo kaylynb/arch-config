@@ -1,4 +1,3 @@
-#!/bin/bash
 # Start the agent by attempting to connect (SSH won't automatically start it)
 gpg-connect-agent /bye >/dev/null 2>&1
 
