@@ -5,8 +5,8 @@
     - vars/main.yml
     - vars/rho.yml
   roles:
-    - base
-    - graphics-nvidia
-    - infinality
-    - desktop-X11
+    - { role: base, tags: ['bootstrap'] }
+    - { role: graphics-nvidia, tags: ['bootstrap'] }
+    - { role: infinality, tags: ['bootstrap'] }
+    - { role: desktop-X11, tags: ['bootstrap'] }
     - applications
