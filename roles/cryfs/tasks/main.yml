@@ -1,0 +1,16 @@
+---
+- name: install cryfs packages
+  become: true
+  aura:
+    name: cryfs
+
+- name: install cryfs base directory
+  file:
+    path: ~/.cryfs
+    state: directory
+    mode: 0700
+
+# TODO: Add systemd user unit to mount
+
+- include: directory.yml
+  with_items: "{{ cryfs }}"

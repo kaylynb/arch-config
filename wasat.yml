@@ -5,9 +5,9 @@
     - vars/main.yml
     - vars/wasat.yml
   roles:
-    - { role: base, tags: ['bootstrap'] }
-    - { role: graphics-intel, tags: ['bootstrap'] }
-    - { role: infinality, tags: ['bootstrap'] }
-    - { role: desktop-X11, tags: ['bootstrap'] }
-    - { role: macbook, tags: ['bootstrap'] }
+    - base
+    - graphics-intel
+    - infinality
+    - desktop-X11
+    - macbook
     - applications

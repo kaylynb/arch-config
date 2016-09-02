@@ -1,0 +1,2 @@
+#!/bin/bash
+ansible-playbook --diff --vault-password-file ./vault/decrypt_vault_passphrase ${HOSTNAME}_vault.yml

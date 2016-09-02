@@ -8,4 +8,6 @@ source_directory() {
 	fi
 }
 
+export EDITOR=nano
+
 source_directory ~/.bashrc.d

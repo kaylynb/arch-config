@@ -3,3 +3,4 @@
 - include: evince.yml
 - include: firefox.yml
 - include: sublime-text.yml
+- include: syncthing.yml
