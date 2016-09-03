@@ -10,3 +10,4 @@
 - include: terminator.yml
 - include: gvfs.yml
 - include: pcmanfm.yml
+- include: xclip.yml
