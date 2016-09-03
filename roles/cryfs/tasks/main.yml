@@ -1,16 +1,41 @@
 ---
-- name: install cryfs packages
+- block:
+  - name: install cryfs packages
+    aura:
+      name: cryfs
+
+  - name: install cryfs exec wrapper script
+    copy:
+      src: cryfs-mount
+      dest: /usr/local/bin/
+      mode: 0755
+
+  - name: install cryfs systemd user unit
+    copy:
+      src: cryfs@.service
+      dest: /etc/systemd/user/
+      mode: 0755
+    notify:
+      - reload systemctl user daemon
+
   become: true
-  aura:
-    name: cryfs
+
+- meta: flush_handlers
+
+- name: stop all cryfs systemd services (fuse mounts can cause havoc with directory setups)
+  systemd:
+    name: cryfs@*
+    state: stopped
+    user: true
+  # Must exist is missing or something
+  # See: https://github.com/ansible/ansible/issues/16134
+  ignore_errors: yes
 
 - name: install cryfs base directory
   file:
     path: ~/.cryfs
     state: directory
     mode: 0700
-
-# TODO: Add systemd user unit to mount
 
 - include: directory.yml
   with_items: "{{ cryfs }}"
