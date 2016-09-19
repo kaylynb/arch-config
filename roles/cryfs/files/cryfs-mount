@@ -4,7 +4,7 @@ mount() {
 }
 
 umount() {
-	/usr/bin/fusermount -u "$2/mount"
+	/usr/bin/fusermount -uz "$2/mount"
 }
 
 usage () {
