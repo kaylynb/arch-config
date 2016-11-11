@@ -1,0 +1,1 @@
+export CHROME_USER_FLAGS=" --force-device-scale-factor=2"
