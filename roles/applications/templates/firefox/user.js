@@ -23,22 +23,34 @@
 // http://www.mozilla.org/en-US/firefox/geolocation/
 user_pref("geo.enabled",					false);
 
+// Disable dom.mozTCPSocket.enabled (raw TCP socket support)
+// https://trac.torproject.org/projects/tor/ticket/18863
+// https://www.mozilla.org/en-US/security/advisories/mfsa2015-97/
+// https://developer.mozilla.org/docs/Mozilla/B2G_OS/API/TCPSocket
+user_pref("dom.mozTCPSocket.enabled",				false);
+
 // http://kb.mozillazine.org/Dom.storage.enabled
 // http://dev.w3.org/html5/webstorage/#dom-localstorage
 // you can also see this with Panopticlick's "DOM localStorage"
 //user_pref("dom.storage.enabled",		false);
 
 // Whether JS can get information about the network/browser connection
-// Network Information API provides general information about the system's connection type (WiFi, cellar, etc.)
+// Network Information API provides general information about the system's connection type (WiFi, cellular, etc.)
 // https://developer.mozilla.org/en-US/docs/Web/API/Network_Information_API
 // https://wicg.github.io/netinfo/#privacy-considerations
 // https://bugzilla.mozilla.org/show_bug.cgi?id=960426
 user_pref("dom.netinfo.enabled",				false);
 
+// Disable Web Audio API
+// https://bugzil.la/1288359
+user_pref("dom.webaudio.enabled",				false);
+
 // Don't reveal your internal IP
 // Check the settings with: http://net.ipcalf.com/
 // https://wiki.mozilla.org/Media/WebRTC/Privacy
-user_pref("media.peerconnection.ice.default_address_only",	true);
+user_pref("media.peerconnection.ice.default_address_only",	true); // Firefox < 51
+user_pref("media.peerconnection.ice.no_host",			true); // Firefox >= 51
+// Disable WebRTC entirely
 user_pref("media.peerconnection.enabled",			false);
 
 // getUserMedia
@@ -98,6 +110,9 @@ user_pref("dom.webnotifications.enabled",			false);
 // disable webGL
 // http://www.contextis.com/resources/blog/webgl-new-dimension-browser-exploitation/
 user_pref("webgl.disabled",					true);
+// https://bugzilla.mozilla.org/show_bug.cgi?id=1171228
+// https://developer.mozilla.org/en-US/docs/Web/API/WEBGL_debug_renderer_info
+user_pref("webgl.enable-debug-renderer-info",			false);
 // somewhat related...
 //user_pref("pdfjs.enableWebGL",		false);
 
@@ -120,6 +135,10 @@ user_pref("clipboard.autocopy",					false);
 // http://kb.mozillazine.org/Keyword.enabled#Caveats
 //user_pref("keyword.enabled",					false);
 
+// Don't trim HTTP off of URLs in the address bar.
+// https://bugzilla.mozilla.org/show_bug.cgi?id=665580
+user_pref("browser.urlbar.trimURLs",				false);
+
 // Don't try to guess where i'm trying to go!!! e.g.: "http://foo" -> "http://(prefix)foo(suffix)"
 // http://www-archive.mozilla.org/docs/end-user/domain-guessing.html
 user_pref("browser.fixup.alternate.enabled",			false);
@@ -127,7 +146,7 @@ user_pref("browser.fixup.alternate.enabled",			false);
 // https://trac.torproject.org/projects/tor/wiki/doc/TorifyHOWTO/WebBrowsers
 user_pref("network.proxy.socks_remote_dns",			true);
 
-// We not want to monitoring the connection state of users
+// We not want to monitoring the connection state of users 
 // https://trac.torproject.org/projects/tor/ticket/18945
 user_pref("network.manage-offline-status",		false);
 
@@ -156,11 +175,6 @@ user_pref("security.fileuri.strict_origin_policy",		true);
 // CIS 2.3.6 Disable Displaying Javascript in History URLs
 // http://kb.mozillazine.org/Browser.urlbar.filter.javascript
 user_pref("browser.urlbar.filter.javascript",			true);
-
-// Disable HTML frames
-// WARNING: might make your life difficult!
-// NOTE: to be removed(?) see: https://bugzilla.mozilla.org/show_bug.cgi?id=729030
-//user_pref("browser.frames.enabled",		false);
 
 // http://asmjs.org/
 // https://www.mozilla.org/en-US/security/advisories/mfsa2015-29/
@@ -410,8 +424,6 @@ user_pref("security.sri.enable",				true);
 // Send a referer header with the target URI as the source
 //user_pref("network.http.sendRefererHeader",			1);
 user_pref("network.http.referer.spoofSource",			true);
-// CIS Version 1.2.0 October 21st, 2011 2.4.3 Disable Referer from an SSL Website
-user_pref("network.http.sendSecureXSiteReferrer",		false);
 
 // CIS 2.5.1 Accept Only 1st Party Cookies
 // http://kb.mozillazine.org/Network.cookie.cookieBehavior#1
@@ -598,9 +610,9 @@ user_pref("security.tls.version.max",				3);
 // "2. Strict. Pinning is always enforced."
 user_pref("security.cert_pinning.enforcement_level",		2);
 
-// Kill SHA1 certificates
-// https://bugzilla.mozilla.org/show_bug.cgi?id=942515#c32
-user_pref("security.pki.sha1_enforcement_level",		2);
+// disallow SHA-1
+// https://bugzilla.mozilla.org/show_bug.cgi?id=1302140
+//user_pref("security.pki.sha1_enforcement_level",		1);
 
 // https://wiki.mozilla.org/Security:Renegotiation#security.ssl.treat_unsafe_negotiation_as_broken
 // see also CVE-2009-3555
