@@ -6,3 +6,4 @@ git:
   editor: subl3 -n -w
 
 pass_store_directory: ~/sync/keys/password_store
+pass_store_generated_length: 40

@@ -1,1 +1,2 @@
 export PASSWORD_STORE_DIR={{ pass_store_directory }}
+export PASSWORD_STORE_GENERATED_LENGTH={{ pass_store_generated_length }}

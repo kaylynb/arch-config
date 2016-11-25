@@ -1,1 +1,0 @@
-export PASSWORD_STORE_DIR={{ pass_store_directory | realpath }}
