@@ -5,7 +5,7 @@
     name: xclip
 
 - name: install xclip bash alias
-  file:
+  copy:
     src: xclip/bashrc.d/clip
     dest: ~/.bashrc.d/aliases/
     mode: 0600
