@@ -4,3 +4,5 @@ gpg:
   signingKeyHash: 754D 875D 1CF9 B7D0 BC60  DCCD C614 7F50 B1CC F27A
 git:
   editor: subl3 -n -w
+
+pass_store_directory: ~/sync/keys/password_store

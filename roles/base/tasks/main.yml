@@ -7,3 +7,4 @@
 - include: gpg.yml
 - include: git.yml
 - include: alsa.yml
+- include: pass.yml
