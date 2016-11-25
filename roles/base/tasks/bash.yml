@@ -1,4 +1,10 @@
 ---
+- name: install bash-completion package
+  package:
+    name: bash-completion
+    state: present
+  become: true
+
 - name: install bashrc.d directory
   file:
     path: ~/.bashrc.d
