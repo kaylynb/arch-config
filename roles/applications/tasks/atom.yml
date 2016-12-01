@@ -9,16 +9,42 @@
   apm:
     name: "{{ item }}"
   with_items:
-    - minimap
     - nucleus-dark-ui
+    - docblockr
+    - editorconfig
+    - highlight-selected
+    - indent-guide-improved
+    - language-ansible
+    - language-docker
+    - language-ini
+    - language-ledger
+    - language-nginx
+    - language-nunjucks
+    - language-terraform
+    - linter
+    - linter-eslint
+    - pigments
+    - minimap
+    - minimap-pigments
+    - minimap-highlight-selected
+    - minimap-find-and-replace
+    - minimap-selection
+    - minimap-linter
+    - synced-sidebar
+    - linter
+    - linter-eslint
+    - Stylus
 
 - name: install apm hidpi package
   apm:
     name: hidpi
   when: ansible_hostname == "wasat"
 
-- name: install atom config
+- name: install atom configs
   copy:
-    src: atom/config.cson
+    src: "atom/{{ item }}"
     dest: ~/.atom/
     mode: 0644
+  with_items:
+    - config.cson
+    - styles.less
