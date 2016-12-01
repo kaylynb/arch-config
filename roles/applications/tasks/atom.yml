@@ -1,0 +1,24 @@
+---
+- name: install atom package
+  package:
+    name: atom
+    state: present
+  become: true
+
+- name: install apm packages
+  apm:
+    name: "{{ item }}"
+  with_items:
+    - minimap
+    - nucleus-dark-ui
+
+- name: install apm hidpi package
+  apm:
+    name: hidpi
+  when: ansible_hostname == "wasat"
+
+- name: install atom config
+  copy:
+    src: atom/config.cson
+    dest: ~/.atom/
+    mode: 0644

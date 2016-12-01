@@ -1,0 +1,19 @@
+"*":
+  core:
+    autoHideMenuBar: true
+    automaticallyUpdate: false
+    telemetryConsent: "no"
+    themes: [
+      "nucleus-dark-ui"
+      "one-dark-syntax"
+    ]
+  editor:
+    fontSize: 16
+    invisibles:
+      space: " "
+      tab: " "
+    showIndentGuide: true
+    showInvisibles: true
+    softTabs: false
+  welcome:
+    showOnStartup: false
