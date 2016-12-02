@@ -34,6 +34,7 @@
     - linter
     - linter-eslint
     - Stylus
+    - auto-detect-indentation
 
 - name: install apm hidpi package
   apm:

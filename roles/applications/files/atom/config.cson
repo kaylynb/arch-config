@@ -6,6 +6,9 @@
       "text.html.nunjucks": [
         "njk.html"
       ]
+    disabledPackages: [
+      "whitespace"
+    ]
     telemetryConsent: "no"
     themes: [
       "nucleus-dark-ui"
