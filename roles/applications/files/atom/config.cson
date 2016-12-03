@@ -20,6 +20,8 @@
       tab: " "
     showInvisibles: true
     softTabs: false
+  "language-ledger":
+    ledgerBinary: "true"
   minimap:
     plugins:
       "find-and-replace": true
