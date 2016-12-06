@@ -1,1 +1,1 @@
-function getprop { grep "${1-user}:" | tr -d ' ' | cut -d':' -f2; }
+function getprop { grep "${1-user}:" | tr -d ' ' | cut -d':' -f2-; }
