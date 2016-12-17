@@ -1,7 +1,7 @@
 ---
 - name: install atom package
-  package:
-    name: atom
+  aura:
+    name: atom-editor-bin
     state: present
   become: true
 
