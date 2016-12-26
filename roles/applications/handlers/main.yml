@@ -1,2 +1,3 @@
 ---
 - include: firefox.yml
+- include: mpd.yml

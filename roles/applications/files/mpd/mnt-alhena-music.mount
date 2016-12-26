@@ -1,0 +1,15 @@
+[Unit]
+Description=Mount Alhena music at boot
+Requires=systemd-networkd.service
+After=network-online.target
+Wants=network-online.target
+
+[Mount]
+What=//alhena/music
+Where=/mnt/alhena/music
+Options=guest,user=samba-guest,iocharset=utf8,ro,x-systemd.automount
+Type=cifs
+TimeoutSec=30
+
+[Install]
+WantedBy=multi-user.target

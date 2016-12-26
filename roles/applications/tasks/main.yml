@@ -5,3 +5,5 @@
 - include: sublime-text.yml
 - include: syncthing.yml
 - include: atom.yml
+- include: mpd.yml
+  when: ansible_hostname == "rho"
