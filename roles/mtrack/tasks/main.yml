@@ -1,0 +1,13 @@
+- block:
+  - name: install mtrack package
+    aura:
+      name: xf86-input-mtrack-git
+      state: present
+
+  - name: install mtrack configuration
+    copy:
+      src: 01-mtrack-touchpad.conf
+      dest: /etc/X11/xorg.conf.d/
+      mode: 0644
+
+  become: true

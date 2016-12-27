@@ -1,0 +1,35 @@
+{
+	"color_scheme": "Packages/User/SublimeLinter/base16-eighties.dark (SL).tmTheme",
+	"default_line_ending": "unix",
+	"dpi_scale": {{ sublime_text_dpi_scale | default(1.0) }},
+	"drag_text": false,
+	"draw_minimap_border": true,
+	"draw_white_space": "all",
+	"folder_exclude_patterns":
+	[
+		".git",
+		"node_modules"
+	],
+	"font_size": 12,
+	"hot_exit": false,
+	"ignored_packages":
+	[
+		"Vintage"
+	],
+	"indent_guide_options":
+	[
+		"draw_normal",
+		"draw_active"
+	],
+	"remember_open_files": false,
+	"rulers":
+	[
+		80,
+		120
+	],
+	"show_encoding": true,
+	"show_line_endings": true,
+	"tab_size": 2,
+	"theme": "Spacegray Eighties.sublime-theme",
+	"update_check": false
+}

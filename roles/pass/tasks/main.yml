@@ -1,0 +1,19 @@
+---
+- name: install pass package
+  package:
+    name: pass
+    state: present
+  become: true
+
+- name: install pass env vars
+  template:
+    src: bashrc.d/pass
+    dest: ~/.bashrc.d/
+    mode: 0600
+
+- name: install pass directory
+  file:
+    path: "{{ pass_store_directory }}"
+    state: directory
+    mode: 0700
+    recurse: true

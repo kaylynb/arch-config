@@ -1,15 +1,9 @@
 ---
-X11:
-  display_size: "286 179"
-gtk:
-  font_size: 22
-i3:
-  font_size: 8
-  show_wireless: true
-  show_battery: true
-rofi:
-  font_size: 24
-firefox:
-  dpi_scale: "2.0"
-sublime_text:
-  dpi_scale: "2.0"
+X11_display_size: "286 179"
+gtk_font_size: 22
+i3_font_size: 8
+i3status_show_wireless: true
+i3status_show_battery: true
+rofi_font_size: 24
+firefox_dpi_scale: "2.0"
+sublime_text_dpi_scale: "2.0"

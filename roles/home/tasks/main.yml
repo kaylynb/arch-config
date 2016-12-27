@@ -1,0 +1,18 @@
+---
+- name: install .config directory
+  file:
+    path: ~/.config
+    state: directory
+    mode: 0700
+
+- name: install .xprofile.d directory
+  file:
+    path: ~/.xprofile.d
+    state: directory
+    mode: 0700
+
+- name: install .xprofile file
+  copy:
+    src: xprofile
+    dest: ~/.xprofile
+    mode: 0700

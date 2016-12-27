@@ -1,0 +1,26 @@
+---
+- name: install bash-completion package
+  package:
+    name: bash-completion
+    state: present
+  become: true
+
+- name: install bashrc.d directory
+  file:
+    path: ~/.bashrc.d
+    state: directory
+    mode: 0700
+
+- name: install bash inits
+  copy:
+    src: "{{ item }}"
+    dest: "~/.{{ item }}"
+  with_items:
+    - bash_profile
+    - bashrc
+
+- name: install base bashrc.d rules
+  copy:
+    src: bashrc.d/
+    dest: ~/.bashrc.d/
+    mode: 0600

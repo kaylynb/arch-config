@@ -1,0 +1,10 @@
+---
+dependencies:
+  - { role: home }
+  - { role: makepkg }
+  - { role: systemd-timesyncd }
+  - { role: yubikey }
+  - { role: bash }
+  - { role: gpg }
+  - { role: git }
+  - { role: alsa }

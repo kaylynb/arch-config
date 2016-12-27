@@ -1,0 +1,12 @@
+---
+- name: install compton package
+  become: true
+  package:
+    name: compton
+    state: present
+
+- name: install compton user xprofile startup for i3
+  copy:
+    src: xprofile.d/compton
+    dest: ~/.xprofile.d/
+    mode: 0600

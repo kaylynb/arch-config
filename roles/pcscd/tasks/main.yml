@@ -1,0 +1,13 @@
+---
+- block:
+  - name: install pcsclite package
+    package:
+      name: pcsclite
+      state: present
+
+  - name: enable pcscd service
+    service:
+      name: pcscd
+      enabled: true
+
+  become: true

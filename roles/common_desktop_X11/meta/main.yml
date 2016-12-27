@@ -1,0 +1,13 @@
+---
+dependencies:
+  - { role: infinality }
+  - { role: X11 }
+  - { role: lightdm }
+  - { role: gtk }
+  - { role: compton }
+  - { role: xclip }
+  - { role: rofi }
+  - { role: i3 }
+  - { role: terminator }
+  - { role: gvfs }
+  - { role: pcmanfm }

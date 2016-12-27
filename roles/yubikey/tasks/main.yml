@@ -1,0 +1,22 @@
+---
+- block:
+  - name: install yubikey smartcard dependency packages
+    package:
+      name: "{{ item }}"
+      state: present
+    with_items:
+      - libusb-compat
+      - libu2f-host
+
+    # Add udev rules for permissions on smartcard for yubikey
+    # This config also fixes a bug related to scdaemon not working when
+    # replugging the key, so the workaround for now is have udev kill
+    # scdaemon on plug.
+    # https://bugs.gnupg.org/gnupg/issue2167
+  - name: install udev smartcard rules
+    copy:
+      src: yubikey.rules
+      dest: /etc/udev/rules.d/
+      mode: 0644
+
+  become: true

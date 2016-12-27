@@ -5,9 +5,8 @@
     - vars/main.yml
     - vars/wasat.yml
   roles:
-    - base
-    - graphics-intel
-    - infinality
-    - desktop-X11
-    - macbook
-    - applications
+    - common_base
+    - graphics_intel
+    - common_desktop_X11
+    - common_macbook
+    - common_applications

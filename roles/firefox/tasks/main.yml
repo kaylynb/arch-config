@@ -1,0 +1,27 @@
+---
+- name: install firefox package
+  become: true
+  package:
+    name: firefox
+    state: present
+
+- name: install user firefox configuration directories
+  file:
+    path: ~/.mozilla/firefox/profile
+    state: directory
+    recurse: true
+    mode: 0700
+
+- name: install user firefox profiles configuration
+  copy:
+    src: profiles.ini
+    dest: ~/.mozilla/firefox/
+    mode: 0644
+
+- name: install user.js file
+  template:
+    src: user.js
+    dest: ~/.mozilla/firefox/profile/user.js
+    mode: 0700
+  notify:
+    - remove firefox prefs file

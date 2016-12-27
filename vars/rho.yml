@@ -1,7 +1,4 @@
 ---
-gtk:
-  font_size: 12
-i3:
-  font_size: 10
-rofi:
-  font_size: 12
+gtk_font_size: 12
+i3_font_size: 10
+rofi_font_size: 12

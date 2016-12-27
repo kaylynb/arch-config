@@ -1,0 +1,42 @@
+---
+- block:
+  - name: install i3 packages
+    package:
+      name: "{{ item }}"
+      state: present
+    with_items:
+      - i3-wm
+      - i3status
+
+  - name: install ttf-font-awesome
+    aura:
+      name: ttf-font-awesome
+
+  become: true
+
+- name: install user i3 configuration directories
+  file:
+    path: "~/.config/{{ item }}"
+    state: directory
+    mode: 0700
+  with_items:
+    - i3
+    - i3status
+
+- name: install user i3 configuration
+  template:
+    src: "{{ item }}"
+    dest: "~/.config/{{ item }}"
+    mode: 0600
+  with_items:
+    - i3/config
+    - i3status/config
+
+- name: install user i3status shell scripts
+  copy:
+    src: "{{ item }}"
+    dest: "~/.config/i3/{{ item }}"
+    mode: 0700
+  with_items:
+    - i3statusmem.sh
+    - mem.sh

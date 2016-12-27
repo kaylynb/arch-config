@@ -1,6 +1,0 @@
----
-- name: install google-chrome hidpi flags
-  copy:
-    src: chrome/xprofile.d/google-chrome-hidpi-flags
-    dest: ~/.xprofile.d/
-    mode: 0600

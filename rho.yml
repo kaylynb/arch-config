@@ -5,8 +5,8 @@
     - vars/main.yml
     - vars/rho.yml
   roles:
-    - base
-    - graphics-nvidia
-    - infinality
-    - desktop-X11
-    - applications
+    - common_base
+    - graphics_nvidia
+    - common_desktop_X11
+    - common_applications
+    - mpd

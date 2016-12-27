@@ -1,0 +1,21 @@
+---
+# Install dispad manually from AUR Archive
+# https://raw.githubusercontent.com/aur-archive/dispad-git/master/PKGBUILD
+
+- name: install user dispad configuration directory
+  file:
+    path: ~/.config/dispad
+    state: directory
+    mode: 0700
+
+- name: install user dispad configuration file
+  copy:
+    src: dispad.conf
+    dest: ~/.config/dispad/
+    mode: 0600
+
+- name: install user dispad xprofile start script
+  copy:
+    src: xprofile.d/dispad
+    dest: ~/.xprofile.d/dispad
+    mode: 0600

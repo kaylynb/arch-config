@@ -1,0 +1,14 @@
+---
+- block:
+  - name: get X11 keymap settings
+    shell: "/usr/bin/localectl status | grep -oP '(?<=X11 Variant: ).*'"
+    register: current_X11_keyboard_variant
+    failed_when: current_X11_keyboard_variant.rc == 2
+    changed_when: false
+
+  # TODO: This may not work for non-colemak or other variant keyboard types
+  - name: set X11 keymap settings
+    command: "/usr/bin/localectl --no-convert set-x11-keymap us pc105 {{ keyboard_layout }}"
+    when: not ansible_check_mode and current_X11_keyboard_variant.stdout != keyboard_layout
+
+  become: true

@@ -1,0 +1,25 @@
+---
+- block:
+  - name: install xbindkeys package
+    package:
+      name: xbindkeys
+      state: present
+
+  - name: install kbdlight package
+    aura:
+      name: kbdlight
+      state: present
+
+  become: true
+
+- name: install user xbindkeys configuration
+  copy:
+    src: xbindkeysrc
+    dest: ~/.xbindkeysrc
+    mode: 0400
+
+- name: install user xbindkeys xprofile start script
+  copy:
+    src: xprofile.d/xbindkeys
+    dest: ~/.xprofile.d/
+    mode: 0600

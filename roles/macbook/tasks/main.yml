@@ -1,7 +1,0 @@
----
-- include: disable-intel-hdmi-sound.yml
-- include: xbindkeys.yml
-- include: network-manager.yml
-- include: touchpad.yml
-- include: tlp.yml
-- include: chrome-hidpi.yml

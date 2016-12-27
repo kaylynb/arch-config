@@ -1,0 +1,9 @@
+---
+dependencies:
+  - { role: mirage }
+  - { role: evince }
+  - { role: firefox }
+  - { role: google-chrome }
+  - { role: sublime-text }
+  - { role: syncthing }
+  - { role: atom }

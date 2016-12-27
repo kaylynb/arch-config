@@ -1,9 +1,0 @@
----
-gpg:
-  sshKeygrip: 07427475ECD297F676280BC471BA139CF62EBE09
-  signingKeyHash: 754D 875D 1CF9 B7D0 BC60  DCCD C614 7F50 B1CC F27A
-git:
-  editor: subl3 -n -w
-
-pass_store_directory: ~/sync/keys/password_store
-pass_store_generated_length: 40

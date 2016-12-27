@@ -1,0 +1,13 @@
+---
+- name: install google-chrome package
+  aura:
+    name: google-chrome
+    state: present
+  become: true
+
+- name: install google-chrome hidpi flags
+  copy:
+    src: xprofile.d/google-chrome-hidpi-flags
+    dest: ~/.xprofile.d/
+    mode: 0600
+  when: ansible_hostname == "wasat"

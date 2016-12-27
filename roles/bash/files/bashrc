@@ -1,0 +1,11 @@
+source_directory() {
+	local directory="${1}"
+
+	if [[ -d "${directory}" && -r "${directory}" && -x "${directory}" ]]; then
+		for file in "${directory}"/* "${directory}"/**/* ; do
+			[[ -f "${file}" && -r "${file}" ]] && . "${file}"
+		done
+	fi
+}
+
+source_directory ~/.bashrc.d

@@ -1,9 +1,0 @@
----
-- include: mirage.yml
-- include: evince.yml
-- include: firefox.yml
-- include: sublime-text.yml
-- include: syncthing.yml
-- include: atom.yml
-- include: mpd.yml
-  when: ansible_hostname == "rho"
