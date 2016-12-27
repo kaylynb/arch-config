@@ -1,0 +1,4 @@
+---
+i3status_show_wireless: false
+i3status_show_battery: false
+i3_font_size: 10
