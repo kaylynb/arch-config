@@ -17,5 +17,6 @@
 [profiles]
   [[default]]
     background_image = None
+    scrollback_infinite = True
     scrollbar_position = hidden
     show_titlebar = False
