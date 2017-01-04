@@ -12,7 +12,7 @@
     mode: 0700
 
 - name: install user terminator configuration
-  copy:
+  template:
     src: config
     dest: ~/.config/terminator/
     mode: 0600
