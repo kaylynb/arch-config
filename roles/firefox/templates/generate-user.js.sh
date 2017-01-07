@@ -31,6 +31,7 @@ removedconfigs=(
 	'privacy.clearOnShutdown.cookies'               # Don't clear cookies (using uMatrix or something here)
 	'network.cookie.cookieBehavior'
 	'network.cookie.lifetimePolicy'
+	'dom.event.clipboardevents.enabled'             # Don't disable clipboard events (mostly interferes with facebook)
 	'security.ssl3.rsa_camellia_128_sha'            # Don't disable a bunch of ciphers
 	'security.ssl3.ecdhe_rsa_aes_128_sha'
 	'security.ssl3.ecdhe_ecdsa_aes_128_sha'
@@ -58,11 +59,6 @@ cat << EOF >> $BASEDIR/user.js
 // Setup DPI
 user_pref("layout.css.devPixelsPerPx", "{{ firefox_dpi_scale }}");
 {% endif %}
-
-// Set default search to DuckDuckGo
-user_pref("browser.search.geoSpecificDefaults", false);
-user_pref("browser.search.defaultenginename", "DuckDuckGo");
-user_pref("browser.search.defaultenginename.US", "data:text/plain,browser.search.defaultenginename.US=DuckDuckGo");
 
 // Fullscreen shouldn't animate. Just no.
 user_pref("browser.fullscreen.animate", false);
