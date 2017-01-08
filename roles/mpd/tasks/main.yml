@@ -31,6 +31,13 @@
     recurse: true
     mode: 0700
 
+- name: install mpd playlist directory
+  file:
+    path: ~/.config/mpd/playlists
+    state: directory
+    recurse: true
+    mode: 0700
+
 - name: install mpd config file
   copy:
     src: mpd.conf

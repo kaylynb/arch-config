@@ -1,0 +1,7 @@
+---
+- name: reload systemd user daemon
+  shell: systemctl --user daemon-reload
+
+- name: reload systemd daemon
+  shell: systemctl daemon-reload
+  become: true

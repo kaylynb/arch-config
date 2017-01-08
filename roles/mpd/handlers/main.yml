@@ -1,0 +1,6 @@
+---
+- name: restart mpd service
+  systemd:
+    name: mpd
+    user: true
+    state: restarted
