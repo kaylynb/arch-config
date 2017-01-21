@@ -1,6 +1,6 @@
 ---
 dependencies:
-  - { role: infinality }
+  - { role: fontconfig }
   - { role: X11 }
   - { role: lightdm }
   - { role: gtk }
