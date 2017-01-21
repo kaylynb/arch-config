@@ -36,16 +36,19 @@
     - Stylus
     - auto-detect-indentation
 
-- name: install apm hidpi package
-  apm:
-    name: hidpi
-  when: ansible_hostname == "wasat"
+# - name: install apm hidpi package
+#   apm:
+#     name: hidpi
+#   when: ansible_hostname == "wasat"
 
-- name: install atom configs
-  copy:
-    src: "{{ item }}"
+- name: install atom config
+  template:
+    src: config.cson
     dest: ~/.atom/
     mode: 0644
-  with_items:
-    - config.cson
-    - styles.less
+
+- name: install atom styles
+  copy:
+    src: styles.less
+    dest: ~/.atom/
+    mode: 0644

@@ -16,7 +16,7 @@
     ]
   editor:
     fontFamily: "Hack"
-    fontSize: 16
+    fontSize: {{ atom_font_size }}
     invisibles:
       tab: " "
     showInvisibles: true

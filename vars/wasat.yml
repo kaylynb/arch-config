@@ -1,6 +1,6 @@
 ---
 X11_display_size: "286 179"
-gtk_font_size: 22
+atom_font_size: 14
 terminator_font_size: 22
 i3_font_size: 8
 i3status_show_wireless: true
