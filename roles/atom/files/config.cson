@@ -15,7 +15,7 @@
       "one-dark-syntax"
     ]
   editor:
-    fontFamily: "monospace"
+    fontFamily: "Hack"
     fontSize: 16
     invisibles:
       tab: " "
