@@ -8,3 +8,4 @@ dependencies:
   - { role: gpg }
   - { role: git }
   - { role: alsa }
+  - { role: pulseaudio }

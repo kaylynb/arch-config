@@ -1,0 +1,9 @@
+---
+- name: install pulseaudio package
+  become: true
+  package:
+    name: "{{ item }}"
+    state: present
+  with_items:
+    - pulseaudio
+    - pulseaudio-alsa
