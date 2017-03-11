@@ -5,6 +5,6 @@
     name: "{{ item }}"
     state: present
   with_items:
-    - mesa-libgl
+    - mesa
     - xf86-video-intel
     - libva-intel-driver
