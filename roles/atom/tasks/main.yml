@@ -31,8 +31,6 @@
     - minimap-selection
     - minimap-linter
     - synced-sidebar
-    - linter
-    - linter-eslint
     - Stylus
     - auto-detect-indentation
 
