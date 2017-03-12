@@ -5,7 +5,7 @@
       name: "{{ item }}"
       state: present
     with_items:
-      - nvidia-libgl
+      - nvidia-utils
       - nvidia
       - nvidia-settings
 
