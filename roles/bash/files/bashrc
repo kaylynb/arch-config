@@ -1,3 +1,32 @@
+# Common Bash Defaults
+
+# Prevent overwrite with redirect
+set -o noclobber
+
+# Update windows size automatically
+shopt -s checkwinsize
+
+# Recursive globbing
+shopt -s globstar 2> /dev/null
+
+# !! + Space replaces with command
+bind Space:magic-space
+
+# Case insensitive completion
+bind "set completion-ignore-case on"
+
+# Always show ambiguous matches
+bind "set show-all-if-ambiguous on"
+
+# History stuff
+shopt -s histappend
+shopt -s cmdhist
+HISTSIZE=500000
+HISTFILESIZE=100000
+HISTCONTROL="erasedups:ignoreboth"
+export HISTIGNORE="&:[ ]*:exit:ls:bg:fg:history:clear"
+
+# Now load up all the other configs
 source_directory() {
 	local directory="${1}"
 
