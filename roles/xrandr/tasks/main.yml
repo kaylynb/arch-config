@@ -1,0 +1,12 @@
+---
+- name: install xrahdr package
+  become: true
+  package:
+    name: xorg-xrandr
+    state: present
+
+- name: install xrandr xprofile startup for i3
+  copy:
+    src: xprofile.d/xrandr
+    dest: ~/.xprofile.d/
+    mode: 0600

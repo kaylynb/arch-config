@@ -8,6 +8,7 @@
     - common_base
     - graphics_nvidia
     - common_desktop_X11
+    - xrandr
     - common_applications
     - mpd
     - ncmpcpp

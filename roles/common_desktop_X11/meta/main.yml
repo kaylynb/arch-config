@@ -1,5 +1,6 @@
 ---
 dependencies:
+  - { role: compton }
   - { role: fontconfig }
   - { role: X11 }
   - { role: lightdm }
