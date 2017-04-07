@@ -1,5 +1,6 @@
 [global_config]
   broadcast_default = off
+  dbus = False
   enabled_plugins = ,
   homogeneous_tabbar = False
   scroll_tabbar = False
