@@ -126,7 +126,7 @@ client.urgent #CE4045 #CE4045 #e7d8b1 #DCCD69
 
 font pango:monospace {{ i3_font_size }}
 
-new_window 1pixel
+new_window pixel {{ i3_window_size }}
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)

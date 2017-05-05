@@ -4,6 +4,7 @@ atom_font_size: 14
 terminator_font_size: 22
 gtk_font_size: 14
 i3_font_size: 8
+i3_window_size: 1
 i3status_show_wireless: true
 i3status_show_battery: true
 rofi_font_size: 24
