@@ -1,0 +1,26 @@
+{
+	"editor.fontFamily": "'Monospace'",
+	"editor.fontSize": 18,
+	"editor.insertSpaces": false,
+	"editor.rulers": [80, 120],
+	"editor.minimap.enabled": true,
+	"editor.fontLigatures": true,
+	"editor.renderWhitespace": "all",
+	"editor.renderControlCharacters": true,
+	"editor.renderIndentGuides": true,
+
+	"files.insertFinalNewline": true,
+
+	"keyboard.dispatch": "keyCode",
+
+	"telemetry.enableTelemetry": false,
+	"telemetry.enableCrashReporter": false,
+
+	"git.autofetch": false,
+
+	"window.menuBarVisibility": "toggle",
+	"workbench.iconTheme": "vs-seti",
+	"workbench.colorTheme": "Base16 Eighties Dark",
+
+	"ledger.binary": "/usr/bin/ledger"
+}

@@ -1,0 +1,27 @@
+---
+- name: install vscode package
+  aura:
+    name: visual-studio-code
+    state: present
+  become: true
+
+- name: install vscode config
+  template:
+    src: settings.json
+    dest: ~/.config/Code/User/
+    mode: 0644
+
+- name: install vscode extensions
+  command: "code --install-extension '{{ item }}'"
+  register: install_vscode_extensions_result
+  changed_when: "'already installed' not in install_vscode_extensions_result.stdout"
+  with_items:
+    - EditorConfig.EditorConfig
+    - PeterJausovec.vscode-docker
+    - bsides.Theme-Base16-Eighties
+    - dbaeumer.vscode-eslint
+    - haaaad.ansible
+    - mariosangiorgio.ledger
+    - mauve.terraform
+    - ronnidc.nunjucks
+    - sysoev.language-stylus
