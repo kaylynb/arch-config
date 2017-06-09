@@ -6,5 +6,4 @@ dependencies:
   - { role: google-chrome }
   - { role: sublime-text }
   - { role: syncthing }
-  - { role: atom }
   - { role: vscode }
