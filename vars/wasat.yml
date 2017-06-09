@@ -1,6 +1,7 @@
 ---
 X11_display_size: "286 179"
 atom_font_size: 14
+vscode_font_size: 14
 terminator_font_size: 22
 gtk_font_size: 14
 i3_font_size: 8
