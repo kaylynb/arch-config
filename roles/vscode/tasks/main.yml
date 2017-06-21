@@ -19,9 +19,12 @@
     - EditorConfig.EditorConfig
     - PeterJausovec.vscode-docker
     - bsides.Theme-Base16-Eighties
+    - bungcip.better-toml
     - dbaeumer.vscode-eslint
+    - kalitaalexey.vscode-rust
     - haaaad.ansible
     - mariosangiorgio.ledger
     - mauve.terraform
     - ronnidc.nunjucks
     - sysoev.language-stylus
+    - webfreak.debug
