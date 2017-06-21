@@ -33,6 +33,7 @@
 	},
 	"rust.mode": "rls",
 	"rust.rls": {
-		"useRustfmt": false
+		"useRustfmt": false,
+		"revealOutputChannelOn": "never"
 	}
 }
