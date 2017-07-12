@@ -4,6 +4,7 @@
 	"editor.insertSpaces": false,
 	"editor.rulers": [80, 120],
 	"editor.minimap.enabled": true,
+	"editor.minimap.showSlider": "always",
 	"editor.fontLigatures": true,
 	"editor.renderWhitespace": "all",
 	"editor.renderControlCharacters": true,
@@ -22,8 +23,10 @@
 	"git.autofetch": false,
 
 	"window.menuBarVisibility": "toggle",
+
 	"workbench.iconTheme": "vs-seti",
 	"workbench.colorTheme": "Base16 Eighties Dark",
+	"workbench.startupEditor": "none",
 
 	"update.channel": "none",
 	
