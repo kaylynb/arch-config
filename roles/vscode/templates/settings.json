@@ -1,5 +1,5 @@
 {
-	"editor.fontFamily": "'Monospace'",
+	"editor.fontFamily": "'Fira Code'",
 	"editor.fontSize": {{ vscode_font_size }},
 	"editor.insertSpaces": false,
 	"editor.rulers": [80, 120],
