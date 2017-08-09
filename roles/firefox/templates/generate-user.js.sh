@@ -74,4 +74,8 @@ user_pref("browser.tabs.warnOnClose", false);
 
 // Disable middle mouse from opening pasted text
 user_pref("middlemouse.contentLoadURL", false);
+
+// Use multiple process windows
+user_pref("dom.ipc.processCount", 7);
+
 EOF
