@@ -26,6 +26,9 @@
 
 	"workbench.iconTheme": "vs-seti",
 	"workbench.colorTheme": "Base16 Eighties Dark",
+	"workbench.colorCustomizations": {
+		"tab.activeBorder": "#B8B8B8"
+	},
 	"workbench.startupEditor": "none",
 
 	"update.channel": "none",
