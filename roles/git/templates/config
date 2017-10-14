@@ -1,6 +1,6 @@
 [user]
 	email = {{ email }}
-	name = {{ name }}
+	name = {{ full_name }}
 	signingkey = {{ gpg_signing_key_hash }}
 [core]
 	editor = {{ git_editor }}
