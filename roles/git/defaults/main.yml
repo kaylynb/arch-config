@@ -1,2 +1,2 @@
 ---
-git_editor: subl3 -n -w
+git_editor: code -n -w
