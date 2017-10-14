@@ -7,3 +7,4 @@ dependencies:
   # - { role: sublime-text }
   - { role: syncthing }
   - { role: vscode }
+  - { role: pass }
