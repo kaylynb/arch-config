@@ -17,5 +17,5 @@
 
   become: true
 
-- include: keyboard.yml
-- include: mouse.yml
+- import_tasks: keyboard.yml
+- import_tasks: mouse.yml

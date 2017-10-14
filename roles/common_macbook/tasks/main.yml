@@ -1,2 +1,2 @@
 ---
-- include: disable-intel-hdmi-sound.yml
+- import_tasks: disable-intel-hdmi-sound.yml
