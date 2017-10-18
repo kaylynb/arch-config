@@ -20,3 +20,5 @@ user_pref("middlemouse.contentLoadURL", false);
 
 // Use multiple process windows
 user_pref("dom.ipc.processCount", 7);
+
+user_pref("extensions.pocket.enabled", false);
