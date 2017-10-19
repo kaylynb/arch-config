@@ -17,7 +17,6 @@
   changed_when: "'already installed' not in install_vscode_extensions_result.stdout"
   with_items:
     - EditorConfig.EditorConfig
-    - PeterJausovec.vscode-docker
     - bsides.Theme-Base16-Eighties
     - bungcip.better-toml
     - dbaeumer.vscode-eslint
