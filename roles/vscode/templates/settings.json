@@ -41,5 +41,8 @@
 	"rust.rls": {
 		"useRustfmt": false,
 		"revealOutputChannelOn": "never"
+	},
+	"[csharp]": {
+		"editor.codeLens": false
 	}
 }
