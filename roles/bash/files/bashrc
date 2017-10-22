@@ -18,6 +18,9 @@ bind "set completion-ignore-case on"
 # Always show ambiguous matches
 bind "set show-all-if-ambiguous on"
 
+# Allow Shift Tab to complete items
+bind '"\e[Z": menu-complete'
+
 # History stuff
 shopt -s histappend
 shopt -s cmdhist
