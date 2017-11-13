@@ -6,7 +6,10 @@
       state: present
     with_items:
       - xorg-server
-      - xorg-server-utils
+      - xorg-xbacklight
+      - xorg-xinput
+      - xorg-xmodmap
+      - xorg-xrandr
 
   - name: install X11 display size configuration
     template:

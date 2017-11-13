@@ -7,10 +7,7 @@
     with_items:
       - i3-wm
       - i3status
-
-  - name: install ttf-font-awesome
-    aura:
-      name: ttf-font-awesome
+      - ttf-font-awesome
 
   become: true
 
