@@ -44,5 +44,6 @@
 	},
 	"[csharp]": {
 		"editor.codeLens": false
-	}
+	},
+	"window.zoomLevel": {{ vscode_window_zoomlevel }}
 }

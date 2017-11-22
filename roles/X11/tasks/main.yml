@@ -10,6 +10,7 @@
       - xorg-xinput
       - xorg-xmodmap
       - xorg-xrandr
+      - xorg-xrdb
 
   - name: install X11 display size configuration
     template:
@@ -22,3 +23,15 @@
 
 - import_tasks: keyboard.yml
 - import_tasks: mouse.yml
+
+- name: install Xresources
+  template:
+    src: Xresources
+    dest: ~/.Xresources
+    mode: 0644
+
+- name: install xrdb init
+  copy:
+    src: xprofile.d/xrdb
+    dest: ~/.xprofile.d/xrdb
+    mode: 0600
