@@ -22,8 +22,8 @@ order += "volume master"
 order += "tztime local"
 
 volume master {
-	format = " %volume"
-	format_muted = " %volume"
+	format = "VOL %volume"
+	format_muted = "(VOL) %volume"
 }
 
 wireless _first_ {
