@@ -10,6 +10,6 @@
 - name: install syncthing service
   systemd:
     name: syncthing
-    user: true
+    scope: user
     state: started
     enabled: true

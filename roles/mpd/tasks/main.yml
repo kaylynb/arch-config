@@ -67,6 +67,6 @@
 - name: install mpd service
   systemd:
     name: mpd
-    user: true
+    scope: user
     state: started
     enabled: true

@@ -22,4 +22,12 @@
       name: tlp-sleep
       enabled: true
 
+  - name: mask systemd-rfkill service
+    service:
+      name: "{{ item }}"
+      masked: true
+    with_items:
+      - systemd-rfkill
+      - systemd-rfkill.socket
+
   become: true

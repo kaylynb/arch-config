@@ -26,7 +26,7 @@
   systemd:
     name: cryfs@*
     state: stopped
-    user: true
+    scope: user
   # Must exist is missing or something
   # See: https://github.com/ansible/ansible/issues/16134
   ignore_errors: yes
