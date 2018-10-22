@@ -88,8 +88,11 @@ bindsym $mod+underscore [con_mark="scratch1"] scratchpad show
 bindsym $mod+Shift+plus mark "scratch2", move scratchpad
 bindsym $mod+plus [con_mark="scratch2"] scratchpad show
 
-# reload the configuration file
-bindsym $mod+Shift+c reload
+{% if i3_center_float is defined %}
+# float and center window
+bindsym $mod+Shift+c bindsym $mod+Shift+c floating toggle; resize set {{ i3_center_float }}; move position center
+{% endif %}
+
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+p restart
 
@@ -125,8 +128,8 @@ client.unfocused #222133 #222133 #AAAAAA #A074C4
 client.urgent #CE4045 #CE4045 #e7d8b1 #DCCD69
 
 font pango:monospace {{ i3_font_size }}
-
 new_window pixel {{ i3_window_size }}
+hide_edge_borders smart
 
 # Force pinentry to be floating
 for_window [class="Pinentry" instance="pinentry"] floating enable
