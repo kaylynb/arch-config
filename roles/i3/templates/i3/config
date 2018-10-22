@@ -93,8 +93,8 @@ bindsym $mod+plus [con_mark="scratch2"] scratchpad show
 bindsym $mod+Shift+c bindsym $mod+Shift+c floating toggle; resize set {{ i3_center_float }}; move position center
 {% endif %}
 
-# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
-bindsym $mod+Shift+p restart
+# reload i3 config
+bindsym $mod+Shift+p reload
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -122,10 +122,10 @@ mode "resize" {
 
 bindsym $mod+p mode "resize"
 
-client.focused #664477 #664477 #cccccc #e7d8b1
-client.focused_inactive #e7d8b1 #e7d8b1 #181715 #A074C4
-client.unfocused #222133 #222133 #AAAAAA #A074C4
-client.urgent #CE4045 #CE4045 #e7d8b1 #DCCD69
+client.focused #664477 #664477 #cccccc #e7d8b1 #664477
+client.focused_inactive #e7d8b1 #e7d8b1 #181715 #A074C4 #e7d8b1
+client.unfocused #222133 #222133 #AAAAAA #A074C4 #222133
+client.urgent #CE4045 #CE4045 #e7d8b1 #DCCD69 #CE4045
 
 font pango:monospace {{ i3_font_size }}
 new_window pixel {{ i3_window_size }}
