@@ -13,13 +13,6 @@
       - ttf-ubuntu-font-family
       - ttf-dejavu
 
-  - name: install aura font packages
-    aura:
-      name: "{{ item }}"
-      state: present
-    with_items:
-      - otf-fira-code
-
   - name: install user font config
     copy:
       src: 91-user-config.conf

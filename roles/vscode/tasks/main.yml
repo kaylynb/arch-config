@@ -17,7 +17,7 @@
   changed_when: "'already installed' not in install_vscode_extensions_result.stdout"
   with_items:
     - EditorConfig.EditorConfig
-    - bsides.Theme-Base16-Eighties
+    - tomphilbin.gruvbox-themes
     - bungcip.better-toml
     - dbaeumer.vscode-eslint
     - kalitaalexey.vscode-rust
