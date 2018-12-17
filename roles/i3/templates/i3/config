@@ -8,10 +8,10 @@ bindsym $mod+space exec "rofi -modi 'run,window' -show run"
 bindsym $mod+Ctrl+space exec "rofi -modi 'run,window' -show window"
 
 # change focus
-bindsym $mod+n focus left
-bindsym $mod+e focus down
-bindsym $mod+i focus up
-bindsym $mod+o focus right
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
@@ -20,10 +20,10 @@ bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
 # move focused window
-bindsym $mod+Shift+n move left
-bindsym $mod+Shift+e move down
-bindsym $mod+Shift+i move up
-bindsym $mod+Shift+o move right
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Shift+Left move left
@@ -32,7 +32,7 @@ bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
 # split in horizontal orientation
-bindsym $mod+h split h
+bindsym $mod+b split h
 
 # split in vertical orientation
 bindsym $mod+v split v
@@ -101,13 +101,13 @@ mode "resize" {
 	# These bindings trigger as soon as you enter the resize mode
 
 	# Pressing left will shrink the window’s width.
-	# Pressing right will grow the window’s width.
-	# Pressing up will shrink the window’s height.
 	# Pressing down will grow the window’s height.
-	bindsym n resize shrink width 10 px or 10 ppt
-	bindsym e resize grow height 10 px or 10 ppt
-	bindsym i resize shrink height 10 px or 10 ppt
-	bindsym o resize grow width 10 px or 10 ppt
+	# Pressing up will shrink the window’s height.
+	# Pressing right will grow the window’s width.
+	bindsym h resize shrink width 10 px or 10 ppt
+	bindsym j resize grow height 10 px or 10 ppt
+	bindsym k resize shrink height 10 px or 10 ppt
+	bindsym l resize grow width 10 px or 10 ppt
 
 	# same bindings, but for the arrow keys
 	bindsym Left resize shrink width 10 px or 10 ppt
