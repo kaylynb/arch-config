@@ -18,3 +18,9 @@
 
 "kbdlight down"
   XF86KbdBrightnessDown
+
+"togglecapsctrl"
+  Shift + Shift_R
+
+"togglecapsctrl"
+  Shift + Shift_L

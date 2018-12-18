@@ -1,0 +1,7 @@
+#!/bin/bash
+
+if setxkbmap -query | grep -q 'ctrl:nocaps'; then
+	setxkbmap us -variant {{ keyboard_layout }} -option ""
+else
+	setxkbmap us -variant {{ keyboard_layout }} -option ctrl:nocaps
+fi

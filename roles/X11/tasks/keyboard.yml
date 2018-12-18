@@ -6,9 +6,14 @@
     failed_when: current_X11_keyboard_variant.rc == 2
     changed_when: false
 
-  # TODO: This may not work for non-colemak or other variant keyboard types
   - name: set X11 keymap settings
     command: "/usr/bin/localectl --no-convert set-x11-keymap us pc105 {{ keyboard_layout }}"
     when: not ansible_check_mode and current_X11_keyboard_variant.stdout != keyboard_layout
+
+  - name: install togglecapsctrl script
+    template:
+      src: togglecapsctrl
+      dest: /usr/local/bin/
+      mode: 0755
 
   become: true

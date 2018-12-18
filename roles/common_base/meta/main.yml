@@ -9,3 +9,4 @@ dependencies:
   - { role: git }
   - { role: alsa }
   - { role: pulseaudio }
+  - { role: xbindkeys }

@@ -5,11 +5,6 @@
       name: xbindkeys
       state: present
 
-  - name: install kbdlight package
-    aura:
-      name: kbdlight
-      state: present
-
   become: true
 
 - name: install user xbindkeys configuration
