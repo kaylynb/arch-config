@@ -31,7 +31,7 @@ export HISTIGNORE="&:[ ]*:exit:ls:bg:fg:history:clear"
 
 error_prompt() {
 	last_exit=$?
-	PS1="\[\033[38;5;6m\][\u@\h] \[\033[38;5;5m\]\w\[$(tput sgr0)\]\n"
+	PS1="\[\033[38;5;3m\]\t\[$(tput sgr0)\]\[\033[38;5;6m\] [\u@\h] \[\033[38;5;5m\]\w\[$(tput sgr0)\]\n"
 
 	if [ $last_exit -ne 0 ]; then
 		PS1+="\[\033[38;5;1m\]\$?\[$(tput sgr0)\] "
