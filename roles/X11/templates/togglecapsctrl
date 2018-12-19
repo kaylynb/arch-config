@@ -2,6 +2,8 @@
 
 if setxkbmap -query | grep -q 'ctrl:nocaps'; then
 	setxkbmap us -variant {{ keyboard_layout }} -option ""
+	pkill -x xcape || null
 else
 	setxkbmap us -variant {{ keyboard_layout }} -option ctrl:nocaps
+	xcape
 fi

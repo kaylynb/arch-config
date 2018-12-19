@@ -10,6 +10,11 @@
     command: "/usr/bin/localectl --no-convert set-x11-keymap us pc105 {{ keyboard_layout }}"
     when: not ansible_check_mode and current_X11_keyboard_variant.stdout != keyboard_layout
 
+  - name: install xcape
+    package:
+        name: xcape
+        state: present
+
   - name: install togglecapsctrl script
     template:
       src: togglecapsctrl
