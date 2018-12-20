@@ -1,0 +1,6 @@
+---
+- name: install neovim package
+  package:
+    name: neovim
+    state: present
+  become: true

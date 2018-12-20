@@ -8,3 +8,4 @@ dependencies:
   - { role: syncthing }
   - { role: vscode }
   - { role: pass }
+  - { role: neovim }
