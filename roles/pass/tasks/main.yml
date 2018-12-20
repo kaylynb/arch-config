@@ -7,8 +7,8 @@
 
 - name: install pass env vars
   template:
-    src: bashrc.d/pass
-    dest: ~/.bashrc.d/
+    src: bashrc.d/PASSWORD_STORE_
+    dest: ~/.bashrc.d/environment/
     mode: 0600
 
 - name: install pass directory
