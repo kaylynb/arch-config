@@ -17,3 +17,15 @@
     src: bashrc.d/aliases/vim
     dest: ~/.bashrc.d/aliases/
     mode: 0600
+
+- name: install minpac plugin
+  git:
+    repo: https://github.com/k-takata/minpac.git
+    dest: ~/.config/nvim/pack/minpac/opt/minpac
+    update: no
+
+- name: install neovim config
+  copy:
+    src: init.vim
+    dest: ~/.config/nvim/
+    mode: 0600
