@@ -9,6 +9,8 @@ function! PackInit() abort
 	call minpac#add('itchyny/lightline.vim')
 	call minpac#add('editorconfig/editorconfig-vim')
 	call minpac#add('tpope/vim-surround')
+	call minpac#add('iloginow/vim-stylus')
+	call minpac#add('scrooloose/nerdtree')
 endfunction
 
 command! PackUpdate	call PackInit() | call minpac#update('', {'do': 'call minpac#status()'})
@@ -39,5 +41,8 @@ set smartcase
 let g:netrw_banner=0
 let g:netrw_liststyle=3
 let g:netrw_keepdir=0
+
+let g:NERDTreeHijackNetrw=0
+let g:NERDTreeMinimalUI=1
 
 nnoremap <C-p> :<C-u>FZF<CR>
