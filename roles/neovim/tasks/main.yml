@@ -1,6 +1,13 @@
 ---
-- name: install neovim package
-  package:
-    name: neovim
-    state: present
+- block:
+  - name: install neovim package
+    package:
+      name: neovim
+      state: present
+
+  - name: install editorconfig-core-c package
+    package:
+        name: editorconfig-core-c
+        state: present
+
   become: true
