@@ -1,5 +1,5 @@
 ---
-- name: install xrahdr package
+- name: install xrandr package
   become: true
   package:
     name: xorg-xrandr
