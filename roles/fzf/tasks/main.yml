@@ -10,3 +10,9 @@
     src: bashrc.d/fzf
     dest: ~/.bashrc.d/
     mode: 0600
+
+- name: install fzf environment variables
+  copy:
+    src: bashrc.d/environment/FZF_DEFAULT_COMMAND
+    dest: ~/.bashrc.d/environment/
+    mode: 0600

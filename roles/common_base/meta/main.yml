@@ -5,6 +5,7 @@ dependencies:
   - { role: systemd-timesyncd }
   - { role: yubikey }
   - { role: bash }
+  - { role: fzf }
   - { role: gpg }
   - { role: git }
   - { role: alsa }
