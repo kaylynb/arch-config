@@ -11,3 +11,9 @@
         state: present
 
   become: true
+
+- name: install vim alias
+  copy:
+    src: bashrc.d/aliases/vim
+    dest: ~/.bashrc.d/aliases/
+    mode: 0600

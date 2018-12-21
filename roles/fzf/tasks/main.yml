@@ -4,3 +4,9 @@
     name: fzf
     state: present
   become: true
+
+- name: install fzf bash completions and shortcuts
+  copy:
+    src: bashrc.d/fzf
+    dest: ~/.bashrc.d/
+    mode: 0600

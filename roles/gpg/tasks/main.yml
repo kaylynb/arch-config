@@ -37,6 +37,6 @@
 
 - name: install gpg bash TTY var
   copy:
-    src: bashrc.d/GPG_TTY
+    src: bashrc.d/environment/GPG_TTY
     dest: ~/.bashrc.d/environment/
     mode: 0600
