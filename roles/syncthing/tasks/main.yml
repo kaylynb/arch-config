@@ -1,11 +1,9 @@
 ---
-- name: install syncthing packages
+- name: install syncthing package
   become: true
   package:
-    name: "{{ item }}"
-  with_items:
-    - syncthing
-    - syncthing-inotify
+    name: syncthing
+    state: present
 
 - name: install syncthing service
   systemd:

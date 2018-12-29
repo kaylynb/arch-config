@@ -1,7 +1,5 @@
 ---
 dependencies:
-  - { role: mirage }
-  - { role: evince }
   - { role: firefox }
   - { role: google-chrome }
   - { role: syncthing }

@@ -5,13 +5,19 @@
     name: rofi
     state: present
 
-- name: install user rofi configuration directory
+- name: install rofi configuration directory
   file:
     path: ~/.config/rofi
     state: directory
     mode: 0700
 
-- name: install user rofi configuration
+- name: install rofi theme
+  copy:
+    src: purple.rasi
+    dest: ~/.config/rofi/
+    mode: 0600
+
+- name: install rofi configuration
   template:
     src: config
     dest: ~/.config/rofi/
