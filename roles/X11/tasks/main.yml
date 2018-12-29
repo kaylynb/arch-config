@@ -12,12 +12,6 @@
       - xorg-xrandr
       - xorg-xrdb
 
-  - name: install xorg configuration directory
-    file:
-      path: /etc/X11/xorg.conf.d
-      state: directory
-      mode: 0755
-
   - name: install X11 display size configuration
     template:
       src: 90-monitor-scale.conf

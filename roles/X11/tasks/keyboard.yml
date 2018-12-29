@@ -1,14 +1,12 @@
 ---
 - block:
-  - name: get X11 keymap settings
-    shell: "/usr/bin/localectl status | grep -oP '(?<=X11 Variant: ).*'"
-    register: current_X11_keyboard_variant
-    failed_when: current_X11_keyboard_variant.rc == 2
-    changed_when: false
-
-  - name: set X11 keymap settings
-    command: "/usr/bin/localectl --no-convert set-x11-keymap us pc105 {{ keyboard_layout }}"
-    when: not ansible_check_mode and current_X11_keyboard_variant.stdout != keyboard_layout
+  # Install file directly instead of using localectl as
+  # it checks for X11 running now, which will mess up initial config
+  - name: install keyboard layout config
+    template:
+      src: 00-keyboard.conf
+      dest: /etc/X11/xorg.conf.d/
+      mode: 0644
 
   - name: install xcape
     package:
