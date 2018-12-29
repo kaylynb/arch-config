@@ -2,24 +2,7 @@
 - block:
   - name: install nvidia graphics packages
     package:
-      name: "{{ item }}"
+      name: nvidia
       state: present
-    with_items:
-      - nvidia-utils
-      - nvidia
-      - nvidia-settings
-
-  # TODO: Somehow do this in X11 config only if this role is used?
-  - name: install xorg configuration directory
-    file:
-      path: /etc/X11/xorg.conf.d
-      state: directory
-      mode: 0755
-
-  - name: install xorg configuration file
-    copy:
-      src: 20-nvidia.conf
-      dest: /etc/X11/xorg.conf.d/
-      mode: 0644
 
   become: true
