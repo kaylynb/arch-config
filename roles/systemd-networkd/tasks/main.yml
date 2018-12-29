@@ -1,0 +1,17 @@
+---
+- block:
+  - name: install wired network configuration
+    copy:
+      src: 20-wired.network
+      dest: /etc/systemd/network/
+      mode: 0644
+    notify:
+      - restart systemd-networkd service
+
+  - name: install systemd-networkd service
+    service:
+      name: systemd-networkd
+      state: started
+      enabled: true
+
+  become: yes
