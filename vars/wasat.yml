@@ -3,7 +3,7 @@ X11_display_size: "286 179"
 X11_cursor_size: 48
 atom_font_size: 14
 vscode_font_size: 16
-vscode_window_zoomlevel: -1
+vscode_window_zoomlevel: 3
 terminator_font_size: 22
 gtk_font_size: 14
 i3_font_size: 8
