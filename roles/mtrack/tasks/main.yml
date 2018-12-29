@@ -1,8 +1,7 @@
 - block:
   - name: install mtrack package
-    aura:
-      name: xf86-input-mtrack
-      state: present
+    aur:
+      name: xf86-input-mtrack-git
 
   - name: install mtrack configuration
     copy:

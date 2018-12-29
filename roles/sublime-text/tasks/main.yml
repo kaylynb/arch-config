@@ -1,9 +1,8 @@
 ---
 - name: install sublime text package
-  become: true
-  aura:
+  aur:
     name: sublime-text-dev
-    state: present
+  become: true
 
 - name: install user sublime text directories
   file:

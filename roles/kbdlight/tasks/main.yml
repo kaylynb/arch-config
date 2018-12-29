@@ -1,8 +1,5 @@
 ---
-- block:
-  - name: install kbdlight package
-    aura:
-      name: kbdlight
-      state: present
-
+- name: install kbdlight package
+  aur:
+    name: kbdlight
   become: true

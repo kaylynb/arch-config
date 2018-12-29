@@ -1,8 +1,7 @@
 ---
 - name: install google-chrome package
-  aura:
+  aur:
     name: google-chrome
-    state: present
   become: true
 
 - name: install google-chrome hidpi flags

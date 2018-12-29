@@ -1,8 +1,7 @@
 ---
 - name: install atom package
-  aura:
+  aur:
     name: atom-editor-bin
-    state: present
   become: true
 
 - name: install apm packages

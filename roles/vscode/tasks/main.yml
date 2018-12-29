@@ -1,8 +1,7 @@
 ---
 - name: install vscode package
-  aura:
-    name: visual-studio-code
-    state: present
+  aur:
+    name: visual-studio-code-bin
   become: true
 
 - name: install vscode config

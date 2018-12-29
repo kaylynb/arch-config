@@ -29,6 +29,7 @@
 		"tab.activeBorder": "#B8B8B8"
 	},
 	"workbench.startupEditor": "none",
+	"workbench.settings.editor": "json",
 
 	"update.channel": "none",
 	
@@ -44,5 +45,6 @@
 	"[csharp]": {
 		"editor.codeLens": false
 	},
-	"window.zoomLevel": {{ vscode_window_zoomlevel }}
+	"window.zoomLevel": {{ vscode_window_zoomlevel }},
+	"window.titleBarStyle": "native"
 }

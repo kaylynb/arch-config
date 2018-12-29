@@ -1,7 +1,7 @@
 ---
 - block:
   - name: install cryfs packages
-    aura:
+    aur:
       name: cryfs
 
   - name: install cryfs exec wrapper script
