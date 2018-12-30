@@ -36,6 +36,7 @@ set number
 set noshowmode
 set cursorline
 set incsearch
+set ignorecase
 set smartcase
 
 let g:netrw_banner=0
