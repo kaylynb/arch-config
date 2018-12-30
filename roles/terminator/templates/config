@@ -2,10 +2,58 @@
   broadcast_default = off
   dbus = False
   enabled_plugins = ,
+  extra_styling = False
   homogeneous_tabbar = False
-  scroll_tabbar = False
+  scroll_tabbar = True
   tab_position = hidden
 [keybindings]
+  broadcast_all = None
+  broadcast_group = None
+  broadcast_off = None
+  close_term = None
+  close_window = None
+  cycle_next = None
+  cycle_prev = None
+  edit_tab_title = None
+  edit_terminal_title = None
+  full_screen = None
+  go_down = None
+  go_left = None
+  go_next = None
+  go_prev = None
+  go_right = None
+  go_up = None
+  group_all = None
+  group_tab = None
+  help = None
+  hide_window = None
+  insert_number = None
+  insert_padded = None
+  layout_launcher = None
+  move_tab_left = None
+  move_tab_right = None
+  new_tab = None
+  new_terminator = None
+  new_window = None
+  next_tab = None
+  prev_tab = None
+  reset = None
+  reset_clear = None
+  resize_down = None
+  resize_left = None
+  resize_right = None
+  resize_up = None
+  rotate_ccw = None
+  scaled_zoom = None
+  split_horiz = None
+  split_vert = None
+  toggle_scrollbar = None
+  toggle_zoom = None
+  ungroup_all = None
+  ungroup_tab = None
+  zoom_in = None
+  zoom_normal = None
+  zoom_out = None
 [layouts]
   [[default]]
     [[[child1]]]
@@ -17,15 +65,13 @@
 [plugins]
 [profiles]
   [[default]]
+    background_color = "#282828"
+    cursor_color = "#7c6f64"
     font = Mono {{ terminator_font_size }}
-    background_image = None
+    foreground_color = "#ebdbb2"
     icon_bell = False
+    palette = "#282828:#cc241d:#98971a:#d79921:#458588:#b16286:#689d6a:#a89984:#928374:#fb4934:#b8bb26:#fabd2f:#83a598:#d3869b:#8ec07c:#ebdbb2"
     scrollback_infinite = True
     scrollbar_position = hidden
     show_titlebar = False
     use_system_font = False
-    # gruvbox-dark
-    background_color = "#282828"
-    cursor_color = "#7c6f64"
-    foreground_color = "#ebdbb2"
-    palette = "#181818:#cc241d:#98971a:#d79921:#458588:#b16286:#689d6a:#ebdbb2:#928374:#fb4934:#b8bb26:#fabd2f:#83a598:#d3869b:#8ec07c:#ebdbb2"
