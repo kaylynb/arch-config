@@ -1,6 +1,5 @@
 dependencies:
   - { role: kbdlight }
+  - { role: libinput-touchpad }
   - { role: NetworkManager }
   - { role: tlp }
-  - { role: mtrack }
-  - { role: dispad }

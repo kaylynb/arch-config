@@ -1,0 +1,12 @@
+- block:
+  - name: install xf86-input-libinput package
+    aur:
+      name: xf86-input-libinput
+
+  - name: install libinput touchpad configuration
+    copy:
+      src: 02-libinput-touchpad.conf
+      dest: /etc/X11/xorg.conf.d/
+      mode: 0644
+
+  become: true
