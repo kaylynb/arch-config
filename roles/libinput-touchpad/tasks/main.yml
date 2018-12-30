@@ -1,6 +1,7 @@
+---
 - block:
   - name: install xf86-input-libinput package
-    aur:
+    package:
       name: xf86-input-libinput
 
   - name: install libinput touchpad configuration
@@ -9,4 +10,31 @@
       dest: /etc/X11/xorg.conf.d/
       mode: 0644
 
+  - name: add user to input group
+    user:
+      name: "{{ lookup('env', 'USER') }}"
+      groups: input
+      append: true
+
+  - name: install libinput-gestures package
+    aur:
+      name: libinput-gestures
+
+  - name: install libinput-gestures systemd user unit
+    copy:
+      src: libinput-gestures.service
+      dest: /etc/systemd/user/
+      mode: 0644
+    notify:
+      - reload systemd user daemon
+
   become: true
+
+- meta: flush_handlers
+
+- name: install libinput-gestures service
+  systemd:
+    name: libinput-gestures
+    scope: user
+    state: started
+    enabled: true
