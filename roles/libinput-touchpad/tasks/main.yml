@@ -20,21 +20,10 @@
     aur:
       name: libinput-gestures
 
-  - name: install libinput-gestures systemd user unit
-    copy:
-      src: libinput-gestures.service
-      dest: /etc/systemd/user/
-      mode: 0644
-    notify:
-      - reload systemd user daemon
-
   become: true
 
-- meta: flush_handlers
-
-- name: install libinput-gestures service
-  systemd:
-    name: libinput-gestures
-    scope: user
-    state: started
-    enabled: true
+- name: install user libiput-gestures xprofile start script
+  copy:
+    src: xprofile.d/libinput-gestures
+    dest: ~/.xprofile.d/
+    mode: 0600

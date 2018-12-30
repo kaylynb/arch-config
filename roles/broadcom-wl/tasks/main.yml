@@ -1,0 +1,5 @@
+---
+- name: install broadcom-wl package
+  package:
+    name: broadcom-wl-dkms
+    state: present

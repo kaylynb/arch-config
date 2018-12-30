@@ -1,9 +1,0 @@
-[Unit]
-Description=Translates trackpad gestures
-
-[Service]
-ExecStart=/usr/bin/libinput-gestures
-Restart=always
-
-[Install]
-WantedBy=graphical.target
