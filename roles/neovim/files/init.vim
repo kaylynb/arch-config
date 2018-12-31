@@ -32,6 +32,7 @@ set tabstop=4 softtabstop=4 shiftwidth=4
 
 map <space> :
 
+set title
 set number
 set noshowmode
 set cursorline
