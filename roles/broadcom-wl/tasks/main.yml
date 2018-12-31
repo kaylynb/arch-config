@@ -3,3 +3,4 @@
   package:
     name: broadcom-wl-dkms
     state: present
+    become: true
