@@ -17,6 +17,14 @@
   become: yes
 
 - block:
+  - name: install wireless network configuration
+    copy:
+      src: 25-wireless.network
+      dest: /etc/systemd/network/
+      mode: 0644
+    notify:
+      - restart systemd-networkd service
+
   - name: install wpa_supplicant package
     package:
       name: wpa_supplicant
