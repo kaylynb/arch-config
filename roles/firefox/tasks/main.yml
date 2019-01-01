@@ -10,18 +10,18 @@
     path: ~/.mozilla/firefox/profile
     state: directory
     recurse: true
-    mode: 0700
+    mode: 0755
 
 - name: install user firefox profiles configuration
   copy:
     src: profiles.ini
     dest: ~/.mozilla/firefox/
-    mode: 0644
+    mode: 0444
 
 - name: install user.js file
   template:
     src: user.js
     dest: ~/.mozilla/firefox/profile/user.js
-    mode: 0700
+    mode: 0755
   notify:
     - remove firefox prefs file

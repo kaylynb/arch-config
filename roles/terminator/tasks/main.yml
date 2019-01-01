@@ -9,10 +9,10 @@
   file:
     path: ~/.config/terminator
     state: directory
-    mode: 0700
+    mode: 0755
 
 - name: install user terminator configuration
   template:
     src: config
     dest: ~/.config/terminator/
-    mode: 0600
+    mode: 0444

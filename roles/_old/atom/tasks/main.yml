@@ -42,10 +42,10 @@
   template:
     src: config.cson
     dest: ~/.atom/
-    mode: 0644
+    mode: 0444
 
 - name: install atom styles
   copy:
     src: styles.less
     dest: ~/.atom/
-    mode: 0644
+    mode: 0444

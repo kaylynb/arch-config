@@ -9,4 +9,4 @@
   copy:
     src: xprofile.d/compton
     dest: ~/.xprofile.d/
-    mode: 0600
+    mode: 0444

@@ -8,7 +8,7 @@
   template:
     src: settings.json
     dest: ~/.config/Code/User/
-    mode: 0644
+    mode: 0444
 
 - name: install vscode extensions
   command: "code --install-extension '{{ item }}'"

@@ -8,5 +8,5 @@
   copy:
     src: xprofile.d/google-chrome-hidpi-flags
     dest: ~/.xprofile.d/
-    mode: 0600
+    mode: 0444
   when: ansible_hostname == "wasat"

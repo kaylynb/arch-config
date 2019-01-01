@@ -15,7 +15,7 @@
   file:
     path: "~/.config/{{ item }}"
     state: directory
-    mode: 0700
+    mode: 0755
   with_items:
     - i3
     - i3status
@@ -24,7 +24,7 @@
   template:
     src: "{{ item }}"
     dest: "~/.config/{{ item }}"
-    mode: 0600
+    mode: 0444
   with_items:
     - i3/config
     - i3status/config
@@ -33,7 +33,7 @@
   copy:
     src: "{{ item }}"
     dest: "~/.config/i3/{{ item }}"
-    mode: 0700
+    mode: 0444
   with_items:
     - i3statusmem.sh
     - mem.sh

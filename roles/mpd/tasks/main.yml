@@ -4,7 +4,7 @@
     copy:
       src: mnt-alhena-music.mount
       dest: /etc/systemd/system/
-      mode: 0755
+      mode: 0644
     notify:
       - reload systemd daemon
 
@@ -29,20 +29,20 @@
     path: ~/.config/mpd
     state: directory
     recurse: true
-    mode: 0700
+    mode: 0755
 
 - name: install mpd playlist directory
   file:
     path: ~/.config/mpd/playlists
     state: directory
     recurse: true
-    mode: 0700
+    mode: 0755
 
 - name: install mpd config file
   copy:
     src: mpd.conf
     dest: ~/.config/mpd/
-    mode: 0700
+    mode: 0755
   notify:
     - restart mpd service
 

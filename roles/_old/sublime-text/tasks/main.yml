@@ -8,7 +8,7 @@
   file:
     path: "~/.config/sublime-text-3/{{ item }}"
     state: directory
-    mode: 0700
+    mode: 0755
   with_items:
     - Packages
     - Packages/User
@@ -18,16 +18,16 @@
   template:
     src: Preferences.sublime-settings
     dest: ~/.config/sublime-text-3/Packages/User/
-    mode: 0600
+    mode: 0444
 
 - name: install user sublime text package control
   get_url:
     url: https://packagecontrol.io/Package Control.sublime-package
     dest: ~/.config/sublime-text-3/Installed Packages/Package Control.sublime-package
-    mode: 0600
+    mode: 0644
 
 - name: install user sublime text package control settings
   copy:
     src: "Package Control.sublime-settings"
     dest: ~/.config/sublime-text-3/Packages/User/
-    mode: 0600
+    mode: 0444

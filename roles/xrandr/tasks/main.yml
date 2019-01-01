@@ -9,4 +9,4 @@
   copy:
     src: xprofile.d/xrandr
     dest: ~/.xprofile.d/
-    mode: 0600
+    mode: 0444

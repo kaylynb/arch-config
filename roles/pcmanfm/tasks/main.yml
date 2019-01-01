@@ -10,16 +10,16 @@
     path: ~/.config/pcmanfm/default
     state: directory
     recurse: true
-    mode: 0700
+    mode: 0755
 
 - name: install user pcmanfm configuration
   copy:
     src: pcmanfm.conf
     dest: ~/.config/pcmanfm/default/
-    mode: 0700
+    mode: 0755
 
 - name: install user pcmanfm xprofile daemon start
   copy:
     src: xprofile.d/pcmanfm
     dest: ~/.xprofile.d/
-    mode: 0600
+    mode: 0444

@@ -9,7 +9,7 @@
   template:
     src: bashrc.d/environment/PASSWORD_STORE_
     dest: ~/.bashrc.d/environment/
-    mode: 0600
+    mode: 0444
 
 - name: install pass directory
   file:

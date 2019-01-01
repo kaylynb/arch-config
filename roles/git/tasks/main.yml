@@ -9,10 +9,10 @@
   file:
     path: ~/.config/git
     state: directory
-    mode: 0700
+    mode: 0755
 
 - name: install user git configuration
   template:
     src: config
     dest: ~/.config/git/
-    mode: 0600
+    mode: 0444

@@ -16,7 +16,7 @@
   copy:
     src: bashrc.d/aliases/vim
     dest: ~/.bashrc.d/aliases/
-    mode: 0600
+    mode: 0444
 
 - name: install minpac plugin
   git:
@@ -28,4 +28,4 @@
   copy:
     src: init.vim
     dest: ~/.config/nvim/
-    mode: 0600
+    mode: 0444

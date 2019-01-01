@@ -28,10 +28,10 @@
   template:
     src: Xresources
     dest: ~/.Xresources
-    mode: 0644
+    mode: 0444
 
 - name: install xrdb init
   copy:
     src: xprofile.d/xrdb
     dest: ~/.xprofile.d/xrdb
-    mode: 0600
+    mode: 0444

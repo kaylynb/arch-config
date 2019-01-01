@@ -26,10 +26,10 @@
   copy:
     src: libinput-gestures.conf
     dest: ~/.config/
-    mode: 0644
+    mode: 0444
 
 - name: install user libinput-gestures xprofile start script
   copy:
     src: xprofile.d/libinput-gestures
     dest: ~/.xprofile.d/
-    mode: 0644
+    mode: 0444

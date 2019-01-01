@@ -9,12 +9,13 @@
   file:
     path: ~/.bashrc.d
     state: directory
-    mode: 0700
+    mode: 0755
 
 - name: install bash inits
   copy:
     src: "{{ item }}"
     dest: "~/.{{ item }}"
+    mode: 0744
   with_items:
     - bash_profile
     - bashrc
@@ -23,4 +24,4 @@
   copy:
     src: bashrc.d/
     dest: ~/.bashrc.d/
-    mode: 0600
+    mode: 0444
