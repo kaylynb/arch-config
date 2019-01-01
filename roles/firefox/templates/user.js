@@ -22,3 +22,5 @@ user_pref("middlemouse.contentLoadURL", false);
 user_pref("dom.ipc.processCount", 7);
 
 user_pref("extensions.pocket.enabled", false);
+
+user_pref("security.webauth.u2f", true);
