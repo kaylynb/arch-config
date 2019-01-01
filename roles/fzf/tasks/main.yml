@@ -13,6 +13,10 @@
 
 - name: install fzf environment variables
   copy:
-    src: bashrc.d/environment/FZF_DEFAULT_COMMAND
+    src: "bashrc.d/environment/{{ item }}"
     dest: ~/.bashrc.d/environment/
     mode: 0600
+  with_items:
+    - FZF_DEFAULT_COMMAND
+    - FZF_ALT_C_OPTS
+    - FZF_CTRL_R_OPTS

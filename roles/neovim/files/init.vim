@@ -47,4 +47,5 @@ let g:netrw_keepdir=0
 let g:NERDTreeHijackNetrw=0
 let g:NERDTreeMinimalUI=1
 
-nnoremap <C-p> :<C-u>FZF<CR>
+command! FZFPreview call fzf#run({'sink': 'e', 'options': '--preview "cat {}| head -100"', 'down': '40%'})
+nnoremap <C-p> :<C-u>FZFPreview<CR>
