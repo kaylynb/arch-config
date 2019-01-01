@@ -2,7 +2,7 @@
 - name: install pcmanfm package
   become: true
   package:
-    name: pcmanfm
+    name: pcmanfm-gtk3
     state: present
 
 - name: install user pcmanfm configuration directories

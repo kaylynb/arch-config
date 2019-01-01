@@ -33,7 +33,7 @@
   copy:
     src: "{{ item }}"
     dest: "~/.config/i3/{{ item }}"
-    mode: 0444
+    mode: 0544
   with_items:
     - i3statusmem.sh
     - mem.sh
