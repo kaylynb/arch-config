@@ -22,8 +22,14 @@
 
   become: true
 
-- name: install user libiput-gestures xprofile start script
+- name: install user libinput-gestures configuration
+  copy:
+    src: libinput-gestures.conf
+    dest: ~/.config/
+    mode: 0644
+
+- name: install user libinput-gestures xprofile start script
   copy:
     src: xprofile.d/libinput-gestures
     dest: ~/.xprofile.d/
-    mode: 0600
+    mode: 0644
