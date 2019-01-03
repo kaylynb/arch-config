@@ -57,3 +57,4 @@ nnoremap <C-p> :<C-u>Files<CR>
 
 let g:grepper = {}
 let g:grepper.tools = ['rg', 'git']
+command! Grep Grepper
