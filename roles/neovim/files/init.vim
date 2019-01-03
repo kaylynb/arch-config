@@ -14,6 +14,7 @@ function! PackInit() abort
 	call minpac#add('mhinz/vim-grepper')
 	call minpac#add('junegunn/fzf.vim')
 	call minpac#add('tpope/vim-fugitive')
+	call minpac#add('konfekt/vim-alias')
 endfunction
 
 command! PackUpdate	call PackInit() | call minpac#update('', {'do': 'call minpac#status()'})

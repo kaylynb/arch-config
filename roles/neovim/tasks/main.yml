@@ -29,3 +29,9 @@
     src: init.vim
     dest: ~/.config/nvim/
     mode: 0444
+
+- name: install neovim aliases config
+  copy:
+    src: alias.vim
+    dest: ~/.config/nvim/after/plugin/
+    mode: 0444
