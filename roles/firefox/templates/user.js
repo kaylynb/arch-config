@@ -24,3 +24,5 @@ user_pref("dom.ipc.processCount", 7);
 user_pref("extensions.pocket.enabled", false);
 
 user_pref("security.webauth.u2f", true);
+
+user_pref("browser.ctrlTab.recentlyUsedOrder", false);
