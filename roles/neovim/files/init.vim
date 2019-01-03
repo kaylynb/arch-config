@@ -11,6 +11,7 @@ function! PackInit() abort
 	call minpac#add('tpope/vim-surround')
 	call minpac#add('iloginow/vim-stylus')
 	call minpac#add('scrooloose/nerdtree')
+	call minpac#add('mhinz/vim-grepper')
 endfunction
 
 command! PackUpdate	call PackInit() | call minpac#update('', {'do': 'call minpac#status()'})
@@ -49,3 +50,6 @@ let g:NERDTreeMinimalUI=1
 
 command! FZFPreview call fzf#run({'sink': 'e', 'options': '--preview "cat {}| head -100"', 'down': '40%'})
 nnoremap <C-p> :<C-u>FZFPreview<CR>
+
+let g:grepper = {}
+let g:grepper.tools = ['rg', 'git']
