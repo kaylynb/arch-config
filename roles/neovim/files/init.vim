@@ -12,6 +12,8 @@ function! PackInit() abort
 	call minpac#add('iloginow/vim-stylus')
 	call minpac#add('scrooloose/nerdtree')
 	call minpac#add('mhinz/vim-grepper')
+	call minpac#add('junegunn/fzf.vim')
+	call minpac#add('tpope/vim-fugitive')
 endfunction
 
 command! PackUpdate	call PackInit() | call minpac#update('', {'do': 'call minpac#status()'})
@@ -48,8 +50,10 @@ let g:netrw_keepdir=0
 let g:NERDTreeHijackNetrw=0
 let g:NERDTreeMinimalUI=1
 
-command! FZFPreview call fzf#run({'sink': 'e', 'options': '--preview "cat {}| head -100"', 'down': '40%'})
-nnoremap <C-p> :<C-u>FZFPreview<CR>
+command! -bang -nargs=? -complete=dir Files
+	\ call fzf#vim#files(<q-args>, fzf#vim#with_preview('right', '?'), <bang>0)
+
+nnoremap <C-p> :<C-u>Files<CR>
 
 let g:grepper = {}
 let g:grepper.tools = ['rg', 'git']
