@@ -1,0 +1,14 @@
+---
+- block:
+  - name: install libcups package
+    package:
+      name: libcups
+      state: present
+
+  - name: install libcups client config
+    copy:
+      src: client.conf
+      dest: /etc/cups/
+      mode: 0644
+
+  become: true
