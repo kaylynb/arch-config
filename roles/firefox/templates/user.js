@@ -12,6 +12,8 @@ user_pref("general.skins.selectedSkin", "arc-darker-theme");
 // Disable 'first run' page on startup
 user_pref("browser.startup.homepage_override.mstone","ignore");
 
+user_pref("browser.startup.homepage", "about:blank");
+
 // Don't warn on closing tabs
 user_pref("browser.tabs.warnOnClose", false);
 
@@ -26,3 +28,5 @@ user_pref("extensions.pocket.enabled", false);
 user_pref("security.webauth.u2f", true);
 
 user_pref("browser.ctrlTab.recentlyUsedOrder", false);
+
+
