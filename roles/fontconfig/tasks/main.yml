@@ -12,6 +12,7 @@
       - ttf-liberation
       - ttf-ubuntu-font-family
       - ttf-dejavu
+      - adobe-source-han-sans-otc-fonts
 
   - name: install user font config
     copy:
