@@ -13,6 +13,7 @@ user_pref("general.skins.selectedSkin", "arc-darker-theme");
 user_pref("browser.startup.homepage_override.mstone","ignore");
 
 user_pref("browser.startup.homepage", "about:blank");
+user_pref("browser.newtabpage.enabled", false);
 
 // Don't warn on closing tabs
 user_pref("browser.tabs.warnOnClose", false);
