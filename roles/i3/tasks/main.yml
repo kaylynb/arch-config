@@ -35,5 +35,6 @@
     dest: "~/.config/i3/{{ item }}"
     mode: 0544
   with_items:
-    - i3statusmem.sh
+    - i3statuswrap.sh
     - mem.sh
+    - capsmode.sh
