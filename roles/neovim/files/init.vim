@@ -15,6 +15,7 @@ function! PackInit() abort
 	call minpac#add('junegunn/fzf.vim')
 	call minpac#add('tpope/vim-fugitive')
 	call minpac#add('konfekt/vim-alias')
+	call minpac#add('Matt-Deacalion/vim-systemd-syntax')
 endfunction
 
 command! PackUpdate	call PackInit() | call minpac#update('', {'do': 'call minpac#status()'})
