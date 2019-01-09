@@ -4,7 +4,7 @@ user_pref("layout.css.devPixelsPerPx", "{{ firefox_dpi_scale }}");
 {% endif %}
 
 // Fullscreen shouldn't animate. Just no.
-user_pref("browser.fullscreen.animate", false);
+user_pref("toolkit.cosmeticAnimations.enabled", false);
 
 // Select arc theme (this will get nuked if user.js is updated)
 user_pref("general.skins.selectedSkin", "arc-darker-theme");
