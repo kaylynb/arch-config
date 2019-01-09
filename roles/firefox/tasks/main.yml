@@ -25,3 +25,16 @@
     mode: 0755
   notify:
     - remove firefox prefs file
+
+- name: install firefox profile chrome directory
+  file:
+    path: ~/.mozilla/firefox/profile/chrome/
+    state: directory
+    recurse: true
+    mode: 0755
+
+- name: install firefox profile chrome file
+  copy:
+    src: userChrome.css
+    dest: ~/.mozilla/firefox/profile/chrome/
+    mode: 0444

@@ -30,4 +30,4 @@ user_pref("security.webauth.u2f", true);
 
 user_pref("browser.ctrlTab.recentlyUsedOrder", false);
 
-
+user_pref("browser.tabs.opentabfor.middleclick", false);
