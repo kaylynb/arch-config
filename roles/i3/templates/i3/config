@@ -127,7 +127,7 @@ client.focused_inactive #e7d8b1 #e7d8b1 #181715 #A074C4 #e7d8b1
 client.unfocused #222133 #222133 #AAAAAA #A074C4 #222133
 client.urgent #CE4045 #CE4045 #e7d8b1 #DCCD69 #CE4045
 
-font pango:monospace {{ i3_font_size }}
+font pango:monospace bold {{ i3_font_size }}
 new_window pixel {{ i3_window_size }}
 hide_edge_borders smart
 
