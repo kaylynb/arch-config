@@ -8,7 +8,8 @@ dependencies:
   - { role: xclip }
   - { role: rofi }
   - { role: i3 }
-  - { role: terminator }
+    #  - { role: terminator }
+  - { role: kitty }
   - { role: gvfs }
   - { role: pcmanfm }
   - { role: libcups }
