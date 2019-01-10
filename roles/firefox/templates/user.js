@@ -31,3 +31,5 @@ user_pref("security.webauth.u2f", true);
 user_pref("browser.ctrlTab.recentlyUsedOrder", false);
 
 user_pref("browser.tabs.opentabfor.middleclick", false);
+user_pref("browser.link.open_newwindow", 1);
+user_pref("browser.link.open_external", 2);

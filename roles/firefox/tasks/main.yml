@@ -37,4 +37,4 @@
   copy:
     src: userChrome.css
     dest: ~/.mozilla/firefox/profile/chrome/
-    mode: 0444
+    mode: 0755
