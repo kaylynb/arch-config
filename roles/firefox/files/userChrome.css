@@ -1,3 +1,16 @@
-#TabsToolbar {
+/* Hides tab bar if only one tab is open */
+#tabbrowser-tabs, #tabbrowser-tabs > .tabbrowser-arrowscrollbox {
+	min-height: 0 !important;
+}
+
+#tabbrowser-tabs tab[first-visible-tab="true"][last-visible-tab="true"] {
+	visibility: collapse;
+}
+
+#tabbrowser-tabs .tabs-newtab-button { 
 	visibility: collapse !important;
+}
+
+#tabbrowser-tabs tab {
+	min-height: var(--tab-min-height)
 }
