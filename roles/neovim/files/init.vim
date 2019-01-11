@@ -59,3 +59,6 @@ nnoremap <C-p> :<C-u>Files<CR>
 
 let g:grepper = {}
 let g:grepper.tools = ['rg', 'git']
+nnoremap <leader>* :Grepper -cword -noprompt<cr>
+nnoremap <leader>g :Grepper<cr>
+nnoremap <leader>G :Grepper -buffers<cr>
