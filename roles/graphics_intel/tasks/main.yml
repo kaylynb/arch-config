@@ -1,9 +1,18 @@
 ---
-- name: install intel graphics packages
+- block:
+  - name: install intel graphics packages
+    package:
+      name:
+        - mesa
+        - xf86-video-intel
+        - libva-intel-driver
+      state: present
+
+  - name: install intel graphics driver options
+    copy:
+      src: i915.conf
+      dest: /etc/modprobe.d/
+      mode: 0644
+
   become: true
-  package:
-    name:
-      - mesa
-      - xf86-video-intel
-      - libva-intel-driver
-    state: present
+
