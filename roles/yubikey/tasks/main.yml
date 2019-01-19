@@ -2,11 +2,10 @@
 - block:
   - name: install yubikey smartcard dependency packages
     package:
-      name: "{{ item }}"
+      name:
+        - libusb-compat
+        - libu2f-host
       state: present
-    with_items:
-      - libusb-compat
-      - libu2f-host
 
     # Add udev rules for permissions on smartcard for yubikey
     # This config also fixes a bug related to scdaemon not working when

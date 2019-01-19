@@ -5,7 +5,6 @@
       name:
         - i3-wm
         - i3status
-        - ttf-font-awesome
       state: present
 
   become: true

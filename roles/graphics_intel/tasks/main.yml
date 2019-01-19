@@ -2,9 +2,8 @@
 - name: install intel graphics packages
   become: true
   package:
-    name: "{{ item }}"
+    name:
+      - mesa
+      - xf86-video-intel
+      - libva-intel-driver
     state: present
-  with_items:
-    - mesa
-    - xf86-video-intel
-    - libva-intel-driver

@@ -2,11 +2,10 @@
 - block:
   - name: install lightdm packages
     package:
-      name: "{{ item }}"
+      name:
+        - lightdm
+        - lightdm-gtk-greeter
       state: present
-    with_items:
-      - lightdm
-      - lightdm-gtk-greeter
 
   - name: enable lightdm service
     service:

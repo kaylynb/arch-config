@@ -2,11 +2,10 @@
 - name: install gpg and ssh packages
   become: true
   package:
-    name: "{{ item }}"
+    name:
+      - gnupg
+      - openssh
     state: present
-  with_items:
-    - gnupg
-    - openssh
 
 - name: install gpg user directory
   file:

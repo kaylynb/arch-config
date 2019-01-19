@@ -2,15 +2,14 @@
 - block:
   - name: install X11 packages
     package:
-      name: "{{ item }}"
+      name:
+        - xorg-server
+        - xorg-xbacklight
+        - xorg-xinput
+        - xorg-xmodmap
+        - xorg-xrandr
+        - xorg-xrdb
       state: present
-    with_items:
-      - xorg-server
-      - xorg-xbacklight
-      - xorg-xinput
-      - xorg-xmodmap
-      - xorg-xrandr
-      - xorg-xrdb
 
   - name: install X11 display size configuration
     template:

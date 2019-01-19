@@ -2,17 +2,16 @@
 - block:
   - name: install font packages
     package:
-      name: "{{ item }}"
+      name:
+        - freetype2
+        - fontconfig
+        - cairo
+        - ttf-hack
+        - ttf-liberation
+        - ttf-ubuntu-font-family
+        - ttf-dejavu
+        - adobe-source-han-sans-otc-fonts
       state: present
-    with_items:
-      - freetype2
-      - fontconfig
-      - cairo
-      - ttf-hack
-      - ttf-liberation
-      - ttf-ubuntu-font-family
-      - ttf-dejavu
-      - adobe-source-han-sans-otc-fonts
 
   - name: install user font config
     copy:
