@@ -5,17 +5,21 @@ function! PackInit() abort
 	call minpac#add('k-takata/minpac', {'type': 'opt'})
 
 	call minpac#add('morhetz/gruvbox')
-	call minpac#add('justinmk/vim-dirvish')
 	call minpac#add('itchyny/lightline.vim')
+	call minpac#add('justinmk/vim-dirvish')
+	call minpac#add('scrooloose/nerdtree')
+
+	call minpac#add('konfekt/vim-alias')
 	call minpac#add('editorconfig/editorconfig-vim')
 	call minpac#add('tpope/vim-surround')
-	call minpac#add('iloginow/vim-stylus')
-	call minpac#add('scrooloose/nerdtree')
 	call minpac#add('mhinz/vim-grepper')
 	call minpac#add('junegunn/fzf.vim')
 	call minpac#add('tpope/vim-fugitive')
-	call minpac#add('konfekt/vim-alias')
-	call minpac#add('Matt-Deacalion/vim-systemd-syntax')
+
+	" File types
+	call minpac#add('matt-deacalion/vim-systemd-syntax')
+	call minpac#add('iloginow/vim-stylus')
+	call minpac#add('ledger/vim-ledger')
 endfunction
 
 command! PackUpdate	call PackInit() | call minpac#update('', {'do': 'call minpac#status()'})
