@@ -8,11 +8,17 @@
         - libva-intel-driver
       state: present
 
-  - name: install intel graphics driver options
-    copy:
-      src: i915.conf
-      dest: /etc/modprobe.d/
-      mode: 0644
+      #  - name: install intel graphics driver options
+      #    copy:
+      #      src: i915.conf
+      #      dest: /etc/modprobe.d/
+      #      mode: 0644
+      #
+      #  - name: install intel graphics X11 config
+      #    copy:
+      #      src: 20-intel.conf
+      #      dest: /etc/X11/xorg.conf.d/
+      #      mode: 0644
 
   become: true
 

@@ -1,4 +1,5 @@
 dependencies:
+  - { role: compton }
   - { role: kbdlight }
   - { role: libinput-touchpad }
   - { role: broadcom-wl }
