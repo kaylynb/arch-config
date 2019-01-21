@@ -20,6 +20,7 @@ function! PackInit() abort
 	call minpac#add('matt-deacalion/vim-systemd-syntax')
 	call minpac#add('iloginow/vim-stylus')
 	call minpac#add('ledger/vim-ledger')
+	call minpac#add('Glench/Vim-Jinja2-Syntax')
 endfunction
 
 command! PackUpdate	call PackInit() | call minpac#update('', {'do': 'call minpac#status()'})
