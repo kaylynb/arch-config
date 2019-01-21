@@ -1,10 +1,10 @@
-"amixer set Master playback 5%+"
+"amixer set Master playback 5%+ && (killall -q -USR1 i3status || true)"
   XF86AudioRaiseVolume
 
-"amixer set Master playback 5%-"
+"amixer set Master playback 5%- && (killall -q -USR1 i3status || true)"
   XF86AudioLowerVolume
 
-"amixer set Master toggle"
+"amixer set Master toggle && (killall -q -USR1 i3status || true)"
   XF86AudioMute
 
 "xbacklight -dec 5"
@@ -19,8 +19,8 @@
 "kbdlight down"
   XF86KbdBrightnessDown
 
-"togglecapsctrl"
+"togglecapsctrl && (killall -q -USR1 i3status || true)"
   Shift + Shift_R
 
-"togglecapsctrl"
+"togglecapsctrl && (killall -q -USR1 i3status || true)"
   Shift + Shift_L
