@@ -1,7 +1,0 @@
-# Setup compton compositor to prevent screen tearing
-# Preferable:
-# /usr/bin/compton -CGb --no-fading-openclose --backend glx
-# But needs workaround below to not break: https://github.com/chjj/compton/issues/355
-if [ "$XDG_CURRENT_DESKTOP" = "i3" ] ; then
-  /usr/bin/compton -CG --no-fading-openclose --backend glx &
-fi

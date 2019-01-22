@@ -18,6 +18,15 @@
       mode: 0644
     when: X11_display_size is defined
 
+  - name: install systemd user xsession target
+    copy:
+      src: xsession.target
+      dest: /etc/systemd/user/
+      mode: 0644
+    notify: reload systemd user daemon
+
+  - meta: flush_handlers
+
   become: true
 
 - import_tasks: keyboard.yml
@@ -34,3 +43,9 @@
     src: xprofile.d/xrdb
     dest: ~/.xprofile.d/xrdb
     mode: 0444
+
+- name: install .xsession file
+  copy:
+    src: xsession
+    dest: ~/.xsession
+    mode: 0544

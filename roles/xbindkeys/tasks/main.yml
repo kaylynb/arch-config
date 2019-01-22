@@ -5,16 +5,31 @@
       name: xbindkeys
       state: present
 
+  - name: install xbindkeys user service unit
+    copy:
+      src: xbindkeys.service
+      dest: /etc/systemd/user/
+      mode: 0644
+    notify: reload systemd user daemon
+
   become: true
+
+- meta: flush_handlers
+
+- name: install user xbindkeys configuration directory
+  file:
+    path: ~/.config/xbindkeys
+    state: directory
+    recurse: true
 
 - name: install user xbindkeys configuration
   copy:
     src: xbindkeysrc
-    dest: ~/.xbindkeysrc
+    dest: ~/.config/xbindkeys/xbindkeysrc
     mode: 0444
 
-- name: install user xbindkeys xprofile start script
-  copy:
-    src: xprofile.d/xbindkeys
-    dest: ~/.xprofile.d/
-    mode: 0444
+- name: install xbindkeys user service
+  systemd:
+    name: xbindkeys
+    scope: user
+    enabled: true

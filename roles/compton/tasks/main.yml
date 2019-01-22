@@ -1,12 +1,23 @@
 ---
-- name: install compton package
-  become: true
-  package:
-    name: compton
-    state: present
+- block:
+  - name: install compton package
+    package:
+      name: compton
+      state: present
 
-- name: install compton user xprofile startup for i3
-  copy:
-    src: xprofile.d/compton
-    dest: ~/.xprofile.d/
-    mode: 0444
+  - name: install compton user service unit
+    copy:
+      src: compton.service
+      dest: /etc/systemd/user/
+      mode: 0644
+    notify: reload systemd user daemon
+
+  become: true
+
+- meta: flush_handlers
+
+- name: install compton user service
+  systemd:
+    name: compton
+    scope: user
+    enabled: true

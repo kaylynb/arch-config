@@ -16,20 +16,4 @@
       groups: input
       append: true
 
-  - name: install libinput-gestures package
-    aur:
-      name: libinput-gestures
-
   become: true
-
-- name: install user libinput-gestures configuration
-  copy:
-    src: libinput-gestures.conf
-    dest: ~/.config/
-    mode: 0444
-
-- name: install user libinput-gestures xprofile start script
-  copy:
-    src: xprofile.d/libinput-gestures
-    dest: ~/.xprofile.d/
-    mode: 0444

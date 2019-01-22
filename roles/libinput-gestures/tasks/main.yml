@@ -1,0 +1,47 @@
+---
+- name: install libinput-gestures package
+  aur:
+    name: libinput-gestures
+  become: true
+
+- name: install user libinput-gestures configuration directory
+  file:
+    path: ~/.config/libinput-gestures
+    state: directory
+    recurse: true
+
+- name: install user libinput-gestures configuration
+  copy:
+    src: libinput-gestures.conf
+    dest: ~/.config/libinput-gestures/
+    mode: 0444
+
+- name: install libinput-gestures user service unit
+  copy:
+    src: libinput-gestures.service
+    dest: /etc/systemd/user/
+    mode: 0644
+  become: true
+  notify: reload systemd user daemon
+
+- name: install libinput-gestures hibernate resume service unit
+  copy:
+    src: libinput-gestures-hibernateresume@.service
+    dest: /etc/systemd/system/
+    mode: 0644
+  become: true
+  notify: reload systemd daemon
+
+- meta: flush_handlers
+
+- name: install libinput-gestures user service
+  systemd:
+    name: libinput-gestures
+    scope: user
+    enabled: true
+
+- name: install libinput-gestures hibernate resume service
+  service:
+    name: "libinput-gestures-hibernateresume@{{ lookup('env', 'USER') }}.service"
+    enabled: true
+  become: true

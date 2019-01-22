@@ -1,0 +1,11 @@
+[Unit]
+Description=Converts touchpad gestures into commands
+PartOf=xsession.target
+
+[Service]
+ExecStartPre=-/usr/bin/rm --force /tmp/libinput-gestures-%u.lock
+ExecStart=/usr/bin/libinput-gestures --conffile %h/.config/libinput-gestures/libinput-gestures.conf
+Restart=always
+
+[Install]
+WantedBy=xsession.target

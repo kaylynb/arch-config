@@ -1,0 +1,10 @@
+[Unit]
+Description=Compton compositor
+PartOf=xsession.target
+
+[Service]
+ExecStart=/usr/bin/compton -CG --no-fading-openclose --backend glx
+Restart=always
+
+[Install]
+WantedBy=xsession.target

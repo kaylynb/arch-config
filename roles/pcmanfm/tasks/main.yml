@@ -1,9 +1,20 @@
 ---
-- name: install pcmanfm package
+- block:
+  - name: install pcmanfm package
+    package:
+      name: pcmanfm-gtk3
+      state: present
+
+  - name: install pcmanfm user service unit
+    copy:
+      src: pcmanfm.service
+      dest: /etc/systemd/user/
+      mode: 0644
+    notify: reload systemd user daemon
+
   become: true
-  package:
-    name: pcmanfm-gtk3
-    state: present
+
+- meta: flush_handlers
 
 - name: install user pcmanfm configuration directories
   file:
@@ -18,8 +29,8 @@
     dest: ~/.config/pcmanfm/default/
     mode: 0755
 
-- name: install user pcmanfm xprofile daemon start
-  copy:
-    src: xprofile.d/pcmanfm
-    dest: ~/.xprofile.d/
-    mode: 0444
+- name: install pcmanfm user service
+  systemd:
+    name: pcmanfm
+    scope: user
+    enabled: true

@@ -2,5 +2,6 @@ dependencies:
   - { role: compton }
   - { role: kbdlight }
   - { role: libinput-touchpad }
+  - { role: libinput-gestures }
   - { role: broadcom-wl }
   - { role: tlp }

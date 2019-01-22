@@ -1,0 +1,10 @@
+[Unit]
+Description=Restart libinput-gestures service after hibernate
+After=hibernate.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/bash -c "XDG_RUNTIME_DIR=/run/user/`/usr/bin/id -u %i` sudo -E -u %i /usr/bin/systemctl --no-block --user restart libinput-gestures.service"
+
+[Install]
+WantedBy=hibernate.target

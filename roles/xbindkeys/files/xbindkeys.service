@@ -1,0 +1,10 @@
+[Unit]
+Description=Runs commands when specified keys are pressed
+PartOf=xsession.target
+
+[Service]
+ExecStart=/usr/bin/xbindkeys --nodaemon --file %h/.config/xbindkeys/xbindkeysrc
+Restart=always
+
+[Install]
+WantedBy=xsession.target

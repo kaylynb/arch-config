@@ -1,0 +1,9 @@
+[Unit]
+Description=PCManFM daemon
+PartOf=xsession.target
+
+[Service]
+ExecStart=/usr/bin/pcmanfm --daemon-mode
+
+[Install]
+WantedBy=xsession.target
