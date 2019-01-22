@@ -3,6 +3,7 @@ dependencies:
   - { role: home }
   - { role: makepkg }
   - { role: systemd-timesyncd }
+  - { role: systemd-logind }
   - { role: yubikey }
   - { role: bash }
   - { role: fzf }

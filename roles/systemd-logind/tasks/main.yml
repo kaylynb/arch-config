@@ -1,0 +1,17 @@
+---
+- block:
+  - name: install systemd-logind configuration directory
+    file:
+      path: /etc/systemd/logind.conf.d
+      state: directory
+      recurse: true
+
+  - name: install systemd-logind configuration
+    copy:
+      src: HandlePowerKey.conf
+      dest: /etc/systemd/logind.conf.d/
+      mode: 0644
+    notify:
+      - restart systemd-logind service
+
+  become: yes
