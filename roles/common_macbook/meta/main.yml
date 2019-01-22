@@ -3,5 +3,6 @@ dependencies:
   - { role: kbdlight }
   - { role: libinput-touchpad }
   - { role: libinput-gestures }
+  - { role: backlight-persist }
   - { role: broadcom-wl }
   - { role: tlp }

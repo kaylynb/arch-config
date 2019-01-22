@@ -1,0 +1,17 @@
+---
+- block:
+  - name: install backlight-hibernate service unit
+    copy:
+      src: backlight-hibernate.service
+      dest: /etc/systemd/system/
+      mode: 0644
+    notify: reload systemd daemon
+
+  - meta: flush_handlers
+
+  - name: install backlight-hibernate service
+    service:
+      name: backlight-hibernate
+      enabled: true
+
+  become: true
