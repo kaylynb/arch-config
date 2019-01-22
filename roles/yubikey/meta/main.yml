@@ -1,3 +1,4 @@
 ---
 dependencies:
   - { role: pcscd }
+  - { role: handlers_systemd }

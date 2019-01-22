@@ -18,4 +18,18 @@
       dest: /etc/udev/rules.d/
       mode: 0644
 
+  - name: install scdaemon hibernate resume restart service unit
+    copy:
+      src: scdaemon-hibernateresume.service
+      dest: /etc/systemd/system/
+      mode: 0644
+    notify: reload systemd daemon
+
+  - meta: flush_handlers
+
+  - name: install scdaemon hibernate resume restart service
+    service:
+      name: scdaemon-hibernateresume.service
+      enabled: true
+
   become: true
