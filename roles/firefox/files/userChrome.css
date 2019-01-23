@@ -1,3 +1,8 @@
+/* Hides close tab button */
+#tabbrowser-tabs .tabbrowser-tab .tab-close-button {
+	display: none !important;
+}
+
 /* Hides tab bar if only one tab is open */
 #tabbrowser-tabs, #tabbrowser-tabs > .tabbrowser-arrowscrollbox {
 	min-height: 0 !important;
