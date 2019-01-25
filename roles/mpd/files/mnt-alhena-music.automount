@@ -1,0 +1,10 @@
+[Unit]
+Description=Mount Alhena music automount
+Requires=network-online.target
+After=network-online.service
+
+[Automount]
+Where=/mnt/alhena/music
+
+[Install]
+WantedBy=multi-user.target
