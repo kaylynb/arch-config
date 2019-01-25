@@ -15,6 +15,7 @@ function! PackInit() abort
 	call minpac#add('mhinz/vim-grepper')
 	call minpac#add('junegunn/fzf.vim')
 	call minpac#add('tpope/vim-fugitive')
+	call minpac#add('w0rp/ale')
 
 	" File types
 	call minpac#add('matt-deacalion/vim-systemd-syntax')
@@ -50,11 +51,6 @@ set incsearch
 set ignorecase
 set smartcase
 
-let g:netrw_banner=0
-let g:netrw_liststyle=3
-let g:netrw_keepdir=0
-
-let g:NERDTreeHijackNetrw=0
 let g:NERDTreeMinimalUI=1
 
 command! -bang -nargs=? -complete=dir Files
