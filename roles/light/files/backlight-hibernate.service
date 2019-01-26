@@ -1,0 +1,13 @@
+[Unit]
+Description=Store and reset backlight
+Before=hibernate.target
+StopWhenUnneeded=yes
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+ExecStart=/usr/bin/light -O
+ExecStop=/usr/bin/light -I
+
+[Install]
+WantedBy=hibernate.target

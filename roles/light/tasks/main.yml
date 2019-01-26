@@ -1,5 +1,9 @@
 ---
 - block:
+  - name: install light package
+    package:
+      name: light
+
   - name: install backlight-hibernate service unit
     copy:
       src: backlight-hibernate.service

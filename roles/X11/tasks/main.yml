@@ -4,7 +4,6 @@
     package:
       name:
         - xorg-server
-        - xorg-xbacklight
         - xorg-xinput
         - xorg-xmodmap
         - xorg-xrandr

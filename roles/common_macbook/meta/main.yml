@@ -1,8 +1,9 @@
 dependencies:
+  - { role: mbpfan }
   - { role: compton }
   - { role: kbdlight }
+  - { role: light }
   - { role: libinput-touchpad }
   - { role: libinput-gestures }
-  - { role: backlight-persist }
   - { role: broadcom-wl }
   - { role: tlp }

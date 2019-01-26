@@ -7,10 +7,10 @@
 "amixer set Master toggle && (killall -q -USR1 i3status || true)"
   XF86AudioMute
 
-"xbacklight -dec 5"
+"(command -v light && light -U 5) || true"
   XF86MonBrightnessDown
 
-"xbacklight -inc 5"
+"(command -v light && light -A 5) || true"
   XF86MonBrightnessUp
 
 "kbdlight up"

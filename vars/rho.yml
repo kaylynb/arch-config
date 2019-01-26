@@ -1,3 +1,4 @@
 ---
 X11_mouse_left_handed: true
 i3_center_float: "2000 1415"
+i3status_cpu_temp: /sys/devices/platform/coretemp.0/hwmon/hwmon1/temp1_input

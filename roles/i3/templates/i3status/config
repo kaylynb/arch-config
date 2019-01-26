@@ -17,7 +17,9 @@ general {
 
 order += "disk /"
 order += "load"
-
+{% if i3status_cpu_temp is defined %}
+order += "cpu_temperature 0"
+{% endif %}
 {% if i3status_show_wireless %} order += "wireless _first_" {% endif %}
 order += "ethernet _first_"
 order += "volume master"
@@ -38,6 +40,12 @@ ethernet _first_ {
 	format_up = "E %ip (%speed)"
 	format_down = "E down"
 }
+
+{% if i3status_cpu_temp is defined %}
+cpu_temperature 0 {
+	path = {{ i3status_cpu_temp }}
+}
+{% endif %}
 
 battery 0 {
 	format = "%status %percentage %remaining"
