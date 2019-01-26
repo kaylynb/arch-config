@@ -11,7 +11,6 @@ i3_font_size: 8
 i3_window_size: 1
 i3status_show_wireless: true
 i3status_show_battery: true
-i3status_cpu_temp: /sys/devices/platform/coretemp.0/hwmon/hwmon2/temp1_input
 rofi_font_size: 24
 firefox_dpi_scale: "2.0"
 sublime_text_dpi_scale: "2.0"
