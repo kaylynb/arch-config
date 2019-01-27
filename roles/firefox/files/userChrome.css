@@ -1,5 +1,5 @@
 /* Hides window controls */
-#window-controls {
+#window-controls, .titlebar-placeholder {
 	display: none !important;
 }
 
