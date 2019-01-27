@@ -56,7 +56,7 @@ let g:NERDTreeMinimalUI=1
 command! -bang -nargs=? -complete=dir Files
 	\ call fzf#vim#files(<q-args>, fzf#vim#with_preview('right', '?'), <bang>0)
 
-nnoremap <C-p> :<C-u>Files<CR>
+nnoremap <C-p> :Files<CR>
 
 let g:grepper = {}
 let g:grepper.tools = ['rg', 'git']
