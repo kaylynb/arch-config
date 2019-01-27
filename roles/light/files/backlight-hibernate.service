@@ -1,5 +1,5 @@
 [Unit]
-Description=Store and reset backlight
+Description=Store and reset backlight on hibernate
 Before=hibernate.target
 StopWhenUnneeded=yes
 

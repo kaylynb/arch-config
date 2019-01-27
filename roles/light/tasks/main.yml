@@ -4,18 +4,24 @@
     package:
       name: light
 
-  - name: install backlight-hibernate service unit
+  - name: install backlight persistence service units
     copy:
-      src: backlight-hibernate.service
+      src: "{{ item }}"
       dest: /etc/systemd/system/
       mode: 0644
     notify: reload systemd daemon
+    with_items:
+      - backlight-hibernate.service
+      - backlight-shutdown.service
 
   - meta: flush_handlers
 
-  - name: install backlight-hibernate service
+  - name: install backlight persistance services
     service:
-      name: backlight-hibernate
+      name: "{{ item }}"
       enabled: true
+    with_items:
+      - backlight-hibernate
+      - backlight-shutdown
 
   become: true

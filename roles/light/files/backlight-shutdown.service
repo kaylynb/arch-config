@@ -1,0 +1,11 @@
+[Unit]
+Description=Store and reset backlight on shutdown
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+ExecStart=/usr/bin/light -O
+ExecStop=/usr/bin/light -I
+
+[Install]
+WantedBy=multi-user.target
