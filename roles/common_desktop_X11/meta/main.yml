@@ -2,12 +2,10 @@
 dependencies:
   - { role: fontconfig }
   - { role: X11 }
-  - { role: lightdm }
   - { role: gtk }
   - { role: xclip }
   - { role: rofi }
   - { role: i3 }
-    #  - { role: terminator }
   - { role: kitty }
   - { role: gvfs }
   - { role: pcmanfm }

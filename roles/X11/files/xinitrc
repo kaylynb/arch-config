@@ -1,0 +1,19 @@
+hsetroot -solid "#000000"
+
+userresources=$HOME/.Xresources
+if [ -f "$userresources" ]; then
+	xrdb -merge $userresources
+fi
+
+if [ -d /etc/X11/xinit/xinitrc.d ]; then
+	for f in /etc/X11/xinit/xinitrc.d/?*.sh; do
+		[ -x "$f" ] && . "$f"
+	done
+	unset f
+fi
+
+systemctl --no-block --user start xsession.target
+
+[ -f ~/.xprofile ] && . ~/.xprofile
+
+exec bash -c "i3 && systemctl --user stop xsession.target"

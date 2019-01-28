@@ -4,10 +4,12 @@
     package:
       name:
         - xorg-server
+        - xorg-xinit
         - xorg-xinput
         - xorg-xmodmap
         - xorg-xrandr
         - xorg-xrdb
+        - hsetroot
       state: present
 
   - name: install X11 display size configuration
@@ -28,8 +30,17 @@
 
   become: true
 
-- import_tasks: keyboard.yml
-- import_tasks: mouse.yml
+- name: install .xprofile.d directory
+  file:
+    path: ~/.xprofile.d
+    state: directory
+    mode: 0755
+
+- name: install .xprofile file
+  copy:
+    src: xprofile
+    dest: ~/.xprofile
+    mode: 0744
 
 - name: install Xresources
   template:
@@ -37,14 +48,12 @@
     dest: ~/.Xresources
     mode: 0444
 
-- name: install xrdb init
+- name: install .xinitrc file
   copy:
-    src: xprofile.d/xrdb
-    dest: ~/.xprofile.d/xrdb
+    src: xinitrc
+    dest: ~/.xinitrc
     mode: 0444
 
-- name: install .xsession file
-  copy:
-    src: xsession
-    dest: ~/.xsession
-    mode: 0544
+- import_tasks: keyboard.yml
+- import_tasks: mouse.yml
+

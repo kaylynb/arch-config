@@ -5,14 +5,3 @@
     state: directory
     mode: 0755
 
-- name: install .xprofile.d directory
-  file:
-    path: ~/.xprofile.d
-    state: directory
-    mode: 0755
-
-- name: install .xprofile file
-  copy:
-    src: xprofile
-    dest: ~/.xprofile
-    mode: 0744
