@@ -1,0 +1,6 @@
+---
+- name: restart xbindkeys user service
+  systemd:
+    name: xbindkeys
+    scope: user
+    state: restarted

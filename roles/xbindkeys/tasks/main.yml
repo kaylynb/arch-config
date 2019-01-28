@@ -27,6 +27,7 @@
     src: xbindkeysrc
     dest: ~/.config/xbindkeys/xbindkeysrc
     mode: 0444
+  notify: restart xbindkeys user service
 
 - name: install xbindkeys user service
   systemd:
