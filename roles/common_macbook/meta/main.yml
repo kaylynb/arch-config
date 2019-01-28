@@ -1,6 +1,5 @@
 dependencies:
   - { role: mbpfan }
-  - { role: compton }
   - { role: light }
   - { role: libinput-touchpad }
   - { role: libinput-gestures }
