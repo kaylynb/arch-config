@@ -1,8 +1,3 @@
-/* Hides window controls */
-#window-controls, .titlebar-placeholder {
-	display: none !important;
-}
-
 /* Hides close tab button */
 #tabbrowser-tabs .tabbrowser-tab .tab-close-button {
 	display: none !important;

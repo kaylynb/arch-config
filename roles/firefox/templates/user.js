@@ -18,6 +18,9 @@ user_pref("browser.newtabpage.enabled", false);
 // Don't warn on closing tabs
 user_pref("browser.tabs.warnOnClose", false);
 
+// Use native titlebar
+user_pref("browser.tabs.drawInTitlebar", false);
+
 // Disable middle mouse from opening pasted text
 user_pref("middlemouse.contentLoadURL", false);
 
