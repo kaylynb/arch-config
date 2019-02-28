@@ -28,8 +28,10 @@ command! PackUpdate	call PackInit() | call minpac#update('', {'do': 'call minpac
 command! PackClean	call PackInit() | call minpac#clean()
 command! PackStatus	call PackInit() | call minpac#status()
 
-"·Show·whitespace·chars¬
+" Hide buffers instead of closing
 set hidden
+
+"·Show·whitespace·chars¬
 set listchars=tab:→\ ,eol:¬,space:·
 set list
 
