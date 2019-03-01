@@ -1,0 +1,10 @@
+[Unit]
+Description=xcape modifier keys
+PartOf=xsession.target
+
+[Service]
+ExecStart=/usr/bin/xcape -d
+Restart=always
+
+[Install]
+WantedBy=xsession.target

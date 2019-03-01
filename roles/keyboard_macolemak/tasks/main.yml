@@ -1,0 +1,20 @@
+---
+- name: install xkb packages
+  package:
+    name:
+      - xorg-setxkbmap
+      - xorg-xkbcomp
+    state: present
+  become: true
+
+- name: install macolemak keyboard layout
+  copy:
+    src: macolemak.xkb
+    dest: ~/.macolemak.xkb
+    mode: 0444
+
+- name: install macolemak xprofile init
+  copy:
+    src: xprofile.d/macolemak
+    dest: ~/.xprofile.d/
+    mode: 0444

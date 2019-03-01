@@ -1,0 +1,24 @@
+---
+- block:
+  - name: install xcape
+    package:
+      name: xcape
+      state: present
+
+  - name: install xcape user service unit
+    copy:
+      src: xcape.service
+      dest: /etc/systemd/user
+      mode: 0644
+    notify: reload systemd user daemon
+
+  - meta: flush_handlers
+
+  become: true
+
+- name: install xcape user service
+  systemd:
+    name: xcape
+    scope: user
+    enabled: true
+

@@ -18,9 +18,3 @@
 
 "light -s sysfs/leds/smc::kbd_backlight -U 5"
   XF86KbdBrightnessDown
-
-"togglecapsctrl && (killall -q -USR1 i3status || true)"
-  Shift + Shift_R
-
-"togglecapsctrl && (killall -q -USR1 i3status || true)"
-  Shift + Shift_L

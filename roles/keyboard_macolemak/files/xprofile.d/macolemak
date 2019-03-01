@@ -1,0 +1,4 @@
+xkbcomp ~/.macolemak.xkb -w 0 -o "$DISPLAY"
+
+#systemctl --user restart xcape
+

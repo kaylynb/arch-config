@@ -2,6 +2,7 @@
 dependencies:
   - { role: fontconfig }
   - { role: X11 }
+  - { role: xbindkeys }
   - { role: gtk }
   - { role: xclip }
   - { role: rofi }
