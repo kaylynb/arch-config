@@ -1,0 +1,19 @@
+---
+- name: install xkb packages
+  package:
+    name:
+      - xorg-xkbcomp
+    state: present
+  become: true
+
+- name: install colemak-angle-shiftz keyboard layout
+  copy:
+    src: colemak-angle-shiftz.xkb
+    dest: ~/.colemak-angle-shiftz.xkb
+    mode: 0444
+
+- name: install keyboard xprofile init
+  copy:
+    src: xprofile.d/keyboard
+    dest: ~/.xprofile.d/
+    mode: 0444

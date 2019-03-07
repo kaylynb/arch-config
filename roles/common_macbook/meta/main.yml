@@ -5,4 +5,4 @@ dependencies:
   - { role: libinput-gestures }
   - { role: broadcom-wl }
   - { role: tlp }
-  - { role: keyboard_macolemak }
+  - { role: keyboard_colemak-angle-shiftz }
