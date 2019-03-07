@@ -3,6 +3,7 @@ dependencies:
   - { role: fontconfig }
   - { role: X11 }
   - { role: xbindkeys }
+  - { role: keyboard_colemak }
   - { role: gtk }
   - { role: xclip }
   - { role: rofi }

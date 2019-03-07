@@ -1,0 +1,9 @@
+---
+# Install file directly instead of using localectl as
+# it checks for X11 running now, which will mess up initial config
+- name: install keyboard layout config
+  copy:
+    src: 00-keyboard.conf
+    dest: /etc/X11/xorg.conf.d/
+    mode: 0644
+  become: true

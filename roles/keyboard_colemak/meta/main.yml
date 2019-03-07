@@ -1,5 +1,4 @@
 ---
 dependencies:
-  - { role: home }
   - { role: X11 }
   - { role: xcape }
