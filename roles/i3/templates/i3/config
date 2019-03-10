@@ -87,7 +87,7 @@ bindsym $mod+underscore scratchpad show
 
 {% if i3_center_float is defined %}
 # float and center window
-bindsym $mod+Shift+c floating toggle, resize set {{ i3_center_float }}, move position center
+bindsym $mod+Shift+c floating toggle, [floating] resize set {{ i3_center_float }}, move position center
 {% endif %}
 
 # reload i3 config
