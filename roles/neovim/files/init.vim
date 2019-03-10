@@ -59,6 +59,7 @@ command! -bang -nargs=? -complete=dir Files
 	\ call fzf#vim#files(<q-args>, fzf#vim#with_preview('right', '?'), <bang>0)
 
 nnoremap <C-p> :Files<CR>
+nnoremap <leader>p :Buffers<CR>
 
 let g:grepper = {}
 let g:grepper.tools = ['rg', 'git']
