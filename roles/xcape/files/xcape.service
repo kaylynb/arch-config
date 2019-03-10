@@ -3,7 +3,8 @@ Description=xcape modifier keys
 PartOf=xsession.target
 
 [Service]
-ExecStart=/usr/bin/xcape -d
+Type=forking
+ExecStart=/usr/bin/xcape
 Restart=always
 
 [Install]
