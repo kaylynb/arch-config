@@ -6,6 +6,7 @@ PartOf=xsession.target
 Type=forking
 ExecStart=/usr/bin/xcape
 Restart=always
+RuntimeMaxSec=60
 
 [Install]
 WantedBy=xsession.target
