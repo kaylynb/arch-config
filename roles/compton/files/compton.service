@@ -3,7 +3,7 @@ Description=Compton compositor
 PartOf=xsession.target
 
 [Service]
-ExecStart=/usr/bin/compton -CG --no-fading-openclose --backend glx --vsync opengl-swc
+ExecStart=/usr/bin/compton -CG --no-fading-openclose --backend glx --vsync
 Restart=always
 
 [Install]

@@ -16,6 +16,8 @@
 
 - meta: flush_handlers
 
+# Don't start service automatically, as it may fail before system is restarted
+# during initial setup.
 - name: install compton user service
   systemd:
     name: compton
