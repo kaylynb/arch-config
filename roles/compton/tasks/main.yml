@@ -16,6 +16,12 @@
 
 - meta: flush_handlers
 
+- name: install compton configuration
+  copy:
+    src: compton.conf
+    dest: ~/.config/
+    mode: 0444
+
 # Don't start service automatically, as it may fail before system is restarted
 # during initial setup.
 - name: install compton user service
