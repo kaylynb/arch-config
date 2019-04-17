@@ -7,7 +7,6 @@ function! PackInit() abort
 	call minpac#add('morhetz/gruvbox')
 	call minpac#add('itchyny/lightline.vim')
 	call minpac#add('justinmk/vim-dirvish')
-	call minpac#add('scrooloose/nerdtree')
 
 	call minpac#add('konfekt/vim-alias')
 	call minpac#add('editorconfig/editorconfig-vim')
@@ -52,8 +51,6 @@ set cursorline
 set incsearch
 set ignorecase
 set smartcase
-
-let g:NERDTreeMinimalUI=1
 
 command! -bang -nargs=? -complete=dir Files
 	\ call fzf#vim#files(<q-args>, fzf#vim#with_preview('right', '?'), <bang>0)
