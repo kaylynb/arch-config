@@ -11,6 +11,7 @@ function! PackInit() abort
 	call minpac#add('konfekt/vim-alias')
 	call minpac#add('editorconfig/editorconfig-vim')
 	call minpac#add('tpope/vim-surround')
+	call minpac#add('tpope/vim-ragtag')
 	call minpac#add('mhinz/vim-grepper')
 	call minpac#add('junegunn/fzf.vim')
 	call minpac#add('tpope/vim-fugitive')
