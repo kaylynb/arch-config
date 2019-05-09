@@ -9,6 +9,7 @@
         - xorg-xrandr
         - xorg-xrdb
         - hsetroot
+        - numlockx
       state: present
 
   - name: install X11 display size configuration
