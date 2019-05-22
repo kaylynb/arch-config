@@ -5,4 +5,4 @@
     src: 10-left-handed-mouse.conf
     dest: /etc/X11/xorg.conf.d/
     mode: 0644
-  when: X11_mouse_left_handed
+  when: X11_mouse_left_handed|bool
