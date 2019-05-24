@@ -1,0 +1,2 @@
+# Set feh to show entire image in window by default
+feh --scale-down
