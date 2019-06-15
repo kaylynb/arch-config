@@ -1,4 +1,6 @@
 media_library_primary_tag = album_artist
 playlist_show_remaining_time = yes
 playlist_separate_albums = yes
-user_interface = "alternative"
+user_interface = alternative
+display_volume_level = no
+display_bitrate = yes
