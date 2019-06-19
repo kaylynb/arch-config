@@ -6,3 +6,4 @@ dependencies:
   - { role: broadcom-wl }
   - { role: tlp }
   - { role: keyboard_colemak }
+  - { role: compton }

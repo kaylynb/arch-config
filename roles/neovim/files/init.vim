@@ -22,6 +22,7 @@ function! PackInit() abort
 	call minpac#add('iloginow/vim-stylus')
 	call minpac#add('ledger/vim-ledger')
 	call minpac#add('Glench/Vim-Jinja2-Syntax')
+	call minpac#add('pangloss/vim-javascript')
 endfunction
 
 command! PackUpdate	call PackInit() | call minpac#update('', {'do': 'call minpac#status()'})

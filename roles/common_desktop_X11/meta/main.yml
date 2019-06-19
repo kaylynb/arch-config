@@ -11,5 +11,4 @@ dependencies:
   - { role: gvfs }
   - { role: pcmanfm }
   - { role: libcups }
-  - { role: compton }
   - { role: feh }
