@@ -1,2 +1,2 @@
-/usr/bin/xrandr --output DP-0 --primary --mode 2560x1440 --rate 143.96 
-/usr/bin/xrandr --output HDMI-0 --mode 1920x1200 --right-of DP-0
+/usr/bin/xrandr --output DP-2 --primary --mode 2560x1440 --rate 143.96 
+/usr/bin/xrandr --output DP-1-1 --mode 1920x1200 --right-of DP-2
