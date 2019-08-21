@@ -4,7 +4,7 @@ Requires=network-online.target
 After=network-online.target
 
 [Mount]
-What=//alhena/music
+What=//alhena.home/music
 Where=/mnt/alhena/music
 Options=guest,user=samba-guest,iocharset=utf8,ro
 Type=cifs
