@@ -12,6 +12,7 @@ function! PackInit() abort
 	call minpac#add('editorconfig/editorconfig-vim')
 	call minpac#add('tpope/vim-surround')
 	call minpac#add('tpope/vim-ragtag')
+	call minpac#add('tpope/vim-commentary')
 	call minpac#add('mhinz/vim-grepper')
 	call minpac#add('junegunn/fzf.vim')
 	call minpac#add('tpope/vim-fugitive')
@@ -23,6 +24,7 @@ function! PackInit() abort
 	call minpac#add('ledger/vim-ledger')
 	call minpac#add('Glench/Vim-Jinja2-Syntax')
 	call minpac#add('pangloss/vim-javascript')
+	call minpac#add('kaylynb/vim-nftables', {'branch': 'noindentstyles'})
 endfunction
 
 command! PackUpdate	call PackInit() | call minpac#update('', {'do': 'call minpac#status()'})
