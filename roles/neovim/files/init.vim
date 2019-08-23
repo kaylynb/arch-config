@@ -25,6 +25,7 @@ function! PackInit() abort
 	call minpac#add('Glench/Vim-Jinja2-Syntax')
 	call minpac#add('pangloss/vim-javascript')
 	call minpac#add('kaylynb/vim-nftables', {'branch': 'noindentstyles'})
+	call minpac#add('cespare/vim-toml')
 endfunction
 
 command! PackUpdate	call PackInit() | call minpac#update('', {'do': 'call minpac#status()'})
