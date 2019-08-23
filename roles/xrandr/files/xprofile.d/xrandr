@@ -1,2 +1,2 @@
-/usr/bin/xrandr --output DP-2 --primary --mode 2560x1440 --rate 143.96 
-/usr/bin/xrandr --output DP-0 --mode 1920x1200 --right-of DP-2
+/usr/bin/xrandr --output DP-1 --primary --mode 2560x1440 --rate 120.00 
+/usr/bin/xrandr --output DP-2 --mode 1920x1200 --right-of DP-2

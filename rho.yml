@@ -7,7 +7,6 @@
   roles:
     - common_base
     - systemd-networkd
-    - graphics_nvidia
     - common_desktop_X11
     - xrandr
     - common_applications

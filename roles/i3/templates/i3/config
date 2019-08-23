@@ -1,3 +1,6 @@
+#output DP-1 mode 2560x1440@119.998001Hz pos 0 0 background #000000 solid_color
+#output DP-2 background #000000 solid_color
+#wl-clipboard
 set $mod Mod4
 
 floating_modifier $mod
