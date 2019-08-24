@@ -14,4 +14,4 @@
     notify:
       - restart systemd-logind service
 
-  become: yes
+  become: true

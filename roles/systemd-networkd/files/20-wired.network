@@ -2,7 +2,8 @@
 Name=en*
 
 [Network]
-DHCP=yes
+DHCP=true
 
 [DHCP]
 RouteMetric=10
+UseDomains=true

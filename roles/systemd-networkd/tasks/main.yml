@@ -14,7 +14,7 @@
       state: started
       enabled: true
 
-  become: yes
+  become: true
 
 - block:
   - name: install wireless network configuration
@@ -44,4 +44,4 @@
       enabled: true
 
   when: systemd_networkd_wireless is defined
-  become: yes
+  become: true
