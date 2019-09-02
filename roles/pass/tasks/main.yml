@@ -11,6 +11,12 @@
     dest: ~/.bashrc.d/environment/
     mode: 0444
 
+- name: install fzf completions for pass
+  copy:
+    src: bashrc.d/fzf-pass
+    dest: ~/.bashrc.d/
+    mode: 0444
+
 - name: install pass directory
   file:
     path: "{{ pass_store_directory }}"
