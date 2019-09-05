@@ -23,8 +23,8 @@
     src: user.js
     dest: ~/.mozilla/firefox/profile/user.js
     mode: 0755
-  notify:
-    - remove firefox prefs file
+  # notify:
+  #   - remove firefox prefs file
 
 - name: install firefox profile chrome directory
   file:
