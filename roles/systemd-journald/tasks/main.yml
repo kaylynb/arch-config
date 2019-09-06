@@ -1,0 +1,8 @@
+---
+- name: install systemd-journald configuration
+  copy:
+    src: 10-journal-size.conf
+    dest: /etc/systemd/journald.conf.d/
+    mode: 0444
+  become: true
+  notify: restart systemd-journald service

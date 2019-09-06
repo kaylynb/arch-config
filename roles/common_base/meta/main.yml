@@ -5,6 +5,7 @@ dependencies:
   - { role: makepkg }
   - { role: systemd-timesyncd }
   - { role: systemd-logind }
+  - { role: systemd-journald }
   - { role: yubikey }
   - { role: bash }
   - { role: fzf }
