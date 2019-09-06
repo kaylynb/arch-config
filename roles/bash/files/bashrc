@@ -21,6 +21,9 @@ bind "set show-all-if-ambiguous on"
 # Allow Shift Tab to complete items
 bind '"\e[Z": menu-complete'
 
+# Require pressing ctrl+d three times to exit shell
+export IGNOREEOF=2
+
 # History stuff
 shopt -s histappend
 shopt -s cmdhist
