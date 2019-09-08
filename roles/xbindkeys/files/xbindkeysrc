@@ -7,10 +7,10 @@
 "amixer set Master toggle && (killall -q -USR1 i3status || true)"
   XF86AudioMute
 
-"light -s sysfs/backlight/acpi_video0 -A 5"
+"light -s sysfs/backlight/acpi_video0 -A 3"
   XF86MonBrightnessUp
 
-"light -s sysfs/backlight/acpi_video0 -U 5"
+"light -s sysfs/backlight/acpi_video0 -U 3"
   XF86MonBrightnessDown
 
 "light -s sysfs/leds/smc::kbd_backlight -A 5"
