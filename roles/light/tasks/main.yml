@@ -1,5 +1,13 @@
 ---
-- name: install light package
-  package:
-    name: light
+- block:
+  - name: install light package
+    package:
+      name: light
+
+  - name: add kaylyn to video group
+    user:
+      name: kaylyn
+      append: true
+      groups: video
+
   become: true
