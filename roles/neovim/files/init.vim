@@ -26,6 +26,7 @@ function! PackInit() abort
 	call minpac#add('pangloss/vim-javascript')
 	call minpac#add('kaylynb/vim-nftables', {'branch': 'noindentstyles'})
 	call minpac#add('cespare/vim-toml')
+	call minpac#add('pearofducks/ansible-vim')
 endfunction
 
 command! PackUpdate	call PackInit() | call minpac#update('', {'do': 'call minpac#status()'})
