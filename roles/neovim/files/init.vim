@@ -72,3 +72,6 @@ nnoremap <leader>G :Grepper -buffers<cr>
 
 let g:loaded_netrwPlugin = 1
 command! -nargs=? -complete=dir Explore Dirvish <args>
+
+let g:ansible_unindent_after_newline = 1
+let g:ansible_name_highlight = 'd'
