@@ -16,6 +16,7 @@ function! PackInit() abort
 	call minpac#add('mhinz/vim-grepper')
 	call minpac#add('junegunn/fzf.vim')
 	call minpac#add('tpope/vim-fugitive')
+	call minpac#add('machakann/vim-highlightedyank')
 	call minpac#add('w0rp/ale')
 
 	" File types
@@ -57,6 +58,7 @@ set cursorline
 set incsearch
 set ignorecase
 set smartcase
+set inccommand=split
 
 command! -bang -nargs=? -complete=dir Files
 	\ call fzf#vim#files(<q-args>, fzf#vim#with_preview('right', '?'), <bang>0)
