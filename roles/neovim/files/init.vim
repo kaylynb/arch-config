@@ -58,7 +58,12 @@ set cursorline
 set incsearch
 set ignorecase
 set smartcase
+
+" preview substitute commands
 set inccommand=split
+
+" disable intro
+set shortmess=I
 
 command! -bang -nargs=? -complete=dir Files
 	\ call fzf#vim#files(<q-args>, fzf#vim#with_preview('right', '?'), <bang>0)
