@@ -63,7 +63,7 @@ set smartcase
 set inccommand=split
 
 " disable intro
-set shortmess=I
+set shortmess=IfilnxtToOF
 
 command! -bang -nargs=? -complete=dir Files
 	\ call fzf#vim#files(<q-args>, fzf#vim#with_preview('right', '?'), <bang>0)
