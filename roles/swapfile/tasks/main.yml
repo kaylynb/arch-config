@@ -1,0 +1,46 @@
+---
+- block:
+  - name: install swappiness
+    sysctl:
+      name: vm.swappiness
+      state: present
+      value: "{{ swapfile_swappiness|string }}"
+      sysctl_file: /etc/sysctl.d/90-swappiness.conf
+      reload: yes
+
+  # Use stat command as ansible stat will take forever to calculate hash
+  - name: test swapfile existence
+    command: "stat {{ swapfile_path }}"
+    register: swapfile_stat_results
+    failed_when: swapfile_stat_results.rc >= 2
+    changed_when: False
+
+  - name: install swapfile
+    shell: |
+      fallocate -l {{ swapfile_create_size }} {{ swapfile_path }}
+      chmod 0600 {{ swapfile_path }}
+      mkswap {{ swapfile_path }}
+      swapon {{ swapfile_path }}
+    when: swapfile_stat_results.rc == 1
+
+  - name: get swapfile unit name
+    command: systemd-escape -p {{ swapfile_path }}
+    register: swapfile_unit_name_result
+    changed_when: False
+
+  - name: install swapfile swap unit file
+    template:
+      src: swapfile.swap
+      dest: "/etc/systemd/system/{{ swapfile_unit_name_result.stdout }}.swap"
+      owner: root
+      group: root
+      mode: 0644
+
+  - name: install swapfile swap unit
+    systemd:
+      name: "{{ swapfile_unit_name_result.stdout }}.swap"
+      state: started
+      enabled: yes
+      daemon_reload: yes
+
+  become: yes

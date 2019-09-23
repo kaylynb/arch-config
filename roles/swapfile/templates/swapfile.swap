@@ -1,0 +1,8 @@
+[Unit]
+Description=Swap file mount
+
+[Swap]
+What={{ swapfile_path }}
+
+[Install]
+WantedBy=multi-user.target

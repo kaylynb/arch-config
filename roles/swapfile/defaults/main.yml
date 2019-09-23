@@ -1,0 +1,4 @@
+---
+swapfile_swappiness: 1
+swapfile_path: /swapfile
+swapfile_create_size: 8GiB
