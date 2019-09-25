@@ -1,0 +1,68 @@
+---
+- block:
+  - name: install dns over tls configuration
+    copy:
+      src: 10-dot.conf
+      dest: /etc/systemd/resolved.conf.d/
+      owner: root
+      group: root
+      mode: 0644
+    notify:
+      - restart systemd-resolved service
+
+  - name: install disable llmnr configuration
+    copy:
+      src: 10-disable-llmnr.conf
+      dest: /etc/systemd/resolved.conf.d/
+      owner: root
+      group: root
+      mode: 0644
+    notify:
+      - restart systemd-resolved service
+    when: systemd_resolved_disable_llmnr
+
+  - name: uninstall disable llmnr configuration
+    file:
+      path: /etc/systemd/resolved.conf.d/10-disable-llmnr.conf
+      state: absent
+    notify:
+      - restart systemd-resolved service
+    when: not systemd_resolved_disable_llmnr
+
+  - name: install dns server configuration
+    template:
+      src: 10-dns-servers.conf
+      dest: /etc/systemd/resolved.conf.d/
+      owner: root
+      group: root
+      mode: 0644
+    notify:
+      - restart systemd-resolved service
+    when: systemd_resolved_dns_servers|length > 0
+
+  - name: uninstall dns server configuration
+    file:
+      path: /etc/systemd/resolved.conf.d/10-dns-servers.conf
+      state: absent
+    notify:
+      - restart systemd-resolved service
+    when: systemd_resolved_dns_servers|length <= 0
+
+      # - 10-dns_servers.conf
+  - name: install service
+    service:
+      name: systemd-resolved
+      enabled: yes
+      state: started
+
+  - name: install resolv.conf symlink
+    file:
+      state: link
+      src: /run/systemd/resolve/stub-resolv.conf
+      dest: /etc/resolv.conf
+      force: yes
+      mode: 0644
+
+  - meta: flush_handlers
+
+  become: yes

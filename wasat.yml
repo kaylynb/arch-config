@@ -9,5 +9,4 @@
     - graphics_intel
     - common_desktop_X11
     - common_macbook
-    - systemd-networkd
     - common_applications

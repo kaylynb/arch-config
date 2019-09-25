@@ -6,6 +6,8 @@ dependencies:
   - { role: systemd-timesyncd }
   - { role: systemd-logind }
   - { role: systemd-journald }
+  - { role: systemd-networkd }
+  - { role: systemd-resolved }
   - { role: yubikey }
   - { role: bash }
   - { role: swapfile }

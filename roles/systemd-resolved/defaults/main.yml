@@ -1,0 +1,3 @@
+---
+systemd_resolved_disable_llmnr: no
+systemd_resolved_dns_servers: []
