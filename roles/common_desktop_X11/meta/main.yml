@@ -12,3 +12,4 @@ dependencies:
   - { role: pcmanfm }
   - { role: libcups }
   - { role: feh }
+  - { role: qimgv }
