@@ -1,0 +1,10 @@
+[Unit]
+Description=restart systemd-networkd after hibernate
+After=hibernate.target
+
+[Service]
+Type=oneshot
+ExecStart=-/usr/bin/systemctl restart systemd-networkd
+
+[Install]
+WantedBy=hibernate.target

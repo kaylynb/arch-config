@@ -2,7 +2,7 @@
 - block:
   - name: install nvidia graphics packages
     package:
-      name: nvidia-dmks
+      name: nvidia-dkms
       state: present
 
   become: true

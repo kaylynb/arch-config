@@ -3,7 +3,7 @@ Description=Kill scdaemon service after hibernate
 After=hibernate.target
 
 [Service]
-type=OneShot
+type=oneshot
 ExecStart=-/usr/bin/killall -9 scdaemon
 
 [Install]
