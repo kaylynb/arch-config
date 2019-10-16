@@ -1,0 +1,15 @@
+---
+- block:
+  - name: install util-linux package
+    package:
+      name: util-linux
+      state: present
+
+  - name: install fstrim timer
+    systemd:
+      name: fstrim.timer
+      state: started
+      enabled: yes
+      daemon-reload: yes
+
+  become: yes
