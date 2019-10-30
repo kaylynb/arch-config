@@ -12,14 +12,11 @@ user_pref("toolkit.legacyUserProfileCustomizations.stylesheets", true);
 // Select arc theme (this will get nuked if user.js is updated)
 user_pref("general.skins.selectedSkin", "arc-darker-theme");
 
-// Disable 'first run' page on startup
-user_pref("browser.startup.homepage_override.mstone","ignore");
-
 user_pref("browser.startup.homepage", "about:blank");
 user_pref("browser.newtab.url", "about:blank");
 user_pref("browser.newtabpage.enabled", false);
 
-// Don't warn on closing tabs
+// //// Don't warn on closing tabs
 user_pref("browser.tabs.warnOnClose", false);
 
 // Use native titlebar
@@ -27,11 +24,6 @@ user_pref("browser.tabs.drawInTitlebar", false);
 
 // Disable middle mouse from opening pasted text
 user_pref("middlemouse.contentLoadURL", false);
-
-// Use multiple process windows
-user_pref("dom.ipc.processCount", 7);
-
-user_pref("security.webauth.u2f", true);
 
 user_pref("browser.ctrlTab.recentlyUsedOrder", false);
 
@@ -52,6 +44,6 @@ user_pref("browser.uitour.enabled", false);
 // https://developer.mozilla.org/en/Download_Manager_preferences (obsolete)
 user_pref("browser.download.useDownloadDir",			false);
 
-// user_pref("browser.tabs.opentabfor.middleclick", false);
-// user_pref("browser.link.open_newwindow", 1);
-// user_pref("browser.link.open_external", 2);
+//// user_pref("browser.tabs.opentabfor.middleclick", false);
+//// user_pref("browser.link.open_newwindow", 1);
+//// user_pref("browser.link.open_external", 2);
