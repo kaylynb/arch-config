@@ -1,10 +1,10 @@
 [Unit]
-Description=Mount Alhena music automount
+Description=Mount share music automount
 Requires=network-online.target
 After=network-online.service
 
 [Automount]
-Where=/mnt/alhena/music
+Where=/mnt/share/music
 
 [Install]
 WantedBy=multi-user.target

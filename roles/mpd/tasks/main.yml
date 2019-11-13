@@ -1,21 +1,21 @@
 ---
 - block:
-  - name: install alhena music mount unit
+  - name: install share music mount unit
     copy:
       src: "{{ item }}"
       dest: /etc/systemd/system/
       mode: 0644
     with_items:
-      - mnt-alhena-music.mount
-      - mnt-alhena-music.automount
+      - mnt-share-music.mount
+      - mnt-share-music.automount
     notify:
       - reload systemd daemon
 
   - meta: flush_handlers
 
-  - name: enable alhena music automount unit
+  - name: enable share music automount unit
     systemd:
-      name: mnt-alhena-music.automount
+      name: mnt-share-music.automount
       state: started
       enabled: true
 

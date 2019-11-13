@@ -1,11 +1,11 @@
 [Unit]
-Description=Mount Alhena music at boot
+Description=Mount share music at boot
 Requires=network-online.target
 After=network-online.target
 
 [Mount]
-What=//alhena/music
-Where=/mnt/alhena/music
+What=//share/media/music
+Where=/mnt/share/music
 Options=guest,user=samba-guest,iocharset=utf8,ro
 Type=cifs
 TimeoutSec=30
