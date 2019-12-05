@@ -28,7 +28,7 @@
 	visibility: collapse;
 }
 
-#tabbrowser-tabs .tabs-newtab-button { 
+#tabbrowser-tabs #tabs-newtab-button { 
 	visibility: collapse !important;
 }
 
