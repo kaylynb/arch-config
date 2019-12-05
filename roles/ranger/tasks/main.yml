@@ -1,0 +1,17 @@
+---
+- name: install packages
+  package:
+    name:
+      - ranger
+      - python-pillow
+    state: present
+  become: yes
+
+- name: install configuration
+  copy:
+    src: "{{ item }}"
+    dest: ~/.config/ranger/
+    mode: 0644
+  loop:
+    - rc.conf
+    - commands.py

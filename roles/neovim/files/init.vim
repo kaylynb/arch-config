@@ -6,7 +6,9 @@ function! PackInit() abort
 
 	call minpac#add('morhetz/gruvbox')
 	call minpac#add('itchyny/lightline.vim')
-	call minpac#add('justinmk/vim-dirvish')
+	" call minpac#add('justinmk/vim-dirvish')
+	call minpac#add('rbgrouleff/bclose.vim')
+	call minpac#add('francoiscabrol/ranger.vim')
 
 	call minpac#add('konfekt/vim-alias')
 	call minpac#add('editorconfig/editorconfig-vim')
@@ -77,8 +79,12 @@ nnoremap <leader>* :Grepper -cword -noprompt<cr>
 nnoremap <leader>g :Grepper<cr>
 nnoremap <leader>G :Grepper -buffers<cr>
 
-let g:loaded_netrwPlugin = 1
-command! -nargs=? -complete=dir Explore Dirvish <args>
+let g:ranger_map_keys = 0
+let g:ranger_replace_netrw = 1
+nnoremap - :Ranger<cr>
+
+" let g:loaded_netrwPlugin = 1
+" command! -nargs=? -complete=dir Explore Dirvish <args>
 
 let g:ansible_unindent_after_newline = 1
 let g:ansible_name_highlight = 'd'

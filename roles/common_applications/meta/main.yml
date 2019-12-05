@@ -5,4 +5,5 @@ dependencies:
   - { role: syncthing }
   - { role: vscode }
   - { role: pass }
+  - { role: ranger }
   - { role: neovim }
