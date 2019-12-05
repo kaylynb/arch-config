@@ -1,3 +1,15 @@
+/* #navigator-toolbox { */
+/* 	-moz-box-ordinal-group: 2 !important; */
+/* } */
+
+/* #nav-bar-customization-target > toolbarspring { */
+/* 	display: none; */
+/* } */
+
+/* #urlbar-results { */
+/*   margin-top: -26.4em !important; */
+/* } */
+
 #window-controls {
 	display: none !important;
 }

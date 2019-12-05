@@ -1,0 +1,16 @@
+" vim: set filetype=vim:
+set configversion 1.8
+
+colourscheme dark
+
+bind <space> fillcmdline_notrail
+
+set hintchars aorisetndhyfuplvm
+
+set editorcmd kitty --class tridactyl_editor nvim %f -c 'normal %lG%cL'
+
+ bind / fillcmdline find
+ bind ? fillcmdline find -?
+ bind n findnext 1
+ bind N findnext -1
+ bind ,<Space> nohlsearch

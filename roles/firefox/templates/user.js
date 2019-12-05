@@ -48,6 +48,8 @@ user_pref("browser.newtabpage.activity-stream.asrouter.userprefs.cfr", false);
 // https://trac.torproject.org/projects/tor/ticket/19047#comment:3
 user_pref("browser.uitour.enabled", false);
 
+user_pref("browser.uidensity", 1);
+
 // PREF: Always ask the user where to download
 // https://developer.mozilla.org/en/Download_Manager_preferences (obsolete)
 user_pref("browser.download.useDownloadDir",			false);

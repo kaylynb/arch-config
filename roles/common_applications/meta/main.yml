@@ -1,6 +1,7 @@
 ---
 dependencies:
   - { role: firefox }
+  - { role: tridactyl }
   - { role: google-chrome }
   - { role: syncthing }
   - { role: vscode }
