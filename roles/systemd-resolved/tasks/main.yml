@@ -48,6 +48,16 @@
       - restart systemd-resolved service
     when: systemd_resolved_dns_servers|length <= 0
 
+  - name: install disable dnssec configuration
+    copy:
+      src: 10-disable-dnssec.conf
+      dest: /etc/systemd/resolved.conf.d/
+      owner: root
+      group: root
+      mode: 0644
+    notify:
+      - restart systemd-resolved service
+
       # - 10-dns_servers.conf
   - name: install service
     service:
