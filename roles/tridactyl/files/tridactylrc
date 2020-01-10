@@ -4,6 +4,7 @@ set configversion 1.8
 colourscheme dark
 
 bind <space> fillcmdline_notrail
+unbind <C-f>
 
 set hintchars aorisetndhyfuplvm
 

@@ -83,7 +83,7 @@ bindsym $mod+Shift+0 move container to workspace 10
 
 # scratchpad
 bindsym $mod+Shift+underscore move scratchpad
-bindsym $mod+underscore scratchpad show
+bindsym $mod+plus scratchpad show
 
 {% if i3_center_float is defined %}
 # float and center window
