@@ -8,7 +8,6 @@ function! PackInit() abort
 	call minpac#add('itchyny/lightline.vim')
 	call minpac#add('justinmk/vim-dirvish')
 	call minpac#add('rbgrouleff/bclose.vim')
-	call minpac#add('francoiscabrol/ranger.vim')
 	call minpac#add('thaerkh/vim-indentguides')
 
 	call minpac#add('konfekt/vim-alias')
@@ -20,7 +19,6 @@ function! PackInit() abort
 	call minpac#add('junegunn/fzf.vim')
 	call minpac#add('tpope/vim-fugitive')
 	call minpac#add('machakann/vim-highlightedyank')
-	call minpac#add('w0rp/ale')
 	call minpac#add('qpkorr/vim-renamer')
 
 	" File types
@@ -80,10 +78,6 @@ let g:grepper.tools = ['rg', 'git']
 nnoremap <leader>* :Grepper -cword -noprompt<cr>
 nnoremap <leader>g :Grepper<cr>
 nnoremap <leader>G :Grepper -buffers<cr>
-
-" let g:ranger_map_keys = 0
-" let g:ranger_replace_netrw = 1
-" nnoremap - :Ranger<cr>
 
 let g:loaded_netrwPlugin = 1
 command! -nargs=? -complete=dir Explore Dirvish <args>
