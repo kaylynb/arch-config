@@ -17,10 +17,10 @@
       state: started
       enabled: true
 
-  - name: install tlp-sleep service
-    service:
-      name: tlp-sleep
-      enabled: true
+  # - name: install tlp-sleep service
+  #   service:
+  #     name: tlp-sleep
+  #     enabled: true
 
   # - name: mask systemd-rfkill service
   #   service:
