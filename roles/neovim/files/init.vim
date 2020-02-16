@@ -21,6 +21,7 @@ function! PackInit() abort
 	call minpac#add('tpope/vim-fugitive')
 	call minpac#add('machakann/vim-highlightedyank')
 	call minpac#add('w0rp/ale')
+	call minpac#add('qpkorr/vim-renamer')
 
 	" File types
 	call minpac#add('matt-deacalion/vim-systemd-syntax')
