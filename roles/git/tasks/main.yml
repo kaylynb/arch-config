@@ -24,3 +24,10 @@
     src: config
     dest: "{{ git__config_dest }}"
     mode: 0444
+
+- name: install GIT_SSH user environment variable
+  win_environment:
+    name: GIT_SSH
+    level: user
+    value: C:\Windows\System32\OpenSSH\ssh.exe
+  when: "ansible_facts['os_family']|lower == 'windows'"
