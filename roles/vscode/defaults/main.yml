@@ -1,3 +1,7 @@
 ---
+vscode__config_path_linux: ~/.config/Code/User/
+vscode__config_path_windows: ~\AppData\Roaming\Code\User\
+vscode__config_path: "{{ lookup('vars', 'vscode__config_path_' + ansible_facts['os_family']|lower, default=vscode__config_path_linux) }}"
+
 vscode_font_size: 20
 vscode_window_zoomlevel: 0

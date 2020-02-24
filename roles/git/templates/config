@@ -1,3 +1,5 @@
+[core]
+	autocrlf = false
 [user]
 	email = {{ email }}
 	name = {{ full_name }}
@@ -7,3 +9,7 @@
 	followTags = true
 [commit]
 	gpgsign = true
+{% if ansible_facts['os_family']|lower == 'windows' %}
+[gpg]
+	program = %USERPROFILE%/scoop/apps/gpg/current/bin/gpg.exe
+{% endif %}

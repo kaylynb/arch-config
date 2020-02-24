@@ -1,28 +1,34 @@
 ---
-- name: install vscode package
+- name: install linux vscode package
   aur:
     name: visual-studio-code-bin
-  become: true
+  become: yes
+  when: "ansible_facts['os_family']|lower != 'windows'"
+
+- name: install windows vscode package
+  win_scoop:
+    name: vscode
+  when: "ansible_facts['os_family']|lower == 'windows'"
 
 - name: install vscode config
   template:
     src: settings.json
-    dest: ~/.config/Code/User/
+    dest: "{{ vscode__config_path }}"
     mode: 0444
 
-- name: install vscode extensions
-  command: "code --install-extension '{{ item }}'"
-  register: install_vscode_extensions_result
-  changed_when: "'already installed' not in install_vscode_extensions_result.stdout"
-  with_items:
-    - EditorConfig.EditorConfig
-    - tomphilbin.gruvbox-themes
-    - bungcip.better-toml
-    - dbaeumer.vscode-eslint
-    - kalitaalexey.vscode-rust
-    - haaaad.ansible
-    - mariosangiorgio.ledger
-    - mauve.terraform
-    - ronnidc.nunjucks
-    - sysoev.language-stylus
-    - webfreak.debug
+# - name: install vscode extensions
+#   command: "code --install-extension '{{ item }}'"
+#   register: install_vscode_extensions_result
+#   changed_when: "'already installed' not in install_vscode_extensions_result.stdout"
+#   with_items:
+#     - EditorConfig.EditorConfig
+#     - tomphilbin.gruvbox-themes
+#     - bungcip.better-toml
+#     - dbaeumer.vscode-eslint
+#     - kalitaalexey.vscode-rust
+#     - haaaad.ansible
+#     - mariosangiorgio.ledger
+#     - mauve.terraform
+#     - ronnidc.nunjucks
+#     - sysoev.language-stylus
+#     - webfreak.debug

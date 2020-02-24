@@ -1,0 +1,10 @@
+---
+- hosts: localhost
+  vars:
+    ansible_connection: ssh
+    ansible_shell_type: cmd
+  vars_files:
+    - vars/main.yml
+  roles:
+    - git
+    - vscode

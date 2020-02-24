@@ -1,2 +1,6 @@
 ---
-git_editor: code -n -w
+git__config_path_linux: ~/.config/git
+
+git__config_dest_windows: ~\.gitconfig
+git__config_dest_linux: "{{ git__config_path_linux }}/"
+git__config_dest: "{{ lookup('vars', 'git__config_dest_' + ansible_facts['os_family']|lower, default=git__config_dest_linux) }}"

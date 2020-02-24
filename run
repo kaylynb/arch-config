@@ -1,2 +1,8 @@
 #!/bin/bash
-ansible-playbook --ask-become-pass --diff ${HOSTNAME}.yml
+shopt -s nocasematch;
+
+if [[ $(uname -r) =~ microsoft$ ]]; then
+	ANSIBLE_CONFIG=./ansible.cfg ansible-playbook --diff "${HOSTNAME,,}".yml
+else
+	ansible-playbook --ask-become-pass --diff "${HOSTNAME,,}".yml
+fi

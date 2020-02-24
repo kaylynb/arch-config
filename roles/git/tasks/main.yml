@@ -1,18 +1,25 @@
 ---
-- name: install git package
-  become: true
+- name: install linux git package
   package:
     name: git
     state: present
+  become: yes
+  when: "ansible_facts['os_family']|lower != 'windows'"
+
+- name: install windows git package
+  win_scoop:
+    name: git
+  when: "ansible_facts['os_family']|lower == 'windows'"
 
 - name: install user git configuration directory
   file:
-    path: ~/.config/git
+    path: "{{ git__config_path_linux }}"
     state: directory
     mode: 0755
+  when: "ansible_facts['os_family']|lower != 'windows'"
 
 - name: install user git configuration
   template:
     src: config
-    dest: ~/.config/git/
+    dest: "{{ git__config_dest }}"
     mode: 0444
