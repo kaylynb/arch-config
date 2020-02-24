@@ -1,7 +1,9 @@
 ---
-- name: install cmdow
+- name: install cmdow and wsl-ssh-pageant
   win_scoop:
-    name: cmdow
+    name:
+      - cmdow
+      - wsl-ssh-pageant
     state: present
 
 - name: install gpg-connect-agent user startup shortcut
