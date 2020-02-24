@@ -1,0 +1,4 @@
+---
+dependencies:
+  - role: fontconfig
+  - role: powershell

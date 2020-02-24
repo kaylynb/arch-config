@@ -1,0 +1,9 @@
+---
+- name: install windows terminal
+  win_scoop:
+    name: windows-terminal
+
+- name: install windows terminal configuration
+  win_copy:
+    src: profiles.json
+    dest: "{{ ansible_facts['user_dir'] }}\\AppData\\Local\\Microsoft\\Windows Terminal\\"

@@ -1,22 +1,6 @@
 ---
-- name: install fzf package
-  package:
-    name: fzf
-    state: present
-  become: true
+- include_tasks: linux.yml
+  when: "ansible_facts['os_family']|lower != 'windows'"
 
-- name: install fzf bash completions and shortcuts
-  copy:
-    src: bashrc.d/fzf
-    dest: ~/.bashrc.d/
-    mode: 0444
-
-- name: install fzf environment variables
-  copy:
-    src: "bashrc.d/environment/{{ item }}"
-    dest: ~/.bashrc.d/environment/
-    mode: 0444
-  with_items:
-    - FZF_DEFAULT_COMMAND
-    - FZF_ALT_C_OPTS
-    - FZF_CTRL_R_OPTS
+- include_tasks: windows.yml
+  when: "ansible_facts['os_family']|lower == 'windows'"

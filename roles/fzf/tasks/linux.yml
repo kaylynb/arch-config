@@ -1,0 +1,27 @@
+---
+- name: install fzf package
+  package:
+    name: fzf
+    state: present
+  become: true
+
+- name: install fzf bash completions and shortcuts
+  copy:
+    src: bashrc.d/fzf
+    dest: ~/.bashrc.d/
+    mode: 0444
+
+- name: install fzf environment variables
+  copy:
+    src: "bashrc.d/environment/{{ item }}"
+    dest: ~/.bashrc.d/environment/
+    mode: 0444
+  with_items:
+    - FZF_ALT_C_OPTS
+    - FZF_CTRL_R_OPTS
+
+- name: install fzf environment variables
+  template:
+    src: bashrc.d/environment/FZF_DEFAULT_COMMAND
+    dest: ~/.bashrc.d/environment/
+    mode: 0444

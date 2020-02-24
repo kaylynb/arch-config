@@ -1,0 +1,4 @@
+---
+- name: install hack font
+  win_scoop:
+    name: hack-font

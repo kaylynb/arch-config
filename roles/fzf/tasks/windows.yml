@@ -1,0 +1,9 @@
+- name: install fzf package
+  win_scoop:
+    name: fzf
+
+- name: install FZF_DEFAULT_COMMAND user environment variable
+  win_environment:
+    name: FZF_DEFAULT_COMMAND
+    level: user
+    value: "{{ fzf_default_command }}"

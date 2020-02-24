@@ -1,0 +1,2 @@
+---
+fzf_default_command: rg --files --hidden -g !.git
