@@ -9,6 +9,7 @@
 - name: install windows git package
   win_scoop:
     name: git
+    state: present
   when: "ansible_facts['os_family']|lower == 'windows'"
 
 - name: install user git configuration directory

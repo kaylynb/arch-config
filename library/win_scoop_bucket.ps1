@@ -47,7 +47,7 @@ function Get-ScoopBuckets {
     $module.FailJson("Error checking installed buckets")
   }
 
-  return $res.stdout -split "`n"
+  return $res.stdout -split "`r`n"
 }
 function Install-ScoopBucket {
   param(

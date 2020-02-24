@@ -1,41 +1,61 @@
 ---
-- name: install gpg and ssh packages
-  become: true
+- name: install linux gpg package
   package:
-    name:
-      - gnupg
-      - openssh
+    name: gnupg
     state: present
+  become: yes
+  when: "ansible_facts['os_family']|lower != 'windows'"
 
-- name: install gpg user directory
-  file:
-    path: ~/.gnupg
-    state: directory
-    mode: 0700
+- name: install windows gpg package
+  win_scoop:
+    name: gpg
+    state: present
+  when: "ansible_facts['os_family']|lower == 'windows'"
 
-- name: install gpg configs
-  copy:
-    src: "{{ item }}"
-    dest: ~/.gnupg/
+- block:
+  - name: install gpg user directory
+    file:
+      path: ~/.gnupg
+      state: directory
+      mode: 0700
+
+  - name: install gpg ssh keygrip
+    copy:
+      content: "{{ gpg_ssh_keygrip }}\n"
+      dest: ~/.gnupg/sshcontrol
+      mode: 0400
+
+  - name: install gpg-agent xprofile start script
+    copy:
+      src: xprofile.d/gpg-agent
+      dest: ~/.xprofile.d/
+      mode: 0400
+
+  - name: install gpg bash TTY var
+    copy:
+      src: bashrc.d/environment/GPG_TTY
+      dest: ~/.bashrc.d/environment/
+      mode: 0400
+
+  - name: install gpg config
+    copy:
+      src: gpg.conf
+      dest: "{{ gpg__config_path }}"
+      mode: 0400
+
+  when: "ansible_facts['os_family']|lower != 'windows'"
+
+- name: install gpg config
+  win_copy:
+    src: gpg.conf
+    dest: "{{ gpg__config_path }}"
+  when: "ansible_facts['os_family']|lower == 'windows'"
+
+- name: install gpg-agent config
+  template:
+    src: gpg-agent.conf
+    dest: "{{ gpg__config_path }}"
     mode: 0400
-  with_items:
-    - gpg.conf
-    - gpg-agent.conf
 
-- name: install gpg ssh keygrip
-  copy:
-    content: "{{ gpg_ssh_keygrip }}\n"
-    dest: ~/.gnupg/sshcontrol
-    mode: 0400
-
-- name: install gpg-agent xprofile start script
-  copy:
-    src: xprofile.d/gpg-agent
-    dest: ~/.xprofile.d/
-    mode: 0400
-
-- name: install gpg bash TTY var
-  copy:
-    src: bashrc.d/environment/GPG_TTY
-    dest: ~/.bashrc.d/environment/
-    mode: 0400
+- include_tasks: win_ssh_agent.yml
+  when: "ansible_facts['os_family']|lower == 'windows'"

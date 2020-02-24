@@ -1,0 +1,25 @@
+---
+- name: install cmdow
+  win_scoop:
+    name: cmdow
+    state: present
+
+- name: install gpg-connect-agent user startup shortcut
+  win_shortcut:
+    src: "{{ ansible_facts['user_dir'] }}\\scoop\\apps\\gpg\\current\\bin\\gpg-connect-agent.exe"
+    dest: "{{ ansible_facts['user_dir'] }}\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Startup\\gpg-connect-agent.lnk"
+    arguments: /bye
+    windowstyle: minimized
+
+- name: install wsl-ssh-pageant user startup shortcut
+  win_shortcut:
+    src: "{{ ansible_facts['user_dir'] }}\\scoop\\apps\\cmdow\\current\\bin\\Release\\cmdow.exe"
+    dest: "{{ ansible_facts['user_dir'] }}\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Startup\\wsl-ssh-pageant.lnk"
+    arguments: /run /hid wsl-ssh-pageant.exe -winssh ssh-pageant
+    windowstyle: minimized
+
+- name: install SSH_AUTH_SOCK user environment variable
+  win_environment:
+    name: SSH_AUTH_SOCK
+    level: user
+    value: \\.\pipe\ssh-pageant
