@@ -1,0 +1,22 @@
+---
+- name: install powershell
+  win_scoop:
+    name: pwsh
+
+- name: install powershell all hosts profile
+  win_copy:
+    src: profile.ps1
+    dest: ~\Documents\PowerShell\
+
+# - name: inspect PSGallery repository trusted status
+#   win_command: pwsh.exe -NoProfile -Command -
+#   args:
+#     stdin: (Get-PSRepository -Name PSGallery).InstallationPolicy
+#   register: powershell_psgallery_trusted_result
+#   changed_when: false
+
+# - name: set PSGallery repository trusted status
+#   win_command: pwsh.exe -NoProfile -Command -
+#   args:
+#     stdin: Set-PSRepository -Name PSGallery -InstallationPolicy Trusted
+#   when: powershell_psgallery_trusted_result.stdout is search("Untrusted")
