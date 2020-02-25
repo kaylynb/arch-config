@@ -5,5 +5,5 @@
 - name: install FZF_DEFAULT_COMMAND user environment variable
   win_environment:
     name: FZF_DEFAULT_COMMAND
-    level: user
     value: "{{ fzf_default_command }}"
+    level: user

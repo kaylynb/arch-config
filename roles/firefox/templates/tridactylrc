@@ -8,4 +8,6 @@ unbind <C-f>
 
 set hintchars aorisetndhyfuplvm
 
+{% if ansible_facts['os_family']|lower != 'windows' %}
 set editorcmd kitty --class tridactyl_editor nvim %f -c 'normal %lG%cL'
+{% endif %}

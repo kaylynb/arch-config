@@ -36,3 +36,21 @@
     src: userChrome.css
     dest: "~/.mozilla/firefox/profile/chrome/"
     mode: 0755
+
+- block:
+  - name: install tridactyl extension
+    package:
+      name: firefox-tridactyl
+      state: present
+
+  - name: install tridactyl native extension
+    aur:
+      name: firefox-tridactyl-native
+
+  become: yes
+
+- name: install tridactyl config
+  template:
+    src: tridactylrc
+    dest: ~/.config/tridactyl/
+    mode: 0644

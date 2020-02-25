@@ -1,0 +1,13 @@
+---
+- name: install gopass package
+  win_scoop:
+    name: gopass
+
+- name: install gopass user environment variables
+  win_environment:
+    name: "{{ item.name }}"
+    value: "{{ item.value }}"
+    level: user
+  loop:
+    - { name: 'CHECKPOINT_DISABLE', value: 'true' }
+    - { name: 'GOPASS_NO_NOTIFY', value: 'true' }
