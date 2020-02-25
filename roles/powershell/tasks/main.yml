@@ -1,7 +1,9 @@
 ---
 - name: install powershell
   win_scoop:
-    name: pwsh
+    name:
+      - pwsh
+      - sudo
 
 - name: inspect PSGallery repository trusted status
   win_command: pwsh.exe -NoProfile -Command -
@@ -14,7 +16,7 @@
   win_command: pwsh.exe -NoProfile -Command -
   args:
     stdin: Set-PSRepository -Name PSGallery -InstallationPolicy Trusted
-  when: powershell_psgallery_trusted_result.stdout is search("Untrusted")
+  when: not ansible_check_mode and powershell_psgallery_trusted_result.stdout is search("Untrusted")
 
 - name: inspect PSFzf module status
   win_command: pwsh.exe -NoProfile -Command -
@@ -27,7 +29,7 @@
   win_command: pwsh.exe -NoProfile -Command -
   args:
     stdin: Install-Module -Name PSFzf
-  when: powershell_module_psfzf_result.stdout == ""
+  when: not ansible_check_mode and powershell_module_psfzf_result.stdout == ""
 
 - name: install powershell all hosts profile
   win_copy:

@@ -1,0 +1,35 @@
+---
+- name: install firefox package
+  win_package:
+    path: https://download.mozilla.org/?product=firefox-latest-ssl&os=win64&lang=en-US
+    arguments: /S
+    creates_path: C:\Program Files\Mozilla Firefox
+
+- name: install user firefox configuration directories
+  win_file:
+    path: "{{ ansible_facts['user_dir'] }}\\AppData\\Roaming\\Mozilla\\Firefox\\profile"
+    state: directory
+    recurse: true
+
+- name: install user firefox profiles configuration
+  win_copy:
+    src: profiles.ini
+    dest: "{{ ansible_facts['user_dir'] }}\\AppData\\Roaming\\Mozilla\\Firefox\\"
+
+- name: install user.js file
+  template:
+    src: user.js
+    dest: "{{ ansible_facts['user_dir'] }}\\AppData\\Roaming\\Mozilla\\Firefox\\profile\\"
+  # notify:
+  #   - remove firefox prefs file
+
+- name: install firefox profile chrome directory
+  win_file:
+    path: "{{ ansible_facts['user_dir'] }}\\AppData\\Roaming\\Mozilla\\Firefox\\profile\\chrome"
+    state: directory
+    recurse: true
+
+- name: install firefox profile chrome file
+  win_copy:
+    src: userChrome.css
+    dest: "{{ ansible_facts['user_dir'] }}\\AppData\\Roaming\\Mozilla\\Firefox\\profile\\chrome\\"

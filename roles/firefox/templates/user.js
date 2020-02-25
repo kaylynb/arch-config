@@ -9,9 +9,6 @@ user_pref("toolkit.cosmeticAnimations.enabled", false);
 // Allow user stylesheets
 user_pref("toolkit.legacyUserProfileCustomizations.stylesheets", true);
 
-// Select arc theme (this will get nuked if user.js is updated)
-user_pref("general.skins.selectedSkin", "arc-darker-theme");
-
 // Disable 'first run' page on startup
 user_pref("browser.startup.homepage_override.mstone","ignore");
 
