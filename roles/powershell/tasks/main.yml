@@ -1,9 +1,9 @@
 ---
-- name: install powershell
-  win_scoop:
-    name:
-      - pwsh
-      - sudo
+# Disable installing until fix for https://github.com/PowerShell/PowerShell/issues/11314
+# Just manually installing appx for now
+# - name: install powershell
+#   win_scoop:
+#     name: pwsh
 
 - name: inspect PSGallery repository trusted status
   win_command: pwsh.exe -NoProfile -Command -
