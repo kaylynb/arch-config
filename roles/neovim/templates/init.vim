@@ -1,25 +1,25 @@
 function! PackInit() abort
 	packadd minpac
-
+	
 	call minpac#init()
 	call minpac#add('k-takata/minpac', {'type': 'opt'})
 
 	call minpac#add('morhetz/gruvbox')
 	call minpac#add('itchyny/lightline.vim')
-	call minpac#add('justinmk/vim-dirvish')
-	call minpac#add('rbgrouleff/bclose.vim')
 	call minpac#add('thaerkh/vim-indentguides')
-
+	call minpac#add('justinmk/vim-dirvish')
 	call minpac#add('konfekt/vim-alias')
 	call minpac#add('editorconfig/editorconfig-vim')
 	call minpac#add('tpope/vim-surround')
 	call minpac#add('tpope/vim-ragtag')
 	call minpac#add('tpope/vim-commentary')
-	call minpac#add('mhinz/vim-grepper')
-	call minpac#add('junegunn/fzf.vim')
 	call minpac#add('tpope/vim-fugitive')
+	call minpac#add('mhinz/vim-grepper')
+	{% if ansible_facts['os_family']|lower == 'windows' -%}
+	call minpac#add('junegunn/fzf')
+	{% endif -%}
+	call minpac#add('junegunn/fzf.vim')
 	call minpac#add('machakann/vim-highlightedyank')
-	call minpac#add('qpkorr/vim-renamer')
 
 	" File types
 	call minpac#add('matt-deacalion/vim-systemd-syntax')
@@ -45,7 +45,6 @@ set list
 
 set termguicolors
 let g:gruvbox_italic=1
-"let g:gruvbox_guisp_fallback='bg'
 colorscheme gruvbox
 set background=dark
 
@@ -67,20 +66,25 @@ set inccommand=split
 " disable intro
 set shortmess=IfilnxtToOF
 
-command! -bang -nargs=? -complete=dir Files
-	\ call fzf#vim#files(<q-args>, fzf#vim#with_preview('right', '?'), <bang>0)
+" dirvish
+let g:loaded_netrwPlugin = 1
+command! -nargs=? -complete=dir Explore Dirvish <args>
 
-nnoremap <C-p> :Files<CR>
-nnoremap <leader>p :Buffers<CR>
-
+" grepper
 let g:grepper = {}
 let g:grepper.tools = ['rg', 'git']
 nnoremap <leader>* :Grepper -cword -noprompt<cr>
 nnoremap <leader>g :Grepper<cr>
 nnoremap <leader>G :Grepper -buffers<cr>
 
-let g:loaded_netrwPlugin = 1
-command! -nargs=? -complete=dir Explore Dirvish <args>
+" fzf
+{% if ansible_facts['os_family']|lower != 'windows' -%}
+command! -bang -nargs=? -complete=dir Files
+	\ call fzf#vim#files(<q-args>, fzf#vim#with_preview('right', '?'), <bang>0)
+{% endif -%}
+
+nnoremap <C-p> :Files<CR>
+nnoremap <leader>p :Buffers<CR>
 
 let g:ansible_unindent_after_newline = 1
 let g:ansible_name_highlight = 'd'

@@ -1,0 +1,37 @@
+---
+- name: install neovim packages
+  win_scoop:
+    name:
+      - neovim
+      - editorconfig
+
+- name: install neovim configuration directory
+  win_file:
+    path: ~\AppData\Local\nvim
+    state: directory
+
+- name: install minpac directory
+  win_file:
+    path: ~\AppData\Local\nvim\pack\minpac\opt
+    state: directory
+
+- name: install minpac plugin
+  win_command: pwsh.exe -NoProfile -Command -
+  args:
+    stdin: "git clone https://github.com/k-takata/minpac.git {{ ansible_facts['user_dir'] }}\\AppData\\Local\\nvim\\pack\\minpac\\opt\\minpac"
+    creates: "{{ ansible_facts['user_dir'] }}\\AppData\\Local\\nvim\\pack\\minpac\\opt\\minpac"
+
+- name: install neovim config
+  template:
+    src: init.vim
+    dest: ~\AppData\Local\nvim\
+
+- name: install neovim aliases config
+  win_copy:
+    src: alias.vim
+    dest: ~\AppData\Local\nvim\after\plugin\
+
+- name: install vim alias
+  win_copy:
+    src: 10-alias_vim_nvim.ps1
+    dest: ~\Documents\PowerShell\profile.d\

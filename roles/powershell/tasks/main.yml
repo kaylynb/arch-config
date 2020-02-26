@@ -41,3 +41,8 @@
   win_copy:
     src: profile.ps1
     dest: ~\Documents\PowerShell\
+
+- name: install powershell all hosts profile drop-in directory
+  win_file:
+    path: ~\Documents\PowerShell\profile.d
+    state: directory

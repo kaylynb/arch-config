@@ -12,5 +12,6 @@
     - powershell
     - windows-terminal
     - gopass
+    - neovim
     - firefox
     - vscode

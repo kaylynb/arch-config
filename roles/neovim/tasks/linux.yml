@@ -1,0 +1,31 @@
+---
+- name: install neovim packages
+  package:
+    name:
+      - neovim
+      - editorconfig-core-c
+  become: true
+
+- name: install minpac plugin
+  git:
+    repo: https://github.com/k-takata/minpac.git
+    dest: ~/.config/nvim/pack/minpac/opt/minpac
+    update: no
+
+- name: install neovim config
+  template:
+    src: init.vim
+    dest: ~/.config/nvim/
+    mode: 0444
+
+- name: install neovim aliases config
+  copy:
+    src: alias.vim
+    dest: ~/.config/nvim/after/plugin/
+    mode: 0444
+
+- name: install vim alias
+  copy:
+    src: bashrc.d/aliases/vim
+    dest: ~/.bashrc.d/aliases/
+    mode: 0444
