@@ -88,3 +88,5 @@ nnoremap <leader>p :Buffers<CR>
 
 let g:ansible_unindent_after_newline = 1
 let g:ansible_name_highlight = 'd'
+
+set concealcursor=
