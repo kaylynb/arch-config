@@ -6,15 +6,14 @@ function! PackInit() abort
 
 	call minpac#add('morhetz/gruvbox')
 	call minpac#add('itchyny/lightline.vim')
-	call minpac#add('thaerkh/vim-indentguides')
 	call minpac#add('justinmk/vim-dirvish')
 	call minpac#add('konfekt/vim-alias')
 	call minpac#add('editorconfig/editorconfig-vim')
 	call minpac#add('tpope/vim-surround')
 	call minpac#add('tpope/vim-ragtag')
 	call minpac#add('tpope/vim-commentary')
-	call minpac#add('tpope/vim-fugitive')
 	call minpac#add('mhinz/vim-grepper')
+	call minpac#add('mattn/emmet-vim')
 	{% if ansible_facts['os_family']|lower == 'windows' -%}
 	call minpac#add('junegunn/fzf')
 	{% endif -%}
@@ -26,10 +25,12 @@ function! PackInit() abort
 	call minpac#add('iloginow/vim-stylus')
 	call minpac#add('ledger/vim-ledger')
 	call minpac#add('Glench/Vim-Jinja2-Syntax')
-	call minpac#add('pangloss/vim-javascript')
 	call minpac#add('kaylynb/vim-nftables', {'branch': 'noindentstyles'})
 	call minpac#add('cespare/vim-toml')
 	call minpac#add('pearofducks/ansible-vim')
+	call minpac#add('yuezk/vim-js')
+	call minpac#add('MaxMEllon/vim-jsx-pretty')
+	call minpac#add('elzr/vim-json')
 endfunction
 
 command! PackUpdate	call PackInit() | call minpac#update('', {'do': 'call minpac#status()'})
@@ -40,7 +41,7 @@ command! PackStatus	call PackInit() | call minpac#status()
 set hidden
 
 "·Show·whitespace·chars¬
-set listchars=tab:→\ ,eol:¬,space:·
+set listchars=tab:│\ ,eol:¬,space:·
 set list
 
 set termguicolors
@@ -48,7 +49,7 @@ let g:gruvbox_italic=1
 colorscheme gruvbox
 set background=dark
 
-set tabstop=4 softtabstop=4 shiftwidth=4
+set tabstop=2 softtabstop=2 shiftwidth=2
 
 map <space> :
 
@@ -88,5 +89,3 @@ nnoremap <leader>p :Buffers<CR>
 
 let g:ansible_unindent_after_newline = 1
 let g:ansible_name_highlight = 'd'
-
-set concealcursor=
