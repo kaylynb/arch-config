@@ -19,6 +19,8 @@ function! PackInit() abort
 	{% endif -%}
 	call minpac#add('junegunn/fzf.vim')
 	call minpac#add('machakann/vim-highlightedyank')
+	call minpac#add('thaerkh/vim-indentguides')
+	call minpac#add('numirias/semshi', {'do': 'UpdateRemotePlugins'})
 
 	" File types
 	call minpac#add('matt-deacalion/vim-systemd-syntax')
@@ -31,6 +33,7 @@ function! PackInit() abort
 	call minpac#add('yuezk/vim-js')
 	call minpac#add('MaxMEllon/vim-jsx-pretty')
 	call minpac#add('elzr/vim-json')
+
 endfunction
 
 command! PackUpdate	call PackInit() | call minpac#update('', {'do': 'call minpac#status()'})
@@ -89,3 +92,5 @@ nnoremap <leader>p :Buffers<CR>
 
 let g:ansible_unindent_after_newline = 1
 let g:ansible_name_highlight = 'd'
+
+autocmd FileType python setlocal signcolumn=yes

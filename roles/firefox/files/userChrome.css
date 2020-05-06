@@ -20,7 +20,7 @@
 }
 
 /* Hides tab bar if only one tab is open */
-#tabbrowser-tabs, #tabbrowser-tabs > .tabbrowser-arrowscrollbox {
+#tabbrowser-tabs, #tabbrowser-tabs > #tabbrowser-arrowscrollbox {
 	min-height: 0 !important;
 }
 

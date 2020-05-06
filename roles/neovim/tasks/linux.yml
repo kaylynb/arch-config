@@ -3,6 +3,7 @@
   package:
     name:
       - neovim
+      - python-pynvim
       - editorconfig-core-c
   become: true
 
