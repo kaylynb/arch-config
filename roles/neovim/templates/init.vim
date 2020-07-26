@@ -12,6 +12,7 @@ function! PackInit() abort
 	call minpac#add('tpope/vim-surround')
 	call minpac#add('tpope/vim-ragtag')
 	call minpac#add('tpope/vim-commentary')
+	call minpac#add('tpope/vim-fugitive')
 	call minpac#add('mhinz/vim-grepper')
 	call minpac#add('mattn/emmet-vim')
 	{% if ansible_facts['os_family']|lower == 'windows' -%}
@@ -44,7 +45,7 @@ command! PackStatus	call PackInit() | call minpac#status()
 set hidden
 
 "·Show·whitespace·chars¬
-set listchars=tab:│\ ,eol:¬,space:·
+set listchars=tab:→\ ,eol:¬,space:·
 set list
 
 set termguicolors
