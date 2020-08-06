@@ -7,6 +7,8 @@
 [push]
 	default = simple
 	followTags = true
+[pull]
+	ff = only
 [commit]
 	gpgsign = true
 {% if ansible_facts['os_family']|lower == 'windows' %}
