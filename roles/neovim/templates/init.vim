@@ -20,7 +20,6 @@ function! PackInit() abort
 	{% endif -%}
 	call minpac#add('junegunn/fzf.vim')
 	call minpac#add('machakann/vim-highlightedyank')
-	call minpac#add('thaerkh/vim-indentguides')
 	call minpac#add('numirias/semshi', {'do': 'UpdateRemotePlugins'})
 	call minpac#add('jamessan/vim-gnupg')
 
