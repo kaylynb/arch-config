@@ -22,6 +22,7 @@ function! PackInit() abort
 	call minpac#add('machakann/vim-highlightedyank')
 	call minpac#add('thaerkh/vim-indentguides')
 	call minpac#add('numirias/semshi', {'do': 'UpdateRemotePlugins'})
+	call minpac#add('jamessan/vim-gnupg')
 
 	" File types
 	call minpac#add('matt-deacalion/vim-systemd-syntax')
