@@ -40,6 +40,10 @@ user_pref("browser.newtabpage.activity-stream.feeds.section.topstories",	false);
 // PREF: Disable Extension recommendations (Firefox >= 65)
 // https://support.mozilla.org/en-US/kb/extension-recommendations
 user_pref("browser.newtabpage.activity-stream.asrouter.userprefs.cfr", false);
+
+// Ignore enable/disable extension changes
+user_pref("services.sync.addons.ignoreUserEnabledChanges", true);
+
 //
 // PREF: Disable the UITour backend
 // https://trac.torproject.org/projects/tor/ticket/19047#comment:3
