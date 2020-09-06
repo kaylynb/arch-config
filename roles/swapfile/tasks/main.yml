@@ -17,7 +17,7 @@
 
   - name: install swapfile
     shell: |
-      fallocate -l {{ swapfile_create_size }} {{ swapfile_path }}
+      dd if=/dev/zero of={{ swapfile_path }} bs=1M count={{ swapfile_create_size }} status=progress
       chmod 0600 {{ swapfile_path }}
       mkswap {{ swapfile_path }}
       swapon {{ swapfile_path }}
