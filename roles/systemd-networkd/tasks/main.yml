@@ -12,7 +12,7 @@
     service:
       name: systemd-networkd
       state: started
-      enabled: true
+      enabled: yes
 
   - name: install systemd-networkd-hibernateresume service unit
     copy:
@@ -25,10 +25,10 @@
   - name: install systemd-networkd-hibernateresume service
     systemd:
       name: systemd-networkd-hibernateresume
-      enabled: true
-      daemon-reload: true
+      enabled: yes
+      daemon-reload: yes
 
-  become: true
+  become: yes
 
 - block:
   - name: install wireless network configuration
@@ -38,6 +38,18 @@
       mode: 0644
     notify:
       - restart systemd-networkd service
+
+  # - name: install iwd package
+  #   package:
+  #     name: iwd
+  #     state: present
+
+  # - name: install iwd service
+  #   systemd:
+  #     name: iwd
+  #     enabled: yes
+  #     state: started
+  #     daemon-reload: yes
 
   - name: install wpa_supplicant package
     package:
@@ -58,4 +70,4 @@
       enabled: true
 
   when: systemd_networkd_wireless is defined
-  become: true
+  become: yes
