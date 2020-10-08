@@ -1,9 +1,9 @@
 ---
 - block:
-  # - name: install compton package
-  #   package:
-  #     name: compton
-  #     state: present
+  - name: install compton package
+    package:
+      name: compton
+      state: present
 
   - name: install compton user service unit
     copy:
