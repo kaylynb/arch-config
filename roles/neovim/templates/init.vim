@@ -83,11 +83,7 @@ nnoremap <leader>g :Grepper<cr>
 nnoremap <leader>G :Grepper -buffers<cr>
 
 " fzf
-{% if ansible_facts['os_family']|lower != 'windows' -%}
-command! -bang -nargs=? -complete=dir Files
-	\ call fzf#vim#files(<q-args>, fzf#vim#with_preview('right', '?'), <bang>0)
-{% endif -%}
-
+let g:fzf_layout = { 'down': '40%' }
 nnoremap <C-p> :Files<CR>
 nnoremap <leader>p :Buffers<CR>
 
