@@ -91,3 +91,4 @@ let g:ansible_unindent_after_newline = 1
 let g:ansible_name_highlight = 'd'
 
 autocmd FileType python setlocal signcolumn=yes
+autocmd FileType c,cpp setlocal commentstring=//\ %s
