@@ -1,7 +1,9 @@
 ---
-- name: install ncmpcpp package
+- name: install ncmpcpp packages
   package:
-    name: ncmpcpp
+    name:
+      - ncmpcpp
+      - mpc
     state: present
   become: true
 

@@ -18,3 +18,18 @@
 
 "light -s sysfs/leds/smc::kbd_backlight -U 5"
   XF86KbdBrightnessDown
+
+"mpc --quiet prev"
+  XF86AudioPrev
+
+"mpc --quiet next"
+  XF86AudioNext
+
+"mpc --quiet seek +5"
+  XF86AudioForward
+
+"mpc --quiet seek -5"
+  XF86AudioRewind
+
+"mpc --quiet toggle"
+  XF86AudioPlay
