@@ -1,0 +1,10 @@
+[Unit]
+Description=evdev event injector
+
+[Service]
+ExecStart=/usr/bin/evscript --file /var/lib/evscript/ctrlesc.dyon --device {{ evscript_device }}
+
+Restart=always
+
+[Install]
+WantedBy=multi-user.target

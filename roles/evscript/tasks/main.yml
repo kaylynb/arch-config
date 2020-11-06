@@ -1,0 +1,36 @@
+---
+- block:
+  - name: install evscript
+    aur:
+      name: evscript-git
+
+  - name: install script directory
+    file:
+      path: /var/lib/evscript
+      state: directory
+      mode: 0755
+
+  - name: install ctrlesc script
+    copy:
+      src: ctrlesc.dyon
+      dest: /var/lib/evscript/
+      mode: 0644
+    notify:
+      - restart evscript service
+
+  - name: install service unit file
+    template:
+      src: evscript.service
+      dest: /etc/systemd/system/
+      mode: 0644
+    notify:
+      - restart evscript service
+
+  - name: install service
+    systemd:
+      name: evscript
+      state: started
+      enabled: yes
+      daemon-reload: yes
+
+  become: yes

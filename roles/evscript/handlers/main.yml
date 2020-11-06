@@ -1,0 +1,7 @@
+---
+- name: restart evscript service
+  systemd:
+    name: evscript
+    state: restarted
+    daemon-reload: yes
+  become: yes
