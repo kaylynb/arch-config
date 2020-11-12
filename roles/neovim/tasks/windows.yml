@@ -4,6 +4,7 @@
     name:
       - neovim
       - editorconfig
+      - fvim
 
 - name: install neovim configuration directory
   win_file:
@@ -21,10 +22,13 @@
     stdin: "git clone https://github.com/k-takata/minpac.git {{ ansible_facts['user_dir'] }}\\AppData\\Local\\nvim\\pack\\minpac\\opt\\minpac"
     creates: "{{ ansible_facts['user_dir'] }}\\AppData\\Local\\nvim\\pack\\minpac\\opt\\minpac"
 
-- name: install neovim config
+- name: install neovim configs
   template:
-    src: init.vim
+    src: "{{ item }}"
     dest: ~\AppData\Local\nvim\
+  loop:
+    - init.vim
+    - ginit.vim
 
 - name: install neovim aliases config
   win_copy:
