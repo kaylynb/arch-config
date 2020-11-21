@@ -1,5 +1,5 @@
 " vim: set filetype=vim:
-set configversion 1.8
+set storageloc local
 
 colourscheme dark
 
