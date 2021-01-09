@@ -127,6 +127,7 @@ client.urgent #CE4045 #CE4045 #e7d8b1 #DCCD69 #CE4045
 font pango:monospace bold {{ i3_font_size }}
 default_border pixel {{ i3_window_size }}
 hide_edge_borders smart
+workspace 10 output DP-0
 
 # Force pinentry to be floating
 for_window [class="Pinentry" instance="pinentry"] floating enable
