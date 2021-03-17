@@ -12,6 +12,9 @@ shopt -s globstar 2> /dev/null
 # !! + Space replaces with command
 bind Space:magic-space
 
+# Bracketed paste
+bind 'set enable-bracketed-paste on'
+
 # Case insensitive completion
 bind "set completion-ignore-case on"
 
