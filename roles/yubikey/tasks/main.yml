@@ -4,7 +4,6 @@
     package:
       name:
         - libusb-compat
-        - libu2f-host
       state: present
 
     # Add udev rules for permissions on smartcard for yubikey
