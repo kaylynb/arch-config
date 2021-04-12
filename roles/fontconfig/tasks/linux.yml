@@ -18,15 +18,22 @@
       dest: /etc/fonts/conf.avail/
       mode: 0644
 
-  - name: install active font configurations
+  - name: install active user font configurations
     file:
       src: "/etc/fonts/conf.avail/{{ item }}"
+      dest: "/etc/fonts/conf.d/{{ item }}"
+      state: link
+    with_items:
+      - 91-user-config.conf
+
+  - name: install active system font configurations
+    file:
+      src: "/usr/share/fontconfig/conf.avail/{{ item }}"
       dest: "/etc/fonts/conf.d/{{ item }}"
       state: link
     with_items:
       - 11-lcdfilter-default.conf
       - 10-sub-pixel-rgb.conf
       - 10-hinting-slight.conf
-      - 91-user-config.conf
 
   become: true
