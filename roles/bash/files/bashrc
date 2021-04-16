@@ -32,8 +32,8 @@ shopt -s histappend
 shopt -s cmdhist
 HISTSIZE=500000
 HISTFILESIZE=100000
-HISTCONTROL="erasedups:ignoreboth"
-export HISTIGNORE="&:[ ]*:exit:ls:bg:fg:history:clear"
+HISTCONTROL="ignoreboth"
+export HISTIGNORE=":exit:ls:bg:fg:history:clear:pass*"
 
 error_prompt() {
 	last_exit=$?
