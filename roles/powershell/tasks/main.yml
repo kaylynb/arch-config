@@ -4,12 +4,15 @@
     name: pwsh
 
 # Add path to real exe manually until fix for https://github.com/PowerShell/PowerShell/issues/11314
-- name: Add path to pwsh.exe before scoop shims
-  win_path:
-    elements:
-      - "{{ ansible_facts['user_dir'] }}\\scoop\\apps\\pwsh\\current"
-      - "{{ ansible_facts['user_dir'] }}\\scoop\\shims"
-    scope: user
+# For now instead of this run:
+# > scoop config shim kiennq
+# > scoop reset *
+#- name: Add path to pwsh.exe before scoop shims
+#  win_path:
+#    elements:
+#      - "{{ ansible_facts['user_dir'] }}\\scoop\\apps\\pwsh\\current"
+#      - "{{ ansible_facts['user_dir'] }}\\scoop\\shims"
+#    scope: user
 
 - name: inspect PSGallery repository trusted status
   win_command: pwsh.exe -NoProfile -Command -
