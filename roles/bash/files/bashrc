@@ -33,7 +33,7 @@ shopt -s cmdhist
 HISTSIZE=500000
 HISTFILESIZE=100000
 HISTCONTROL="ignoreboth"
-export HISTIGNORE=":exit:ls:bg:fg:history:clear:pass*"
+export HISTIGNORE=":exit:ls:bg:fg:history:clear"
 
 error_prompt() {
 	last_exit=$?
