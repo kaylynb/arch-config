@@ -1,8 +1,8 @@
 #!/bin/bash
 shopt -s nocasematch;
 
-if [[ $(uname -r) =~ microsoft$ ]]; then
-	ANSIBLE_CONFIG=./ansible.cfg ansible-playbook --diff "${HOSTNAME,,}".yml
+if [[ "$(< /proc/sys/kernel/osrelease)" == *microsoft* ]]; then
+	ANSIBLE_CONFIG=./ansible.cfg ansible-playbook -i $(tail -1 /etc/resolv.conf | cut -d' ' -f2), --user kaylyn --ask-pass --diff "${HOSTNAME,,}".yml
 else
 	ansible-playbook --ask-become-pass --diff "${HOSTNAME,,}".yml
 fi
