@@ -1,6 +1,6 @@
 ---
 - name: install windows terminal
-  win_scoop:
+  community.windows.win_scoop:
     name: windows-terminal
 
 - name: install windows terminal configuration

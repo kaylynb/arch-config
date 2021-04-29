@@ -7,7 +7,7 @@
   when: "ansible_facts['os_family']|lower != 'windows'"
 
 - name: install windows gpg package
-  win_scoop:
+  community.windows.win_scoop:
     name: gpg
     state: present
   when: "ansible_facts['os_family']|lower == 'windows'"

@@ -1,7 +1,7 @@
 ---
 - block:
   - name: install scoop extras bucket
-    win_scoop_bucket:
+    community.windows.win_scoop_bucket:
       name: extras
       state: present
 

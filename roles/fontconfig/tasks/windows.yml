@@ -1,4 +1,4 @@
 ---
 - name: install hack font
-  win_scoop:
+  community.windows.win_scoop:
     name: hack-font

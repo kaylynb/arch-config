@@ -1,5 +1,5 @@
 - name: install fzf package
-  win_scoop:
+  community.windows.win_scoop:
     name: fzf
 
 - name: install FZF_DEFAULT_COMMAND user environment variable

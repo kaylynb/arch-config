@@ -1,6 +1,6 @@
 ---
 - name: install neovim packages
-  win_scoop:
+  community.windows.win_scoop:
     name:
       - neovim
       - editorconfig

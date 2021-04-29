@@ -1,6 +1,6 @@
 ---
 - name: install gopass package
-  win_scoop:
+  community.windows.win_scoop:
     name: gopass
 
 - name: install gopass user environment variables

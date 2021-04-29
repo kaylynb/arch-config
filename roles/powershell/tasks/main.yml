@@ -1,6 +1,6 @@
 ---
 - name: install powershell
-  win_scoop:
+  community.windows.win_scoop:
     name: pwsh
 
 # Add path to real exe manually until fix for https://github.com/PowerShell/PowerShell/issues/11314

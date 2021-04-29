@@ -1,6 +1,6 @@
 ---
 - name: install cmdow and wsl-ssh-pageant
-  win_scoop:
+  community.windows.win_scoop:
     name:
       - cmdow
       - wsl-ssh-pageant
