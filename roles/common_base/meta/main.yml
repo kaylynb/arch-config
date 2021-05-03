@@ -13,6 +13,7 @@ dependencies:
   - { role: bash }
   - { role: swapfile }
   - { role: fzf }
+  - { role: z }
   - { role: gpg }
   - { role: git }
   - { role: alsa }

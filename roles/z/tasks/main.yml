@@ -1,0 +1,12 @@
+---
+- name: install z package
+  package:
+    name: z
+    state: present
+  become: yes
+
+- name: install z bashrc.d
+  copy:
+    src: bashrc.d/z
+    dest: ~/.bashrc.d/
+    mode: 0444
