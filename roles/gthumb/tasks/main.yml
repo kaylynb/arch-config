@@ -3,3 +3,4 @@
   package:
     name: gthumb
     state: present
+  become: yes
