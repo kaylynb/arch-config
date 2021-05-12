@@ -1,6 +1,5 @@
 ---
 dependencies:
-  - { role: libvirt }
   - { role: redshift }
   - { role: feh }
   - { role: gthumb }
