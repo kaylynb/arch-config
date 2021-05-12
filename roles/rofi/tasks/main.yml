@@ -19,6 +19,6 @@
 
 - name: install rofi configuration
   template:
-    src: config
+    src: config.rasi
     dest: ~/.config/rofi/
     mode: 0444

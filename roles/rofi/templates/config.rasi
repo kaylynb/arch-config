@@ -1,0 +1,6 @@
+configuration {
+	font: "mono {{ rofi_font_size }}";
+	location: 2;
+	yoffset: 150;
+	theme: "purple.rasi";
+}
