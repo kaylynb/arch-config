@@ -1,0 +1,18 @@
+---
+- block:
+  - name: install libvirt packages
+    package:
+      name:
+        - qemu
+        - libvirt
+        - bridge-utils
+        - virt-manager
+      state: present
+
+  - name: add kaylyn to libvirt group
+    user:
+      name: kaylyn
+      append: true
+      groups: libvirt
+
+  become: yes
