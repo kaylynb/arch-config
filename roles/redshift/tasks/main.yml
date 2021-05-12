@@ -1,0 +1,41 @@
+---
+- block:
+  - name: install redshift packages
+    package:
+      name: redshift
+      state: present
+
+  - name: install redshift user drop in unit directory
+    file:
+      path: /etc/systemd/user/redshift.service.d
+      state: directory
+      mode: 0755
+
+  - name: install redshift user drop in units
+    copy:
+      src: "{{ item }}"
+      dest: /etc/systemd/user/redshift.service.d/
+      mode: 0644
+    loop:
+      - 10-xsession-target.conf
+      - 20-requires-geoclue.conf
+    notify:
+      - restart redshift service
+
+  - name: install geoclue agent service unit
+    copy:
+      src: geoclue-agent.service
+      dest: /etc/systemd/user/
+      mode: 0644
+    notify:
+      - restart redshift service
+
+  become: yes
+
+- name: install redshift service
+  systemd:
+    name: redshift
+    state: started
+    enabled: yes
+    daemon_reload: yes
+    scope: user

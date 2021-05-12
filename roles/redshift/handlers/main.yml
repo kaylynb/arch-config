@@ -1,0 +1,7 @@
+---
+- name: restart redshift service
+  systemd:
+    name: redshift
+    state: restarted
+    daemon_reload: yes
+    scope: user

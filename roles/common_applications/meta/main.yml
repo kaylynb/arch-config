@@ -1,6 +1,7 @@
 ---
 dependencies:
   - { role: libvirt }
+  - { role: redshift }
   - { role: firefox }
   - { role: google-chrome }
   - { role: syncthing }
