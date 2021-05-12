@@ -22,13 +22,11 @@
       src: scdaemon-hibernateresume.service
       dest: /etc/systemd/system/
       mode: 0644
-    notify: reload systemd daemon
-
-  - meta: flush_handlers
 
   - name: install scdaemon hibernate resume restart service
-    service:
+    systemd:
       name: scdaemon-hibernateresume.service
       enabled: true
+      daemon_reload: yes
 
   become: true

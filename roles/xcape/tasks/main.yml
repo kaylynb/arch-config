@@ -10,9 +10,6 @@
       src: xcape.service
       dest: /etc/systemd/user
       mode: 0644
-    notify: reload systemd user daemon
-
-  - meta: flush_handlers
 
   become: true
 
@@ -21,4 +18,5 @@
     name: xcape
     scope: user
     enabled: true
+    daemon_reload: yes
 

@@ -10,11 +10,8 @@
       src: pcmanfm.service
       dest: /etc/systemd/user/
       mode: 0644
-    notify: reload systemd user daemon
 
   become: true
-
-- meta: flush_handlers
 
 - name: install user pcmanfm configuration directories
   file:
@@ -34,3 +31,4 @@
     name: pcmanfm
     scope: user
     enabled: true
+    daemon_reload: yes

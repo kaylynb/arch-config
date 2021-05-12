@@ -10,11 +10,8 @@
       src: compton.service
       dest: /etc/systemd/user/
       mode: 0644
-    notify: reload systemd user daemon
 
   become: true
-
-- meta: flush_handlers
 
 - name: install compton configuration
   copy:
@@ -29,3 +26,4 @@
     name: compton
     scope: user
     enabled: true
+    daemon_reload: yes

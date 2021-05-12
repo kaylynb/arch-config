@@ -1,7 +1,7 @@
 ---
-- name: restart xbindkeys user service
+- name: restart libinput-gestures user service
   systemd:
-    name: xbindkeys
+    name: libinput-gestures
     scope: user
     state: restarted
     daemon_reload: yes
