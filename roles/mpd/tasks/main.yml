@@ -50,7 +50,6 @@
     file:
       path: /etc/systemd/user/mpd.service.d
       state: directory
-      recurse: true
       mode: 0755
 
   - name: install mpd drop in unit
