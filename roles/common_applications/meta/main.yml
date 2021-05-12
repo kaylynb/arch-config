@@ -2,6 +2,8 @@
 dependencies:
   - { role: libvirt }
   - { role: redshift }
+  - { role: feh }
+  - { role: gthumb }
   - { role: firefox }
   - { role: google-chrome }
   - { role: syncthing }

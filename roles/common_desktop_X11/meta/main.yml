@@ -11,5 +11,3 @@ dependencies:
   - { role: gvfs }
   - { role: pcmanfm }
   - { role: libcups }
-  - { role: feh }
-  - { role: gthumb }
