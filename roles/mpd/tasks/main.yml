@@ -8,23 +8,19 @@
     with_items:
       - mnt-share-music.mount
       - mnt-share-music.automount
-    notify:
-      - reload systemd daemon
-
-  - meta: flush_handlers
 
   - name: enable share music automount unit
     systemd:
       name: mnt-share-music.automount
       state: started
-      enabled: true
+      enabled: yes
+      daemon_reload: yes
 
-  become: true
+  - name: install mpd package
+    package:
+      name: mpd
+      state: present
 
-- name: install mpd package
-  package:
-    name: mpd
-    state: present
   become: true
 
 - name: install mpd config directory
@@ -49,27 +45,28 @@
   notify:
     - restart mpd service
 
-- name: install mpd drop in unit directory
-  file:
-    path: ~/.config/systemd/user/mpd.service.d
-    state: directory
-    recurse: true
-    mode: 0755
+- block:
+  - name: install mpd drop in unit directory
+    file:
+      path: /etc/systemd/user/mpd.service.d
+      state: directory
+      recurse: true
+      mode: 0755
 
-- name: install mpd drop in unit
-  copy:
-    src: mpd.service.d/10-mpd-share-dependency.conf
-    dest: ~/.config/systemd/user/mpd.service.d
-    mode: 0755
-  notify:
-    - reload systemd user daemon
-    - restart mpd service
+  - name: install mpd drop in unit
+    copy:
+      src: mpd.service.d/10-mpd-share-dependency.conf
+      dest: /etc/systemd/user/mpd.service.d/
+      mode: 0644
+    notify:
+      - restart mpd service
 
-- meta: flush_handlers
+  become: yes
 
 - name: install mpd service
   systemd:
     name: mpd
     scope: user
     state: started
-    enabled: true
+    enabled: yes
+    daemon_reload: yes

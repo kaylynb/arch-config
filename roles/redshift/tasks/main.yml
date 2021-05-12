@@ -35,7 +35,7 @@
 - name: install redshift service
   systemd:
     name: redshift
+    scope: user
     state: started
     enabled: yes
     daemon_reload: yes
-    scope: user
