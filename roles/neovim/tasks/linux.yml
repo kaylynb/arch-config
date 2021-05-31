@@ -1,29 +1,36 @@
 ---
+# install from aur until 0.5 release
+- name: install neovim git package
+  aur:
+    name: neovim-git
+  become: true
+
 - name: install neovim packages
   package:
     name:
-      - neovim
+      # - neovim
       - python-pynvim
       - editorconfig-core-c
   become: true
 
-- name: install minpac plugin
+- name: install paq-nvim plugin
   git:
-    repo: https://github.com/k-takata/minpac.git
-    dest: ~/.config/nvim/pack/minpac/opt/minpac
+    repo: https://github.com/savq/paq-nvim.git
+    dest: ~/.local/share/nvim/site/pack/paqs/opt/paq-nvim
     update: no
 
 - name: install neovim config
-  template:
+  copy:
     src: init.vim
     dest: ~/.config/nvim/
     mode: 0444
 
-- name: install neovim aliases config
+- name: install neovim lua config
   copy:
-    src: alias.vim
-    dest: ~/.config/nvim/after/plugin/
+    src: lua/init.lua
+    dest: ~/.config/nvim/lua/
     mode: 0444
+    directory_mode: 0755
 
 - name: install vim alias
   copy:

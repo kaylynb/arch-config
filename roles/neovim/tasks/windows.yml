@@ -1,8 +1,13 @@
 ---
+- name: install scoop versions bucket
+  community.windows.win_scoop_bucket:
+    name: versions
+    state: present
+
 - name: install neovim packages
   community.windows.win_scoop:
     name:
-      - neovim
+      - neovim-nightly
       - editorconfig
       - fvim
 
@@ -11,29 +16,29 @@
     path: ~\AppData\Local\nvim
     state: directory
 
-- name: install minpac directory
+- name: install paq-nvim directory
   win_file:
-    path: ~\AppData\Local\nvim\pack\minpac\opt
+    path: ~\AppData\Local\nvim-data\site\pack\paqs\opt
     state: directory
 
-- name: install minpac plugin
+- name: install paq-nvim plugin
   win_command: pwsh.exe -NoProfile -Command -
   args:
-    stdin: "git clone https://github.com/k-takata/minpac.git {{ ansible_facts['user_dir'] }}\\AppData\\Local\\nvim\\pack\\minpac\\opt\\minpac"
-    creates: "{{ ansible_facts['user_dir'] }}\\AppData\\Local\\nvim\\pack\\minpac\\opt\\minpac"
+    stdin: "git clone https://github.com/savq/paq-nvim.git {{ ansible_facts['user_dir'] }}\\AppData\\Local\\nvim-data\\site\\pack\\paqs\\opt\\paq-nvim"
+    creates: "{{ ansible_facts['user_dir'] }}\\AppData\\Local\\nvim-data\\site\\pack\\paqs\\opt\\paq-nvim"
 
 - name: install neovim configs
-  template:
+  copy:
     src: "{{ item }}"
     dest: ~\AppData\Local\nvim\
   loop:
     - init.vim
     - ginit.vim
 
-- name: install neovim aliases config
-  win_copy:
-    src: alias.vim
-    dest: ~\AppData\Local\nvim\after\plugin\
+- name: install neovim lua config
+  copy:
+    src: lua/init.lua
+    dest: ~\AppData\Local\nvim\lua\
 
 - name: install vim alias
   win_copy:
