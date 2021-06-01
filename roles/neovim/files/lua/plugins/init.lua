@@ -38,12 +38,12 @@ paq 'iloginow/vim-stylus'
 paq 'ledger/vim-ledger'
 paq 'Glench/Vim-Jinja2-Syntax'
 paq {'kaylynb/vim-nftables', branch = 'noindentstyles'}
-paq 'cespare/vim-toml'
 paq 'pearofducks/ansible-vim'
-paq 'yuezk/vim-js'
-paq 'elzr/vim-json'
+
+paq {'nvim-treesitter/nvim-treesitter', run = function() vim.api.nvim_command('TSUpdate') end}
 
 require('plugins.telescope')
 require('plugins.dirvish')
 require('plugins.grepper')
 require('plugins.ansible')
+require('plugins.treesitter')
