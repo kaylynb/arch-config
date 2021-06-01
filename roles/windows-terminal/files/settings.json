@@ -74,5 +74,7 @@
 
     // Add any keybinding overrides to this array.
     // To unbind a default keybinding, set the command to "unbound"
-    "keybindings": []
+    "keybindings": [
+        {"command": "unbound", "keys": "ctrl+shift+6"}
+    ]
 }

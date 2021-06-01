@@ -5,7 +5,7 @@
 
 - name: install windows terminal configuration
   win_copy:
-    src: profiles.json
+    src: settings.json
     dest: "{{ ansible_facts['user_dir'] }}\\AppData\\Local\\Microsoft\\Windows Terminal\\"
   # Windows Terminal autoupdates config instead of having layered configs
   # so it will always be marked as changed otherwise
