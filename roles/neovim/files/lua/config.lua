@@ -1,3 +1,8 @@
+-- disable ctrl-z on windows as it locks terminal instead
+if vim.fn.has('win64') == 1 then
+	vim.api.nvim_set_keymap('n', '<C-z>', '<Nop>', {})
+end
+
 local o = vim.opt
 
 -- update title based on buffer
