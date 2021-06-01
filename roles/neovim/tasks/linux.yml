@@ -13,24 +13,16 @@
       - editorconfig-core-c
   become: true
 
-- name: install paq-nvim plugin
-  git:
-    repo: https://github.com/savq/paq-nvim.git
-    dest: ~/.local/share/nvim/site/pack/paqs/opt/paq-nvim
-    update: no
+- name: get neovim config directory
+  command: "{{ neovim_config_directory_command }}"
+  register: neovim_config_cmd
+  check_mode: no
+  changed_when: false
 
-- name: install neovim config
-  copy:
-    src: init.vim
-    dest: ~/.config/nvim/
-    mode: 0444
+- name: set neovim config directory var
+  set_fact:
+    neovim_config_directory: "{{ neovim_config_cmd.stderr }}/"
 
-- name: install neovim lua config
-  copy:
-    src: lua/init.lua
-    dest: ~/.config/nvim/lua/
-    mode: 0444
-    directory_mode: 0755
 
 - name: install vim alias
   copy:

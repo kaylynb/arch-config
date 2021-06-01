@@ -1,0 +1,2 @@
+---
+neovim_config_directory_command: nvim -u NONE --headless --cmd "lua print(vim.fn.stdpath([[config]])); vim.cmd([[quit]])"

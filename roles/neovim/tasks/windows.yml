@@ -11,34 +11,22 @@
       - editorconfig
       - fvim
 
-- name: install neovim configuration directory
-  win_file:
-    path: ~\AppData\Local\nvim
-    state: directory
+- name: get neovim config directory
+  win_command: "{{ neovim_config_directory_command }}"
+  register: neovim_config_cmd
+  check_mode: no
+  changed_when: false
 
-- name: install paq-nvim directory
-  win_file:
-    path: ~\AppData\Local\nvim-data\site\pack\paqs\opt
-    state: directory
+- name: set neovim config directory var
+  set_fact:
+    neovim_config_directory: "{{ neovim_config_cmd.stderr }}/"
 
-- name: install paq-nvim plugin
-  win_command: pwsh.exe -NoProfile -Command -
-  args:
-    stdin: "git clone https://github.com/savq/paq-nvim.git {{ ansible_facts['user_dir'] }}\\AppData\\Local\\nvim-data\\site\\pack\\paqs\\opt\\paq-nvim"
-    creates: "{{ ansible_facts['user_dir'] }}\\AppData\\Local\\nvim-data\\site\\pack\\paqs\\opt\\paq-nvim"
-
-- name: install neovim configs
+- name: install neovim graphical config
   copy:
     src: "{{ item }}"
-    dest: ~\AppData\Local\nvim\
+    dest: "{{ neovim_config_directory }}"
   loop:
-    - init.vim
     - ginit.vim
-
-- name: install neovim lua config
-  copy:
-    src: lua/init.lua
-    dest: ~\AppData\Local\nvim\lua\
 
 - name: install vim alias
   win_copy:

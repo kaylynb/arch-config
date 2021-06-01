@@ -4,3 +4,13 @@
 
 - include_tasks: windows.yml
   when: "ansible_facts['os_family']|lower == 'windows'"
+
+- name: install neovim config
+  copy:
+    src: "{{ item }}"
+    dest: "{{ neovim_config_directory }}"
+    mode: 0444
+    directory_mode: 0755
+  loop:
+    - init.lua
+    - lua
