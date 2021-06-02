@@ -14,6 +14,10 @@ local paq = require 'paq-nvim'.paq
 
 paq {'savq/paq-nvim', opt = true}
 
+-- deps
+paq 'nvim-lua/popup.nvim'
+paq 'nvim-lua/plenary.nvim'
+
 paq 'morhetz/gruvbox'
 paq 'itchyny/lightline.vim'
 paq 'justinmk/vim-dirvish'
@@ -25,11 +29,8 @@ paq 'mhinz/vim-grepper'
 paq 'mattn/emmet-vim'
 paq 'machakann/vim-highlightedyank'
 paq 'jamessan/vim-gnupg'
-
--- telescope
-paq 'nvim-lua/popup.nvim'
-paq 'nvim-lua/plenary.nvim'
 paq 'nvim-telescope/telescope.nvim'
+paq {'nvim-treesitter/nvim-treesitter', run = function() vim.api.nvim_command('TSUpdate') end}
 
 -- file types
 paq 'editorconfig/editorconfig-vim'
@@ -39,8 +40,6 @@ paq 'ledger/vim-ledger'
 paq 'Glench/Vim-Jinja2-Syntax'
 paq {'kaylynb/vim-nftables', branch = 'noindentstyles'}
 paq 'pearofducks/ansible-vim'
-
-paq {'nvim-treesitter/nvim-treesitter', run = function() vim.api.nvim_command('TSUpdate') end}
 
 require('plugins.telescope')
 require('plugins.dirvish')
