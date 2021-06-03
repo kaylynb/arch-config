@@ -37,7 +37,6 @@ paq 'editorconfig/editorconfig-vim'
 paq 'matt-deacalion/vim-systemd-syntax'
 paq 'iloginow/vim-stylus'
 paq 'ledger/vim-ledger'
-paq 'Glench/Vim-Jinja2-Syntax'
 paq {'kaylynb/vim-nftables', branch = 'noindentstyles'}
 paq 'pearofducks/ansible-vim'
 

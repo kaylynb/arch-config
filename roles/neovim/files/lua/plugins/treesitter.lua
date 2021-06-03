@@ -22,7 +22,3 @@ require('nvim-treesitter.configs').setup {
 		enable = true,
 	},
 }
-
-vim.cmd [[
-autocmd FileType jinja.html TSBufDisable highlight
-]]
