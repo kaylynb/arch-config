@@ -1,15 +1,3 @@
-/* #navigator-toolbox { */
-/* 	-moz-box-ordinal-group: 2 !important; */
-/* } */
-
-/* #nav-bar-customization-target > toolbarspring { */
-/* 	display: none; */
-/* } */
-
-/* #urlbar-results { */
-/*   margin-top: -26.4em !important; */
-/* } */
-
 #window-controls {
 	display: none !important;
 }
@@ -28,10 +16,12 @@
 	visibility: collapse;
 }
 
+/* Hides new tab button */
 #tabbrowser-tabs #tabs-newtab-button { 
 	visibility: collapse !important;
 }
 
-#tabbrowser-tabs tab {
-	min-height: var(--tab-min-height)
+/* Add background color to inactive tabs */
+#tabbrowser-tabs .tab-background {
+	background-color: color-mix(in srgb, currentColor 5%, transparent);
 }
