@@ -18,30 +18,34 @@ paq {'savq/paq-nvim', opt = true}
 paq 'nvim-lua/popup.nvim'
 paq 'nvim-lua/plenary.nvim'
 
-paq 'morhetz/gruvbox'
 paq 'itchyny/lightline.vim'
+paq 'jamessan/vim-gnupg'
 paq 'justinmk/vim-dirvish'
-paq 'tpope/vim-surround'
-paq 'tpope/vim-ragtag'
+paq 'machakann/vim-highlightedyank'
+paq 'mattn/emmet-vim'
+paq 'mhinz/vim-grepper'
+paq 'morhetz/gruvbox'
+paq 'nvim-telescope/telescope.nvim'
 paq 'tpope/vim-commentary'
 paq 'tpope/vim-fugitive'
-paq 'mhinz/vim-grepper'
-paq 'mattn/emmet-vim'
-paq 'machakann/vim-highlightedyank'
-paq 'jamessan/vim-gnupg'
-paq 'nvim-telescope/telescope.nvim'
-paq {'nvim-treesitter/nvim-treesitter', run = function() vim.api.nvim_command('TSUpdate') end}
+paq 'tpope/vim-ragtag'
+paq 'tpope/vim-surround'
+-- paq {'nvim-treesitter/nvim-treesitter', run = function() vim.api.nvim_command('TSUpdate') end}
 
 -- file types
+paq 'Glench/Vim-Jinja2-Syntax'
 paq 'editorconfig/editorconfig-vim'
-paq 'matt-deacalion/vim-systemd-syntax'
+paq 'elzr/vim-json'
 paq 'iloginow/vim-stylus'
 paq 'ledger/vim-ledger'
-paq {'kaylynb/vim-nftables', branch = 'noindentstyles'}
+paq 'matt-deacalion/vim-systemd-syntax'
 paq 'pearofducks/ansible-vim'
+paq 'yuezk/vim-js'
+paq 'ziglang/zig.vim'
+paq {'kaylynb/vim-nftables', branch = 'noindentstyles'}
 
-require('plugins.telescope')
+require('plugins.ansible')
 require('plugins.dirvish')
 require('plugins.grepper')
-require('plugins.ansible')
-require('plugins.treesitter')
+require('plugins.telescope')
+-- require('plugins.treesitter')

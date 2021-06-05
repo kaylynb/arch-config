@@ -12,8 +12,9 @@ k('v', '<A-j>', ":m '>+1<CR>gv=gv", {noremap = true})
 k('v', '<A-k>', ":m '<-2<CR>gv=gv", {noremap = true})
 
 vim.cmd [[
-" autocmd FileType python setlocal signcolumn=yes
-autocmd FileType c,cpp setlocal commentstring=//\ %s
+augroup initlua
+	autocmd FileType c,cpp setlocal commentstring=//\ %s
+augroup END
 ]]
 
 require('plugins')
