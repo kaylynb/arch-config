@@ -15,8 +15,8 @@ local paq = require 'paq-nvim'.paq
 paq {'savq/paq-nvim', opt = true}
 
 -- deps
-paq 'nvim-lua/popup.nvim'
-paq 'nvim-lua/plenary.nvim'
+--paq 'nvim-lua/popup.nvim'
+--paq 'nvim-lua/plenary.nvim'
 
 paq 'itchyny/lightline.vim'
 paq 'jamessan/vim-gnupg'
@@ -25,7 +25,7 @@ paq 'machakann/vim-highlightedyank'
 paq 'mattn/emmet-vim'
 paq 'mhinz/vim-grepper'
 paq 'morhetz/gruvbox'
-paq 'nvim-telescope/telescope.nvim'
+--paq 'nvim-telescope/telescope.nvim'
 paq 'tpope/vim-commentary'
 paq 'tpope/vim-fugitive'
 paq 'tpope/vim-ragtag'
@@ -44,8 +44,20 @@ paq 'yuezk/vim-js'
 paq 'ziglang/zig.vim'
 paq {'kaylynb/vim-nftables', branch = 'noindentstyles'}
 
+-- use fzf until telescope is fixed
+if vim.fn.has('win64') == 1 then
+	paq 'junegunn/fzf'
+end
+paq 'junegunn/fzf.vim'
+
+vim.cmd [[
+	let g:fzf_layout = { 'down': '40%' }
+	nnoremap <C-p> :Files<CR>
+	nnoremap <leader>b :Buffers<CR>
+]]
+
 require('plugins.ansible')
 require('plugins.dirvish')
 require('plugins.grepper')
-require('plugins.telescope')
+--require('plugins.telescope')
 -- require('plugins.treesitter')

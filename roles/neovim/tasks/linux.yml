@@ -1,14 +1,8 @@
 ---
-# install from aur until 0.5 release
-- name: install neovim git package
-  aur:
-    name: neovim-git
-  become: true
-
 - name: install neovim packages
   package:
     name:
-      # - neovim
+      - neovim
       - python-pynvim
       - editorconfig-core-c
   become: true
