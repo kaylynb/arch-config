@@ -55,6 +55,8 @@ user_pref("browser.uidensity", 1);
 // https://developer.mozilla.org/en/Download_Manager_preferences (obsolete)
 user_pref("browser.download.useDownloadDir",			false);
 
+user_pref("ui.systemUsesDarkTheme", 1);
+
 // user_pref("browser.tabs.opentabfor.middleclick", false);
 // user_pref("browser.link.open_newwindow", 1);
 // user_pref("browser.link.open_external", 2);
